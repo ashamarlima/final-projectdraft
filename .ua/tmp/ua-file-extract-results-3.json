@@ -1,0 +1,1872 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 15,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 15,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 15,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "server/app.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 54,
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/chat/Chat.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 22,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/materials/lessonAi.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 751,
+      "nonEmptyLines": 602,
+      "functions": [
+        {
+          "name": "stubModule",
+          "startLine": 41,
+          "endLine": 53,
+          "params": [
+            "relativeFile",
+            "value"
+          ]
+        },
+        {
+          "name": "isObjectId",
+          "startLine": 73,
+          "endLine": 74,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "stubFetch",
+          "startLine": 296,
+          "endLine": 319,
+          "params": [
+            "url",
+            "options"
+          ]
+        },
+        {
+          "name": "seedLesson",
+          "startLine": 371,
+          "endLine": 388,
+          "params": []
+        },
+        {
+          "name": "tokenFor",
+          "startLine": 405,
+          "endLine": 406,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "studentToken",
+          "startLine": 408,
+          "endLine": 408,
+          "params": []
+        },
+        {
+          "name": "request",
+          "startLine": 410,
+          "endLine": 434,
+          "params": [
+            "method",
+            "url",
+            "body",
+            "token"
+          ]
+        },
+        {
+          "name": "postJson",
+          "startLine": 436,
+          "endLine": 437,
+          "params": [
+            "url",
+            "body",
+            "token"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "stubModule",
+          "callee": "require.resolve",
+          "lineNumber": 43
+        },
+        {
+          "caller": "stubModule",
+          "callee": "path.join",
+          "lineNumber": 44
+        },
+        {
+          "caller": "isObjectId",
+          "callee": "/^[0-9a-fA-F]{24}$/.test",
+          "lineNumber": 74
+        },
+        {
+          "caller": "isObjectId",
+          "callee": "String",
+          "lineNumber": 74
+        },
+        {
+          "caller": "findByIdAndUpdate",
+          "callee": "this.xpIncrements.push",
+          "lineNumber": 113
+        },
+        {
+          "caller": "findOne",
+          "callee": "isObjectId",
+          "lineNumber": 133
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.reject",
+          "lineNumber": 141
+        },
+        {
+          "caller": "findOne",
+          "callee": "this.materials.find",
+          "lineNumber": 145
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 147
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 148
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 150
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 151
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve",
+          "lineNumber": 154
+        },
+        {
+          "caller": "create",
+          "callee": "this.created.push",
+          "lineNumber": 171
+        },
+        {
+          "caller": "create",
+          "callee": "this.createCalls.push",
+          "lineNumber": 190
+        },
+        {
+          "caller": "create",
+          "callee": "this.attachSave",
+          "lineNumber": 200
+        },
+        {
+          "caller": "create",
+          "callee": "this.attempts.push",
+          "lineNumber": 201
+        },
+        {
+          "caller": "attachSave",
+          "callee": "this.saveCalls.push",
+          "lineNumber": 208
+        },
+        {
+          "caller": "matches",
+          "callee": "this.attempts.filter",
+          "lineNumber": 215
+        },
+        {
+          "caller": "matches",
+          "callee": "Object.entries(query).every",
+          "lineNumber": 216
+        },
+        {
+          "caller": "matches",
+          "callee": "Object.entries",
+          "lineNumber": 216
+        },
+        {
+          "caller": "matches",
+          "callee": "Array.isArray",
+          "lineNumber": 225
+        },
+        {
+          "caller": "matches",
+          "callee": "String",
+          "lineNumber": 230
+        },
+        {
+          "caller": "matches",
+          "callee": "String",
+          "lineNumber": 231
+        },
+        {
+          "caller": "matches",
+          "callee": "String",
+          "lineNumber": 239
+        },
+        {
+          "caller": "matches",
+          "callee": "String",
+          "lineNumber": 240
+        },
+        {
+          "caller": "sorted",
+          "callee": "Object.keys",
+          "lineNumber": 248
+        },
+        {
+          "caller": "sorted",
+          "callee": "[...docs].sort",
+          "lineNumber": 252
+        },
+        {
+          "caller": "matches",
+          "callee": "this.matches",
+          "lineNumber": 266
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve",
+          "lineNumber": 270
+        },
+        {
+          "caller": "findOne",
+          "callee": "this.sorted",
+          "lineNumber": 271
+        },
+        {
+          "caller": "findOne",
+          "callee": "matches",
+          "lineNumber": 271
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve(\n                    matches()[0] || null\n                ).then",
+          "lineNumber": 276
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve",
+          "lineNumber": 276
+        },
+        {
+          "caller": "findOne",
+          "callee": "matches",
+          "lineNumber": 277
+        },
+        {
+          "caller": "stubFetch",
+          "callee": "String(url).includes",
+          "lineNumber": 298
+        },
+        {
+          "caller": "stubFetch",
+          "callee": "String",
+          "lineNumber": 298
+        },
+        {
+          "caller": "stubFetch",
+          "callee": "originalFetch",
+          "lineNumber": 318
+        },
+        {
+          "caller": "tokenFor",
+          "callee": "jwt.sign",
+          "lineNumber": 406
+        },
+        {
+          "caller": "studentToken",
+          "callee": "tokenFor",
+          "lineNumber": 408
+        },
+        {
+          "caller": "request",
+          "callee": "JSON.stringify",
+          "lineNumber": 422
+        },
+        {
+          "caller": "request",
+          "callee": "fetch",
+          "lineNumber": 425
+        },
+        {
+          "caller": "request",
+          "callee": "response.json().catch",
+          "lineNumber": 431
+        },
+        {
+          "caller": "request",
+          "callee": "response.json",
+          "lineNumber": 431
+        },
+        {
+          "caller": "postJson",
+          "callee": "request",
+          "lineNumber": 437
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/materials/materialAiControllers.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 198,
+      "nonEmptyLines": 160,
+      "functions": [
+        {
+          "name": "currentUserId",
+          "startLine": 19,
+          "endLine": 21,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "lessonText",
+          "startLine": 24,
+          "endLine": 26,
+          "params": [
+            "material"
+          ]
+        },
+        {
+          "name": "loadLesson",
+          "startLine": 31,
+          "endLine": 68,
+          "params": [
+            "req",
+            "res"
+          ]
+        },
+        {
+          "name": "sendAiError",
+          "startLine": 72,
+          "endLine": 83,
+          "params": [
+            "res",
+            "label",
+            "error"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "lessonText",
+          "callee": "String(material?.extractedText || '').trim",
+          "lineNumber": 25
+        },
+        {
+          "caller": "lessonText",
+          "callee": "String",
+          "lineNumber": 25
+        },
+        {
+          "caller": "loadLesson",
+          "callee": "findAccessibleMaterialById",
+          "lineNumber": 35
+        },
+        {
+          "caller": "loadLesson",
+          "callee": "res.status(400).json",
+          "lineNumber": 41
+        },
+        {
+          "caller": "loadLesson",
+          "callee": "res.status",
+          "lineNumber": 41
+        },
+        {
+          "caller": "loadLesson",
+          "callee": "res.status(404).json",
+          "lineNumber": 49
+        },
+        {
+          "caller": "loadLesson",
+          "callee": "res.status",
+          "lineNumber": 49
+        },
+        {
+          "caller": "loadLesson",
+          "callee": "lessonText",
+          "lineNumber": 58
+        },
+        {
+          "caller": "loadLesson",
+          "callee": "res.status(400).json",
+          "lineNumber": 59
+        },
+        {
+          "caller": "loadLesson",
+          "callee": "res.status",
+          "lineNumber": 59
+        },
+        {
+          "caller": "sendAiError",
+          "callee": "console.error",
+          "lineNumber": 73
+        },
+        {
+          "caller": "sendAiError",
+          "callee": "res\n        .status(error.status || 502)\n        .json",
+          "lineNumber": 75
+        },
+        {
+          "caller": "sendAiError",
+          "callee": "res\n        .status",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/materials/materialRoutes.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 122,
+      "nonEmptyLines": 93,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/notes/Note.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 22,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/notes/noteAiControllers.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 198,
+      "nonEmptyLines": 160,
+      "functions": [
+        {
+          "name": "currentUserId",
+          "startLine": 7,
+          "endLine": 9,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "loadNoteFromBody",
+          "startLine": 14,
+          "endLine": 50,
+          "params": [
+            "req",
+            "res"
+          ]
+        },
+        {
+          "name": "sendAiError",
+          "startLine": 54,
+          "endLine": 65,
+          "params": [
+            "res",
+            "label",
+            "error"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadNoteFromBody",
+          "callee": "res.status(400).json",
+          "lineNumber": 18
+        },
+        {
+          "caller": "loadNoteFromBody",
+          "callee": "res.status",
+          "lineNumber": 18
+        },
+        {
+          "caller": "loadNoteFromBody",
+          "callee": "Note.findOne",
+          "lineNumber": 28
+        },
+        {
+          "caller": "loadNoteFromBody",
+          "callee": "currentUserId",
+          "lineNumber": 30
+        },
+        {
+          "caller": "loadNoteFromBody",
+          "callee": "res.status(400).json",
+          "lineNumber": 34
+        },
+        {
+          "caller": "loadNoteFromBody",
+          "callee": "res.status",
+          "lineNumber": 34
+        },
+        {
+          "caller": "loadNoteFromBody",
+          "callee": "res.status(404).json",
+          "lineNumber": 42
+        },
+        {
+          "caller": "loadNoteFromBody",
+          "callee": "res.status",
+          "lineNumber": 42
+        },
+        {
+          "caller": "sendAiError",
+          "callee": "console.error",
+          "lineNumber": 55
+        },
+        {
+          "caller": "sendAiError",
+          "callee": "res\n        .status(error.status || 502)\n        .json",
+          "lineNumber": 57
+        },
+        {
+          "caller": "sendAiError",
+          "callee": "res\n        .status",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/notes/noteAiRoutes.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 32,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/notes/noteControllers.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 186,
+      "nonEmptyLines": 154,
+      "functions": [
+        {
+          "name": "currentUserId",
+          "startLine": 8,
+          "endLine": 10,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "extractText",
+          "startLine": 14,
+          "endLine": 22,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "toNoteSummary",
+          "startLine": 25,
+          "endLine": 35,
+          "params": [
+            "note"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "extractText",
+          "callee": "extractPdfText",
+          "lineNumber": 16
+        },
+        {
+          "caller": "extractText",
+          "callee": "file.buffer\n        .toString('utf-8')\n        .trim",
+          "lineNumber": 19
+        },
+        {
+          "caller": "extractText",
+          "callee": "file.buffer\n        .toString",
+          "lineNumber": 19
+        },
+        {
+          "caller": "toNoteSummary",
+          "callee": "text.slice",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/notes/noteRoutes.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 40,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/notes/notes.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 1027,
+      "nonEmptyLines": 818,
+      "functions": [
+        {
+          "name": "stubModule",
+          "startLine": 34,
+          "endLine": 49,
+          "params": [
+            "relativeFile",
+            "value"
+          ]
+        },
+        {
+          "name": "isObjectId",
+          "startLine": 66,
+          "endLine": 69,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "stubFetch",
+          "startLine": 179,
+          "endLine": 197,
+          "params": [
+            "url",
+            "options"
+          ]
+        },
+        {
+          "name": "okText",
+          "startLine": 199,
+          "endLine": 211,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "seedStudent",
+          "startLine": 240,
+          "endLine": 247,
+          "params": []
+        },
+        {
+          "name": "seedNote",
+          "startLine": 249,
+          "endLine": 264,
+          "params": []
+        },
+        {
+          "name": "tokenFor",
+          "startLine": 284,
+          "endLine": 288,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "studentToken",
+          "startLine": 290,
+          "endLine": 291,
+          "params": []
+        },
+        {
+          "name": "request",
+          "startLine": 293,
+          "endLine": 325,
+          "params": [
+            "method",
+            "url",
+            "body",
+            "token"
+          ]
+        },
+        {
+          "name": "postJson",
+          "startLine": 327,
+          "endLine": 328,
+          "params": [
+            "url",
+            "body",
+            "token"
+          ]
+        },
+        {
+          "name": "getJson",
+          "startLine": 330,
+          "endLine": 331,
+          "params": [
+            "url",
+            "token"
+          ]
+        },
+        {
+          "name": "geminiPrompt",
+          "startLine": 336,
+          "endLine": 339,
+          "params": []
+        },
+        {
+          "name": "textUpload",
+          "startLine": 387,
+          "endLine": 403,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "upload",
+          "startLine": 405,
+          "endLine": 428,
+          "params": [
+            "form"
+          ]
+        },
+        {
+          "name": "pdfUpload",
+          "startLine": 531,
+          "endLine": 543,
+          "params": [
+            "bytes"
+          ]
+        },
+        {
+          "name": "buildPdf",
+          "startLine": 561,
+          "endLine": 604,
+          "params": [
+            "contentStream"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "stubModule",
+          "callee": "require.resolve",
+          "lineNumber": 36
+        },
+        {
+          "caller": "stubModule",
+          "callee": "path.join",
+          "lineNumber": 37
+        },
+        {
+          "caller": "isObjectId",
+          "callee": "/^[0-9a-fA-F]{24}$/.test",
+          "lineNumber": 67
+        },
+        {
+          "caller": "isObjectId",
+          "callee": "String",
+          "lineNumber": 68
+        },
+        {
+          "caller": "findById",
+          "callee": "Promise.resolve",
+          "lineNumber": 81
+        },
+        {
+          "caller": "findById",
+          "callee": "String",
+          "lineNumber": 83
+        },
+        {
+          "caller": "findById",
+          "callee": "String",
+          "lineNumber": 83
+        },
+        {
+          "caller": "create",
+          "callee": "this.createCalls.push",
+          "lineNumber": 95
+        },
+        {
+          "caller": "find",
+          "callee": "this.notes.filter",
+          "lineNumber": 108
+        },
+        {
+          "caller": "find",
+          "callee": "String",
+          "lineNumber": 110
+        },
+        {
+          "caller": "find",
+          "callee": "String",
+          "lineNumber": 111
+        },
+        {
+          "caller": "find",
+          "callee": "Promise.resolve",
+          "lineNumber": 116
+        },
+        {
+          "caller": "findOne",
+          "callee": "isObjectId",
+          "lineNumber": 122
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.reject",
+          "lineNumber": 129
+        },
+        {
+          "caller": "findOne",
+          "callee": "this.notes.find",
+          "lineNumber": 133
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 135
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 136
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 137
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 138
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve",
+          "lineNumber": 141
+        },
+        {
+          "caller": "create",
+          "callee": "this.createCalls.push",
+          "lineNumber": 149
+        },
+        {
+          "caller": "stubFetch",
+          "callee": "String(url).includes",
+          "lineNumber": 181
+        },
+        {
+          "caller": "stubFetch",
+          "callee": "String",
+          "lineNumber": 181
+        },
+        {
+          "caller": "stubFetch",
+          "callee": "geminiRequests.push",
+          "lineNumber": 185
+        },
+        {
+          "caller": "stubFetch",
+          "callee": "originalFetch",
+          "lineNumber": 196
+        },
+        {
+          "caller": "tokenFor",
+          "callee": "jwt.sign",
+          "lineNumber": 285
+        },
+        {
+          "caller": "studentToken",
+          "callee": "tokenFor",
+          "lineNumber": 291
+        },
+        {
+          "caller": "request",
+          "callee": "JSON.stringify",
+          "lineNumber": 307
+        },
+        {
+          "caller": "request",
+          "callee": "fetch",
+          "lineNumber": 310
+        },
+        {
+          "caller": "request",
+          "callee": "response.json().catch",
+          "lineNumber": 320
+        },
+        {
+          "caller": "request",
+          "callee": "response.json",
+          "lineNumber": 320
+        },
+        {
+          "caller": "postJson",
+          "callee": "request",
+          "lineNumber": 328
+        },
+        {
+          "caller": "getJson",
+          "callee": "request",
+          "lineNumber": 331
+        },
+        {
+          "caller": "geminiPrompt",
+          "callee": "JSON.parse",
+          "lineNumber": 337
+        },
+        {
+          "caller": "textUpload",
+          "callee": "form.append",
+          "lineNumber": 391
+        },
+        {
+          "caller": "textUpload",
+          "callee": "form.append",
+          "lineNumber": 394
+        },
+        {
+          "caller": "textUpload",
+          "callee": "Buffer.from",
+          "lineNumber": 396
+        },
+        {
+          "caller": "upload",
+          "callee": "studentToken",
+          "lineNumber": 405
+        },
+        {
+          "caller": "upload",
+          "callee": "fetch",
+          "lineNumber": 413
+        },
+        {
+          "caller": "upload",
+          "callee": "response\n            .json()\n            .catch",
+          "lineNumber": 424
+        },
+        {
+          "caller": "upload",
+          "callee": "response\n            .json",
+          "lineNumber": 424
+        },
+        {
+          "caller": "pdfUpload",
+          "callee": "form.append",
+          "lineNumber": 534
+        },
+        {
+          "caller": "pdfUpload",
+          "callee": "Buffer.from",
+          "lineNumber": 536
+        },
+        {
+          "caller": "buildPdf",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 575
+        },
+        {
+          "caller": "buildPdf",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 580
+        },
+        {
+          "caller": "buildPdf",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 589
+        },
+        {
+          "caller": "buildPdf",
+          "callee": "String(offsets[i]).padStart",
+          "lineNumber": 595
+        },
+        {
+          "caller": "buildPdf",
+          "callee": "String",
+          "lineNumber": 595
+        },
+        {
+          "caller": "buildPdf",
+          "callee": "Buffer.from",
+          "lineNumber": 603
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 16,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/quizzes/quizzes.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 1027,
+      "nonEmptyLines": 829,
+      "functions": [
+        {
+          "name": "stubModule",
+          "startLine": 34,
+          "endLine": 49,
+          "params": [
+            "relativeFile",
+            "value"
+          ]
+        },
+        {
+          "name": "isObjectId",
+          "startLine": 60,
+          "endLine": 63,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "stubFetch",
+          "startLine": 300,
+          "endLine": 316,
+          "params": [
+            "url",
+            "options"
+          ]
+        },
+        {
+          "name": "okText",
+          "startLine": 318,
+          "endLine": 330,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "seedStudent",
+          "startLine": 377,
+          "endLine": 384,
+          "params": []
+        },
+        {
+          "name": "seedNote",
+          "startLine": 386,
+          "endLine": 399,
+          "params": []
+        },
+        {
+          "name": "seedAttempt",
+          "startLine": 402,
+          "endLine": 433,
+          "params": []
+        },
+        {
+          "name": "tokenFor",
+          "startLine": 455,
+          "endLine": 459,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "studentToken",
+          "startLine": 461,
+          "endLine": 462,
+          "params": []
+        },
+        {
+          "name": "request",
+          "startLine": 464,
+          "endLine": 496,
+          "params": [
+            "method",
+            "url",
+            "body",
+            "token"
+          ]
+        },
+        {
+          "name": "postJson",
+          "startLine": 498,
+          "endLine": 499,
+          "params": [
+            "url",
+            "body",
+            "token"
+          ]
+        },
+        {
+          "name": "getJson",
+          "startLine": 501,
+          "endLine": 502,
+          "params": [
+            "url",
+            "token"
+          ]
+        },
+        {
+          "name": "submit",
+          "startLine": 506,
+          "endLine": 511,
+          "params": [
+            "id",
+            "answers"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "stubModule",
+          "callee": "require.resolve",
+          "lineNumber": 36
+        },
+        {
+          "caller": "stubModule",
+          "callee": "path.join",
+          "lineNumber": 37
+        },
+        {
+          "caller": "isObjectId",
+          "callee": "/^[0-9a-fA-F]{24}$/.test",
+          "lineNumber": 61
+        },
+        {
+          "caller": "isObjectId",
+          "callee": "String",
+          "lineNumber": 62
+        },
+        {
+          "caller": "findById",
+          "callee": "Promise.resolve",
+          "lineNumber": 78
+        },
+        {
+          "caller": "findById",
+          "callee": "String",
+          "lineNumber": 80
+        },
+        {
+          "caller": "findById",
+          "callee": "String",
+          "lineNumber": 80
+        },
+        {
+          "caller": "findByIdAndUpdate",
+          "callee": "this.xpIncrements.push",
+          "lineNumber": 87
+        },
+        {
+          "caller": "findOne",
+          "callee": "isObjectId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.reject",
+          "lineNumber": 105
+        },
+        {
+          "caller": "findOne",
+          "callee": "this.notes.find",
+          "lineNumber": 109
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 111
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 112
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 113
+        },
+        {
+          "caller": "findOne",
+          "callee": "String",
+          "lineNumber": 114
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve",
+          "lineNumber": 117
+        },
+        {
+          "caller": "create",
+          "callee": "this.createCalls.push",
+          "lineNumber": 130
+        },
+        {
+          "caller": "create",
+          "callee": "this.attachSave",
+          "lineNumber": 140
+        },
+        {
+          "caller": "create",
+          "callee": "this.attempts.push",
+          "lineNumber": 141
+        },
+        {
+          "caller": "attachSave",
+          "callee": "this.saveCalls.push",
+          "lineNumber": 149
+        },
+        {
+          "caller": "matches",
+          "callee": "this.attempts.filter",
+          "lineNumber": 156
+        },
+        {
+          "caller": "matches",
+          "callee": "Object.entries(query).every",
+          "lineNumber": 157
+        },
+        {
+          "caller": "matches",
+          "callee": "Object.entries",
+          "lineNumber": 157
+        },
+        {
+          "caller": "matches",
+          "callee": "Array.isArray",
+          "lineNumber": 166
+        },
+        {
+          "caller": "matches",
+          "callee": "String",
+          "lineNumber": 171
+        },
+        {
+          "caller": "matches",
+          "callee": "String",
+          "lineNumber": 172
+        },
+        {
+          "caller": "matches",
+          "callee": "String",
+          "lineNumber": 180
+        },
+        {
+          "caller": "matches",
+          "callee": "String",
+          "lineNumber": 181
+        },
+        {
+          "caller": "sorted",
+          "callee": "Object.keys",
+          "lineNumber": 189
+        },
+        {
+          "caller": "sorted",
+          "callee": "[...docs].sort",
+          "lineNumber": 194
+        },
+        {
+          "caller": "matches",
+          "callee": "this.matches",
+          "lineNumber": 210
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve",
+          "lineNumber": 214
+        },
+        {
+          "caller": "findOne",
+          "callee": "this.sorted",
+          "lineNumber": 215
+        },
+        {
+          "caller": "findOne",
+          "callee": "matches",
+          "lineNumber": 215
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve(\n                    matches()[0] || null\n                ).then",
+          "lineNumber": 220
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve",
+          "lineNumber": 220
+        },
+        {
+          "caller": "findOne",
+          "callee": "matches",
+          "lineNumber": 221
+        },
+        {
+          "caller": "matches",
+          "callee": "this.matches",
+          "lineNumber": 228
+        },
+        {
+          "caller": "find",
+          "callee": "this.sorted",
+          "lineNumber": 232
+        },
+        {
+          "caller": "find",
+          "callee": "matches",
+          "lineNumber": 233
+        },
+        {
+          "caller": "find",
+          "callee": "Promise.resolve",
+          "lineNumber": 239
+        },
+        {
+          "caller": "find",
+          "callee": "sorted.map",
+          "lineNumber": 240
+        },
+        {
+          "caller": "find",
+          "callee": "this.populateNote",
+          "lineNumber": 241
+        },
+        {
+          "caller": "find",
+          "callee": "Promise.resolve(\n                            sorted\n                        ).then",
+          "lineNumber": 248
+        },
+        {
+          "caller": "find",
+          "callee": "Promise.resolve",
+          "lineNumber": 248
+        },
+        {
+          "caller": "populateNote",
+          "callee": "fakeNote.notes.find",
+          "lineNumber": 258
+        },
+        {
+          "caller": "populateNote",
+          "callee": "String",
+          "lineNumber": 260
+        },
+        {
+          "caller": "populateNote",
+          "callee": "String",
+          "lineNumber": 261
+        },
+        {
+          "caller": "stubFetch",
+          "callee": "String(url).includes",
+          "lineNumber": 302
+        },
+        {
+          "caller": "stubFetch",
+          "callee": "String",
+          "lineNumber": 302
+        },
+        {
+          "caller": "stubFetch",
+          "callee": "originalFetch",
+          "lineNumber": 315
+        },
+        {
+          "caller": "seedAttempt",
+          "callee": "fakeQuizAttempt.attachSave",
+          "lineNumber": 428
+        },
+        {
+          "caller": "tokenFor",
+          "callee": "jwt.sign",
+          "lineNumber": 456
+        },
+        {
+          "caller": "studentToken",
+          "callee": "tokenFor",
+          "lineNumber": 462
+        },
+        {
+          "caller": "request",
+          "callee": "JSON.stringify",
+          "lineNumber": 478
+        },
+        {
+          "caller": "request",
+          "callee": "fetch",
+          "lineNumber": 481
+        },
+        {
+          "caller": "request",
+          "callee": "response.json().catch",
+          "lineNumber": 491
+        },
+        {
+          "caller": "request",
+          "callee": "response.json",
+          "lineNumber": 491
+        },
+        {
+          "caller": "postJson",
+          "callee": "request",
+          "lineNumber": 499
+        },
+        {
+          "caller": "getJson",
+          "callee": "request",
+          "lineNumber": 502
+        },
+        {
+          "caller": "submit",
+          "callee": "studentToken",
+          "lineNumber": 506
+        },
+        {
+          "caller": "submit",
+          "callee": "postJson",
+          "lineNumber": 507
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/server.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 50,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/shared/ai.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 286,
+      "nonEmptyLines": 236,
+      "functions": [
+        {
+          "name": "GEMINI_URL",
+          "startLine": 15,
+          "endLine": 16,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "clipContext",
+          "startLine": 19,
+          "endLine": 25,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "getApiKey",
+          "startLine": 29,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "callGemini",
+          "startLine": 48,
+          "endLine": 127,
+          "params": []
+        },
+        {
+          "name": "parseJsonArray",
+          "startLine": 131,
+          "endLine": 150,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "generateSummary",
+          "startLine": 153,
+          "endLine": 167,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "askQuestion",
+          "startLine": 170,
+          "endLine": 194,
+          "params": [
+            "context",
+            "question"
+          ]
+        },
+        {
+          "name": "generateFlashcards",
+          "startLine": 197,
+          "endLine": 230,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "generateQuiz",
+          "startLine": 233,
+          "endLine": 279,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "clipContext",
+          "callee": "String(text ?? '').trim",
+          "lineNumber": 20
+        },
+        {
+          "caller": "clipContext",
+          "callee": "String",
+          "lineNumber": 20
+        },
+        {
+          "caller": "clipContext",
+          "callee": "value.slice",
+          "lineNumber": 23
+        },
+        {
+          "caller": "callGemini",
+          "callee": "fetch",
+          "lineNumber": 58
+        },
+        {
+          "caller": "callGemini",
+          "callee": "GEMINI_URL",
+          "lineNumber": 59
+        },
+        {
+          "caller": "callGemini",
+          "callee": "getApiKey",
+          "lineNumber": 65
+        },
+        {
+          "caller": "callGemini",
+          "callee": "JSON.stringify",
+          "lineNumber": 68
+        },
+        {
+          "caller": "callGemini",
+          "callee": "AbortSignal.timeout",
+          "lineNumber": 102
+        },
+        {
+          "caller": "callGemini",
+          "callee": "response.json",
+          "lineNumber": 106
+        },
+        {
+          "caller": "callGemini",
+          "callee": "(\n        data.candidates?.[0]?.content?.parts || []\n    )\n        .map((part) => part.text || '')\n        .join('')\n        .trim",
+          "lineNumber": 115
+        },
+        {
+          "caller": "callGemini",
+          "callee": "(\n        data.candidates?.[0]?.content?.parts || []\n    )\n        .map((part) => part.text || '')\n        .join",
+          "lineNumber": 115
+        },
+        {
+          "caller": "callGemini",
+          "callee": "(\n        data.candidates?.[0]?.content?.parts || []\n    )\n        .map",
+          "lineNumber": 115
+        },
+        {
+          "caller": "parseJsonArray",
+          "callee": "text\n        .replace(/^```(?:json)?/i, '')\n        .replace(/```$/, '')\n        .trim",
+          "lineNumber": 132
+        },
+        {
+          "caller": "parseJsonArray",
+          "callee": "text\n        .replace(/^```(?:json)?/i, '')\n        .replace",
+          "lineNumber": 132
+        },
+        {
+          "caller": "parseJsonArray",
+          "callee": "text\n        .replace",
+          "lineNumber": 132
+        },
+        {
+          "caller": "parseJsonArray",
+          "callee": "JSON.parse",
+          "lineNumber": 140
+        },
+        {
+          "caller": "parseJsonArray",
+          "callee": "Array.isArray",
+          "lineNumber": 145
+        },
+        {
+          "caller": "generateSummary",
+          "callee": "callGemini",
+          "lineNumber": 154
+        },
+        {
+          "caller": "generateSummary",
+          "callee": "clipContext",
+          "lineNumber": 162
+        },
+        {
+          "caller": "askQuestion",
+          "callee": "context.trim",
+          "lineNumber": 173
+        },
+        {
+          "caller": "askQuestion",
+          "callee": "clipContext",
+          "lineNumber": 183
+        },
+        {
+          "caller": "askQuestion",
+          "callee": "callGemini",
+          "lineNumber": 188
+        },
+        {
+          "caller": "generateFlashcards",
+          "callee": "callGemini",
+          "lineNumber": 198
+        },
+        {
+          "caller": "generateFlashcards",
+          "callee": "clipContext",
+          "lineNumber": 207
+        },
+        {
+          "caller": "generateFlashcards",
+          "callee": "parseJsonArray(raw)\n        .map((card) => ({\n            question: String(card.question ?? '').trim(),\n            answer: String(card.answer ?? '').trim()\n        }))\n        .filter",
+          "lineNumber": 214
+        },
+        {
+          "caller": "generateFlashcards",
+          "callee": "parseJsonArray(raw)\n        .map",
+          "lineNumber": 214
+        },
+        {
+          "caller": "generateFlashcards",
+          "callee": "parseJsonArray",
+          "lineNumber": 214
+        },
+        {
+          "caller": "generateFlashcards",
+          "callee": "String(card.question ?? '').trim",
+          "lineNumber": 216
+        },
+        {
+          "caller": "generateFlashcards",
+          "callee": "String",
+          "lineNumber": 216
+        },
+        {
+          "caller": "generateFlashcards",
+          "callee": "String(card.answer ?? '').trim",
+          "lineNumber": 217
+        },
+        {
+          "caller": "generateFlashcards",
+          "callee": "String",
+          "lineNumber": 217
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "callGemini",
+          "lineNumber": 234
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "clipContext",
+          "lineNumber": 244
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "parseJsonArray(raw)\n        .map((item) => ({\n            question: String(item.question ?? '').trim(),\n\n            options: Array.isArray(item.options)\n                ? item.options.map((option) =>\n                    String(option).trim()\n                )\n                : [],\n\n            correctAnswer: String(\n                item.correctAnswer ?? ''\n            ).trim()\n        }))\n        .filter",
+          "lineNumber": 251
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "parseJsonArray(raw)\n        .map",
+          "lineNumber": 251
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "parseJsonArray",
+          "lineNumber": 251
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "String(item.question ?? '').trim",
+          "lineNumber": 253
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "String",
+          "lineNumber": 253
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "Array.isArray",
+          "lineNumber": 255
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "item.options.map",
+          "lineNumber": 256
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "String(option).trim",
+          "lineNumber": 257
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "String",
+          "lineNumber": 257
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "String(\n                item.correctAnswer ?? ''\n            ).trim",
+          "lineNumber": 261
+        },
+        {
+          "caller": "generateQuiz",
+          "callee": "String",
+          "lineNumber": 261
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/shared/uploadMiddleware.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "createUploader",
+          "startLine": 24,
+          "endLine": 51,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createUploader",
+          "callee": "multer",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createUploader",
+          "callee": "multer.memoryStorage",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createUploader",
+          "callee": "allowedTypes.includes",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createUploader",
+          "callee": "cb",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createUploader",
+          "callee": "cb",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

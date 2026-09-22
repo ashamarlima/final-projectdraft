@@ -1,0 +1,54 @@
+{
+  "nodes": [
+    {
+      "id": "config:server/.env",
+      "type": "config",
+      "name": ".env",
+      "filePath": "server/.env",
+      "summary": "Environment configuration file containing sensitive credentials and runtime settings for the backend server.",
+      "tags": ["configuration", "environment", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:server/.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": "server/.env.example",
+      "summary": "Template environment configuration file providing a guide for the required variables needed to run the backend.",
+      "tags": ["configuration", "documentation", "template"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:server/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "server/package.json",
+      "summary": "Node.js project manifest for the server, defining dependencies, scripts, and project metadata.",
+      "tags": ["configuration", "build-system", "dependencies"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:server/.env",
+      "target": "file:server/server.js",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:server/package.json",
+      "target": "file:server/server.js",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:server/.env.example",
+      "target": "config:server/.env",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

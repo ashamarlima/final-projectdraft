@@ -1,0 +1,1338 @@
+{
+  "nodes": [
+    {
+      "id": "file:server/features/chat/aiChat.test.js",
+      "type": "file",
+      "name": "aiChat.test.js",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "summary": "Test suite for aiChat.",
+      "tags": [
+        "test",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:stubModule",
+      "type": "function",
+      "name": "stubModule",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        34,
+        52
+      ],
+      "summary": "Function stubModule in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:defaultStudent",
+      "type": "function",
+      "name": "defaultStudent",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        54,
+        65
+      ],
+      "summary": "Function defaultStudent in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:stubFetch",
+      "type": "function",
+      "name": "stubFetch",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        111,
+        180
+      ],
+      "summary": "Function stubFetch in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:okResponse",
+      "type": "function",
+      "name": "okResponse",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        182,
+        194
+      ],
+      "summary": "Function okResponse in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        196,
+        206
+      ],
+      "summary": "Function buildApp in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:headers",
+      "type": "function",
+      "name": "headers",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        278,
+        290
+      ],
+      "summary": "Function headers in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:postChat",
+      "type": "function",
+      "name": "postChat",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        292,
+        317
+      ],
+      "summary": "Function postChat in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/chat/aiController.js",
+      "type": "file",
+      "name": "aiController.js",
+      "filePath": "server/features/chat/aiController.js",
+      "summary": "Handles business logic for ai.",
+      "tags": [
+        "api-handler",
+        "logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/chat/aiController.js:fetchYouTubeVideos",
+      "type": "function",
+      "name": "fetchYouTubeVideos",
+      "filePath": "server/features/chat/aiController.js",
+      "lineRange": [
+        6,
+        47
+      ],
+      "summary": "Function fetchYouTubeVideos in server/features/chat/aiController.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/chat/aiController.js:buildSearchFallback",
+      "type": "function",
+      "name": "buildSearchFallback",
+      "filePath": "server/features/chat/aiController.js",
+      "lineRange": [
+        51,
+        85
+      ],
+      "summary": "Function buildSearchFallback in server/features/chat/aiController.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/chat/aiRoutes.js",
+      "type": "file",
+      "name": "aiRoutes.js",
+      "filePath": "server/features/chat/aiRoutes.js",
+      "summary": "Defines API endpoints for ai.",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/quizzes/QuizAttempt.js",
+      "type": "file",
+      "name": "QuizAttempt.js",
+      "filePath": "server/features/quizzes/QuizAttempt.js",
+      "summary": "Data model definition for QuizAttempt.js.",
+      "tags": [
+        "data-model",
+        "schema"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/quizzes/quizControllers.js",
+      "type": "file",
+      "name": "quizControllers.js",
+      "filePath": "server/features/quizzes/quizControllers.js",
+      "summary": "Handles business logic for quiz.",
+      "tags": [
+        "api-handler",
+        "logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/quizzes/quizControllers.js:sendAiError",
+      "type": "function",
+      "name": "sendAiError",
+      "filePath": "server/features/quizzes/quizControllers.js",
+      "lineRange": [
+        32,
+        43
+      ],
+      "summary": "Function sendAiError in server/features/quizzes/quizControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/quizzes/quizControllers.js:loadNoteSource",
+      "type": "function",
+      "name": "loadNoteSource",
+      "filePath": "server/features/quizzes/quizControllers.js",
+      "lineRange": [
+        48,
+        82
+      ],
+      "summary": "Function loadNoteSource in server/features/quizzes/quizControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/quizzes/quizControllers.js:loadLessonSource",
+      "type": "function",
+      "name": "loadLessonSource",
+      "filePath": "server/features/quizzes/quizControllers.js",
+      "lineRange": [
+        87,
+        136
+      ],
+      "summary": "Function loadLessonSource in server/features/quizzes/quizControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/quizzes/quizRoutes.js",
+      "type": "file",
+      "name": "quizRoutes.js",
+      "filePath": "server/features/quizzes/quizRoutes.js",
+      "summary": "Defines API endpoints for quiz.",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/users/Class.js",
+      "type": "file",
+      "name": "Class.js",
+      "filePath": "server/features/users/Class.js",
+      "summary": "Data model definition for Class.js.",
+      "tags": [
+        "data-model",
+        "schema"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/users/classManagement.test.js",
+      "type": "file",
+      "name": "classManagement.test.js",
+      "filePath": "server/features/users/classManagement.test.js",
+      "summary": "Test suite for classManagement.",
+      "tags": [
+        "test",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/users/classManagement.test.js:stubModule",
+      "type": "function",
+      "name": "stubModule",
+      "filePath": "server/features/users/classManagement.test.js",
+      "lineRange": [
+        32,
+        50
+      ],
+      "summary": "Function stubModule in server/features/users/classManagement.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/classManagement.test.js:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "server/features/users/classManagement.test.js",
+      "lineRange": [
+        122,
+        132
+      ],
+      "summary": "Function buildApp in server/features/users/classManagement.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/classManagement.test.js:createClass",
+      "type": "function",
+      "name": "createClass",
+      "filePath": "server/features/users/classManagement.test.js",
+      "lineRange": [
+        170,
+        201
+      ],
+      "summary": "Function createClass in server/features/users/classManagement.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/users/loginAuth.test.js",
+      "type": "file",
+      "name": "loginAuth.test.js",
+      "filePath": "server/features/users/loginAuth.test.js",
+      "summary": "Test suite for loginAuth.",
+      "tags": [
+        "test",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/users/loginAuth.test.js:stubModule",
+      "type": "function",
+      "name": "stubModule",
+      "filePath": "server/features/users/loginAuth.test.js",
+      "lineRange": [
+        44,
+        62
+      ],
+      "summary": "Function stubModule in server/features/users/loginAuth.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/loginAuth.test.js:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "server/features/users/loginAuth.test.js",
+      "lineRange": [
+        140,
+        152
+      ],
+      "summary": "Function buildApp in server/features/users/loginAuth.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/loginAuth.test.js:login",
+      "type": "function",
+      "name": "login",
+      "filePath": "server/features/users/loginAuth.test.js",
+      "lineRange": [
+        199,
+        226
+      ],
+      "summary": "Function login in server/features/users/loginAuth.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/loginAuth.test.js:getMe",
+      "type": "function",
+      "name": "getMe",
+      "filePath": "server/features/users/loginAuth.test.js",
+      "lineRange": [
+        228,
+        240
+      ],
+      "summary": "Function getMe in server/features/users/loginAuth.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/users/userControllers.js",
+      "type": "file",
+      "name": "userControllers.js",
+      "filePath": "server/features/users/userControllers.js",
+      "summary": "Handles business logic for user.",
+      "tags": [
+        "api-handler",
+        "logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:server/features/users/userModels.js",
+      "type": "file",
+      "name": "userModels.js",
+      "filePath": "server/features/users/userModels.js",
+      "summary": "Data model definition for userModels.js.",
+      "tags": [
+        "data-model",
+        "schema"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/users/userRoutes.js",
+      "type": "file",
+      "name": "userRoutes.js",
+      "filePath": "server/features/users/userRoutes.js",
+      "summary": "Defines API endpoints for user.",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/users/xpLeaderboard.test.js",
+      "type": "file",
+      "name": "xpLeaderboard.test.js",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "summary": "Test suite for xpLeaderboard.",
+      "tags": [
+        "test",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/users/xpLeaderboard.test.js:stubModule",
+      "type": "function",
+      "name": "stubModule",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "lineRange": [
+        34,
+        52
+      ],
+      "summary": "Function stubModule in server/features/users/xpLeaderboard.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/xpLeaderboard.test.js:makeUsers",
+      "type": "function",
+      "name": "makeUsers",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "lineRange": [
+        71,
+        115
+      ],
+      "summary": "Function makeUsers in server/features/users/xpLeaderboard.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/users/xpLeaderboard.test.js:matchesFilter",
+      "type": "function",
+      "name": "matchesFilter",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "lineRange": [
+        118,
+        138
+      ],
+      "summary": "Function matchesFilter in server/features/users/xpLeaderboard.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/xpLeaderboard.test.js:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "lineRange": [
+        208,
+        218
+      ],
+      "summary": "Function buildApp in server/features/users/xpLeaderboard.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/xpLeaderboard.test.js:requestJson",
+      "type": "function",
+      "name": "requestJson",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "lineRange": [
+        257,
+        290
+      ],
+      "summary": "Function requestJson in server/features/users/xpLeaderboard.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/videos/VideoInteraction.js",
+      "type": "file",
+      "name": "VideoInteraction.js",
+      "filePath": "server/features/videos/VideoInteraction.js",
+      "summary": "Data model definition for VideoInteraction.js.",
+      "tags": [
+        "data-model",
+        "schema"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/videos/VideoInteractionControllers.js",
+      "type": "file",
+      "name": "VideoInteractionControllers.js",
+      "filePath": "server/features/videos/VideoInteractionControllers.js",
+      "summary": "Handles business logic for VideoInteraction.",
+      "tags": [
+        "api-handler",
+        "logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/videos/VideoInteractionControllers.js:lastReportedAtMs",
+      "type": "function",
+      "name": "lastReportedAtMs",
+      "filePath": "server/features/videos/VideoInteractionControllers.js",
+      "lineRange": [
+        40,
+        52
+      ],
+      "summary": "Function lastReportedAtMs in server/features/videos/VideoInteractionControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/VideoInteractionControllers.js:storedWatchSeconds",
+      "type": "function",
+      "name": "storedWatchSeconds",
+      "filePath": "server/features/videos/VideoInteractionControllers.js",
+      "lineRange": [
+        55,
+        68
+      ],
+      "summary": "Function storedWatchSeconds in server/features/videos/VideoInteractionControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/VideoInteractionControllers.js:capReportedWatchSeconds",
+      "type": "function",
+      "name": "capReportedWatchSeconds",
+      "filePath": "server/features/videos/VideoInteractionControllers.js",
+      "lineRange": [
+        74,
+        106
+      ],
+      "summary": "Function capReportedWatchSeconds in server/features/videos/VideoInteractionControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/videos/VideoInteractionControllers.js:awardWatchedXp",
+      "type": "function",
+      "name": "awardWatchedXp",
+      "filePath": "server/features/videos/VideoInteractionControllers.js",
+      "lineRange": [
+        110,
+        135
+      ],
+      "summary": "Function awardWatchedXp in server/features/videos/VideoInteractionControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/videos/VideoInteractionRoutes.js",
+      "type": "file",
+      "name": "VideoInteractionRoutes.js",
+      "filePath": "server/features/videos/VideoInteractionRoutes.js",
+      "summary": "Defines API endpoints for VideoInteraction.",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/videos/videoInteractions.test.js",
+      "type": "file",
+      "name": "videoInteractions.test.js",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "summary": "Test suite for videoInteractions.",
+      "tags": [
+        "test",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:stubModule",
+      "type": "function",
+      "name": "stubModule",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        37,
+        55
+      ],
+      "summary": "Function stubModule in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        148,
+        158
+      ],
+      "summary": "Function buildApp in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:headers",
+      "type": "function",
+      "name": "headers",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        239,
+        251
+      ],
+      "summary": "Function headers in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:requestJson",
+      "type": "function",
+      "name": "requestJson",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        253,
+        280
+      ],
+      "summary": "Function requestJson in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:postJson",
+      "type": "function",
+      "name": "postJson",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        282,
+        292
+      ],
+      "summary": "Function postJson in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:putJson",
+      "type": "function",
+      "name": "putJson",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        294,
+        304
+      ],
+      "summary": "Function putJson in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/seed.js",
+      "type": "file",
+      "name": "seed.js",
+      "filePath": "server/seed.js",
+      "summary": "Database seeding script for initial admin and test data.",
+      "tags": [
+        "script",
+        "database",
+        "setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/seed.js:seedAdmin",
+      "type": "function",
+      "name": "seedAdmin",
+      "filePath": "server/seed.js",
+      "lineRange": [
+        22,
+        77
+      ],
+      "summary": "Function seedAdmin in server/seed.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/shared/authMiddleware.js",
+      "type": "file",
+      "name": "authMiddleware.js",
+      "filePath": "server/shared/authMiddleware.js",
+      "summary": "Authentication middleware for protecting API routes.",
+      "tags": [
+        "middleware",
+        "security",
+        "auth"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/shared/authMiddleware.js:durationToMs",
+      "type": "function",
+      "name": "durationToMs",
+      "filePath": "server/shared/authMiddleware.js",
+      "lineRange": [
+        13,
+        33
+      ],
+      "summary": "Function durationToMs in server/shared/authMiddleware.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/authMiddleware.js:sameSitePolicy",
+      "type": "function",
+      "name": "sameSitePolicy",
+      "filePath": "server/shared/authMiddleware.js",
+      "lineRange": [
+        44,
+        58
+      ],
+      "summary": "Function sameSitePolicy in server/shared/authMiddleware.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/authMiddleware.js:cookieOptions",
+      "type": "function",
+      "name": "cookieOptions",
+      "filePath": "server/shared/authMiddleware.js",
+      "lineRange": [
+        62,
+        87
+      ],
+      "summary": "Function cookieOptions in server/shared/authMiddleware.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/authMiddleware.js:clearAuthCookie",
+      "type": "function",
+      "name": "clearAuthCookie",
+      "filePath": "server/shared/authMiddleware.js",
+      "lineRange": [
+        96,
+        110
+      ],
+      "summary": "Function clearAuthCookie in server/shared/authMiddleware.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/authMiddleware.js:readToken",
+      "type": "function",
+      "name": "readToken",
+      "filePath": "server/shared/authMiddleware.js",
+      "lineRange": [
+        115,
+        135
+      ],
+      "summary": "Function readToken in server/shared/authMiddleware.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/shared/xp.js",
+      "type": "file",
+      "name": "xp.js",
+      "filePath": "server/shared/xp.js",
+      "summary": "XP and leveling logic for the gamification system.",
+      "tags": [
+        "utility",
+        "gamification"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:stubModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:defaultStudent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:stubFetch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:okResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:headers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:postChat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "file:server/features/chat/aiRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/chat/aiController.js",
+      "target": "function:server/features/chat/aiController.js:fetchYouTubeVideos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiController.js",
+      "target": "function:server/features/chat/aiController.js:buildSearchFallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiController.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/chat/aiRoutes.js",
+      "target": "file:server/features/chat/aiController.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/chat/aiRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "function:server/features/quizzes/quizControllers.js:sendAiError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "function:server/features/quizzes/quizControllers.js:loadNoteSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "function:server/features/quizzes/quizControllers.js:loadLessonSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/features/materials/materialControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/features/notes/Note.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/features/quizzes/QuizAttempt.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/shared/ai.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/shared/xp.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizRoutes.js",
+      "target": "file:server/features/quizzes/quizControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/classManagement.test.js",
+      "target": "function:server/features/users/classManagement.test.js:stubModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/classManagement.test.js",
+      "target": "function:server/features/users/classManagement.test.js:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/classManagement.test.js",
+      "target": "function:server/features/users/classManagement.test.js:createClass",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/classManagement.test.js",
+      "target": "file:server/features/users/userRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/loginAuth.test.js",
+      "target": "function:server/features/users/loginAuth.test.js:stubModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/loginAuth.test.js",
+      "target": "function:server/features/users/loginAuth.test.js:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/loginAuth.test.js",
+      "target": "function:server/features/users/loginAuth.test.js:login",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/loginAuth.test.js",
+      "target": "function:server/features/users/loginAuth.test.js:getMe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/loginAuth.test.js",
+      "target": "file:server/features/users/userRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userControllers.js",
+      "target": "file:server/features/users/Class.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userControllers.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userControllers.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userControllers.js",
+      "target": "file:server/shared/xp.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userModels.js",
+      "target": "file:server/shared/xp.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userRoutes.js",
+      "target": "file:server/features/users/userControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "function:server/features/users/xpLeaderboard.test.js:stubModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "function:server/features/users/xpLeaderboard.test.js:makeUsers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "function:server/features/users/xpLeaderboard.test.js:matchesFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "function:server/features/users/xpLeaderboard.test.js:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "function:server/features/users/xpLeaderboard.test.js:requestJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "file:server/features/users/userRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "function:server/features/videos/VideoInteractionControllers.js:lastReportedAtMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "function:server/features/videos/VideoInteractionControllers.js:storedWatchSeconds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "function:server/features/videos/VideoInteractionControllers.js:capReportedWatchSeconds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "function:server/features/videos/VideoInteractionControllers.js:awardWatchedXp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "file:server/features/videos/VideoInteraction.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "file:server/shared/xp.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionRoutes.js",
+      "target": "file:server/features/videos/VideoInteractionControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:stubModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:headers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:requestJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:postJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:putJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "file:server/features/videos/VideoInteractionRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/seed.js",
+      "target": "function:server/seed.js:seedAdmin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/seed.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "function:server/shared/authMiddleware.js:durationToMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "function:server/shared/authMiddleware.js:sameSitePolicy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "function:server/shared/authMiddleware.js:cookieOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "function:server/shared/authMiddleware.js:clearAuthCookie",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "function:server/shared/authMiddleware.js:readToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

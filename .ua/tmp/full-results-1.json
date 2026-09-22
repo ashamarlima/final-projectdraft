@@ -1,0 +1,2904 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 21,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 21,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 21,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "client/src/App.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 874,
+      "nonEmptyLines": 731,
+      "functions": [
+        {
+          "name": "App",
+          "startLine": 49,
+          "endLine": 872,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "App",
+          "callee": "useNavigate",
+          "lineNumber": 50
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 52
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 53
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 55
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 60
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 63
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 68
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 71
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 74
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 77
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 80
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 90
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 95
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 98
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 101
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 106
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 111
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 117
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 122
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 127
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 135
+        },
+        {
+          "caller": "App",
+          "callee": "localStorage.getItem",
+          "lineNumber": 138
+        },
+        {
+          "caller": "App",
+          "callee": "JSON.parse",
+          "lineNumber": 141
+        },
+        {
+          "caller": "App",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 145
+        },
+        {
+          "caller": "App",
+          "callee": "useState",
+          "lineNumber": 156
+        },
+        {
+          "caller": "App",
+          "callee": "useCallback",
+          "lineNumber": 159
+        },
+        {
+          "caller": "App",
+          "callee": "getStats",
+          "lineNumber": 161
+        },
+        {
+          "caller": "App",
+          "callee": "setStats",
+          "lineNumber": 163
+        },
+        {
+          "caller": "App",
+          "callee": "console.error",
+          "lineNumber": 166
+        },
+        {
+          "caller": "App",
+          "callee": "useCallback",
+          "lineNumber": 174
+        },
+        {
+          "caller": "App",
+          "callee": "getUsers",
+          "lineNumber": 176
+        },
+        {
+          "caller": "App",
+          "callee": "setUsers",
+          "lineNumber": 183
+        },
+        {
+          "caller": "App",
+          "callee": "setTotalUsers",
+          "lineNumber": 184
+        },
+        {
+          "caller": "App",
+          "callee": "setTotalPages",
+          "lineNumber": 185
+        },
+        {
+          "caller": "App",
+          "callee": "fetchStats",
+          "lineNumber": 187
+        },
+        {
+          "caller": "App",
+          "callee": "console.error",
+          "lineNumber": 190
+        },
+        {
+          "caller": "App",
+          "callee": "useCallback",
+          "lineNumber": 204
+        },
+        {
+          "caller": "App",
+          "callee": "searchUsers",
+          "lineNumber": 206
+        },
+        {
+          "caller": "App",
+          "callee": "setUsers",
+          "lineNumber": 214
+        },
+        {
+          "caller": "App",
+          "callee": "setTotalUsers",
+          "lineNumber": 215
+        },
+        {
+          "caller": "App",
+          "callee": "setTotalPages",
+          "lineNumber": 216
+        },
+        {
+          "caller": "App",
+          "callee": "console.error",
+          "lineNumber": 219
+        },
+        {
+          "caller": "App",
+          "callee": "useEffect",
+          "lineNumber": 233
+        },
+        {
+          "caller": "App",
+          "callee": "setTimeout",
+          "lineNumber": 241
+        },
+        {
+          "caller": "App",
+          "callee": "searchTerm.trim",
+          "lineNumber": 242
+        },
+        {
+          "caller": "App",
+          "callee": "handleSearch",
+          "lineNumber": 243
+        },
+        {
+          "caller": "App",
+          "callee": "fetchUsers",
+          "lineNumber": 245
+        },
+        {
+          "caller": "App",
+          "callee": "clearTimeout",
+          "lineNumber": 250
+        },
+        {
+          "caller": "App",
+          "callee": "useEffect",
+          "lineNumber": 260
+        },
+        {
+          "caller": "App",
+          "callee": "getFilterOptions()\n      .then((data) => {\n        if (cancelled) {\n          return;\n        }\n\n        setClassrooms(data.classrooms || []);\n        setRoles(data.roles || []);\n      })\n      .catch",
+          "lineNumber": 270
+        },
+        {
+          "caller": "App",
+          "callee": "getFilterOptions()\n      .then",
+          "lineNumber": 270
+        },
+        {
+          "caller": "App",
+          "callee": "getFilterOptions",
+          "lineNumber": 270
+        },
+        {
+          "caller": "App",
+          "callee": "setClassrooms",
+          "lineNumber": 276
+        },
+        {
+          "caller": "App",
+          "callee": "setRoles",
+          "lineNumber": 277
+        },
+        {
+          "caller": "App",
+          "callee": "console.error",
+          "lineNumber": 280
+        },
+        {
+          "caller": "App",
+          "callee": "useCallback",
+          "lineNumber": 292
+        },
+        {
+          "caller": "App",
+          "callee": "getTeachers",
+          "lineNumber": 294
+        },
+        {
+          "caller": "App",
+          "callee": "setTeachers",
+          "lineNumber": 296
+        },
+        {
+          "caller": "App",
+          "callee": "console.error",
+          "lineNumber": 299
+        },
+        {
+          "caller": "App",
+          "callee": "useEffect",
+          "lineNumber": 306
+        },
+        {
+          "caller": "App",
+          "callee": "getTeachers()\n      .then((data) => {\n        if (cancelled) {\n          return;\n        }\n\n        setTeachers(data.teachers || []);\n      })\n      .catch",
+          "lineNumber": 316
+        },
+        {
+          "caller": "App",
+          "callee": "getTeachers()\n      .then",
+          "lineNumber": 316
+        },
+        {
+          "caller": "App",
+          "callee": "getTeachers",
+          "lineNumber": 316
+        },
+        {
+          "caller": "App",
+          "callee": "setTeachers",
+          "lineNumber": 322
+        },
+        {
+          "caller": "App",
+          "callee": "console.error",
+          "lineNumber": 325
+        },
+        {
+          "caller": "App",
+          "callee": "useEffect",
+          "lineNumber": 339
+        },
+        {
+          "caller": "App",
+          "callee": "getCurrentUser()\n      .then((data) => {\n        if (cancelled) {\n          return;\n        }\n\n        setLoggedInUser(data.user);\n\n        localStorage.setItem(\n          \"loggedInUser\",\n          JSON.stringify(data.user)\n        );\n      })\n      .catch(() => {\n        if (cancelled) {\n          return;\n        }\n\n        //no valid session cookie: forget the cached user so the\n        //login page is shown\n        localStorage.removeItem(\"loggedInUser\");\n        setLoggedInUser(null);\n      })\n      .finally",
+          "lineNumber": 342
+        },
+        {
+          "caller": "App",
+          "callee": "getCurrentUser()\n      .then((data) => {\n        if (cancelled) {\n          return;\n        }\n\n        setLoggedInUser(data.user);\n\n        localStorage.setItem(\n          \"loggedInUser\",\n          JSON.stringify(data.user)\n        );\n      })\n      .catch",
+          "lineNumber": 342
+        },
+        {
+          "caller": "App",
+          "callee": "getCurrentUser()\n      .then",
+          "lineNumber": 342
+        },
+        {
+          "caller": "App",
+          "callee": "getCurrentUser",
+          "lineNumber": 342
+        },
+        {
+          "caller": "App",
+          "callee": "setLoggedInUser",
+          "lineNumber": 348
+        },
+        {
+          "caller": "App",
+          "callee": "localStorage.setItem",
+          "lineNumber": 350
+        },
+        {
+          "caller": "App",
+          "callee": "JSON.stringify",
+          "lineNumber": 352
+        },
+        {
+          "caller": "App",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 362
+        },
+        {
+          "caller": "App",
+          "callee": "setLoggedInUser",
+          "lineNumber": 363
+        },
+        {
+          "caller": "App",
+          "callee": "setSessionChecked",
+          "lineNumber": 367
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "alert",
+          "lineNumber": 388
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLoading",
+          "lineNumber": 393
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "updateUser",
+          "lineNumber": 397
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "addUser",
+          "lineNumber": 403
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "fetchUsers",
+          "lineNumber": 406
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "fetchTeachers",
+          "lineNumber": 407
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "closeModel",
+          "lineNumber": 408
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "console.error",
+          "lineNumber": 411
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "alert",
+          "lineNumber": 416
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLoading",
+          "lineNumber": 422
+        },
+        {
+          "caller": "handleDelete",
+          "callee": "window.confirm",
+          "lineNumber": 428
+        },
+        {
+          "caller": "handleDelete",
+          "callee": "deleteUser",
+          "lineNumber": 437
+        },
+        {
+          "caller": "handleDelete",
+          "callee": "fetchUsers",
+          "lineNumber": 438
+        },
+        {
+          "caller": "handleDelete",
+          "callee": "fetchTeachers",
+          "lineNumber": 439
+        },
+        {
+          "caller": "handleDelete",
+          "callee": "console.error",
+          "lineNumber": 442
+        },
+        {
+          "caller": "handleDelete",
+          "callee": "alert",
+          "lineNumber": 447
+        },
+        {
+          "caller": "openModel",
+          "callee": "setEditingItem",
+          "lineNumber": 457
+        },
+        {
+          "caller": "openModel",
+          "callee": "setIsModalOpen",
+          "lineNumber": 458
+        },
+        {
+          "caller": "closeModel",
+          "callee": "setIsModalOpen",
+          "lineNumber": 463
+        },
+        {
+          "caller": "closeModel",
+          "callee": "setEditingItem",
+          "lineNumber": 464
+        },
+        {
+          "caller": "openGradeModel",
+          "callee": "setGradingStudent",
+          "lineNumber": 476
+        },
+        {
+          "caller": "openGradeModel",
+          "callee": "setIsGradeModalOpen",
+          "lineNumber": 477
+        },
+        {
+          "caller": "closeGradeModel",
+          "callee": "setIsGradeModalOpen",
+          "lineNumber": 482
+        },
+        {
+          "caller": "closeGradeModel",
+          "callee": "setGradingStudent",
+          "lineNumber": 483
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "alert",
+          "lineNumber": 490
+        },
+        {
+          "caller": "gradeOf",
+          "callee": "Number",
+          "lineNumber": 499
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "gradeOf",
+          "lineNumber": 502
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "gradeOf",
+          "lineNumber": 503
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "gradeOf",
+          "lineNumber": 504
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "Object.values(\n      gradePayload\n    ).some",
+          "lineNumber": 507
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "Object.values",
+          "lineNumber": 507
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "Number.isNaN",
+          "lineNumber": 513
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "alert",
+          "lineNumber": 520
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "setGradeLoading",
+          "lineNumber": 525
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "updateGrades",
+          "lineNumber": 528
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "fetchUsers",
+          "lineNumber": 533
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "closeGradeModel",
+          "lineNumber": 534
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "console.error",
+          "lineNumber": 537
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "alert",
+          "lineNumber": 542
+        },
+        {
+          "caller": "handleGradeSubmit",
+          "callee": "setGradeLoading",
+          "lineNumber": 548
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "logoutUser",
+          "lineNumber": 557
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "console.error",
+          "lineNumber": 560
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 566
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setUsers",
+          "lineNumber": 570
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setClassrooms",
+          "lineNumber": 571
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setRoles",
+          "lineNumber": 572
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setTeachers",
+          "lineNumber": 573
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setSelectedClassroom",
+          "lineNumber": 575
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setSelectedRole",
+          "lineNumber": 576
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setSearchTerm",
+          "lineNumber": 577
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setCurrentPage",
+          "lineNumber": 579
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setTotalUsers",
+          "lineNumber": 580
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setTotalPages",
+          "lineNumber": 581
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setStats",
+          "lineNumber": 583
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "closeModel",
+          "lineNumber": 588
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "closeGradeModel",
+          "lineNumber": 589
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "setLoggedInUser",
+          "lineNumber": 591
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "navigate",
+          "lineNumber": 595
+        },
+        {
+          "caller": "App",
+          "callee": "setLoggedInUser",
+          "lineNumber": 613
+        },
+        {
+          "caller": "App",
+          "callee": "MANAGEMENT_PAGES.find",
+          "lineNumber": 631
+        },
+        {
+          "caller": "App",
+          "callee": "MANAGEMENT_PAGES.map",
+          "lineNumber": 643
+        },
+        {
+          "caller": "App",
+          "callee": "setManagementPage",
+          "lineNumber": 652
+        },
+        {
+          "caller": "App",
+          "callee": "openModel",
+          "lineNumber": 704
+        },
+        {
+          "caller": "App",
+          "callee": "setSearchTerm",
+          "lineNumber": 783
+        },
+        {
+          "caller": "App",
+          "callee": "setCurrentPage",
+          "lineNumber": 784
+        },
+        {
+          "caller": "App",
+          "callee": "setSearchTerm",
+          "lineNumber": 788
+        },
+        {
+          "caller": "App",
+          "callee": "setCurrentPage",
+          "lineNumber": 789
+        },
+        {
+          "caller": "App",
+          "callee": "setItemPerPage",
+          "lineNumber": 795
+        },
+        {
+          "caller": "App",
+          "callee": "setCurrentPage",
+          "lineNumber": 796
+        },
+        {
+          "caller": "App",
+          "callee": "setSelectedClassroom",
+          "lineNumber": 814
+        },
+        {
+          "caller": "App",
+          "callee": "setCurrentPage",
+          "lineNumber": 815
+        },
+        {
+          "caller": "App",
+          "callee": "setSelectedRole",
+          "lineNumber": 819
+        },
+        {
+          "caller": "App",
+          "callee": "setCurrentPage",
+          "lineNumber": 820
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/ai/StudentAIChat.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 698,
+      "nonEmptyLines": 589,
+      "functions": [
+        {
+          "name": "StudentAIChat",
+          "startLine": 22,
+          "endLine": 696,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "StudentAIChat",
+          "callee": "useState",
+          "lineNumber": 24
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useRef",
+          "lineNumber": 28
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useState",
+          "lineNumber": 33
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useState",
+          "lineNumber": 36
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useState",
+          "lineNumber": 39
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useState",
+          "lineNumber": 44
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useRef",
+          "lineNumber": 47
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useRef",
+          "lineNumber": 53
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useEffect",
+          "lineNumber": 57
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "messagesEndRef.current?.scrollIntoView",
+          "lineNumber": 58
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useCallback",
+          "lineNumber": 71
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "Date.now",
+          "lineNumber": 79
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "activeVideos.forEach",
+          "lineNumber": 81
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "activeVideos.delete",
+          "lineNumber": 89
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "Math.max",
+          "lineNumber": 94
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "Math.round",
+          "lineNumber": 96
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "updateVideoDuration(\r\n                        interactionId,\r\n                        durationSeconds\r\n                    ).catch",
+          "lineNumber": 106
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "updateVideoDuration",
+          "lineNumber": 106
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "console.error",
+          "lineNumber": 110
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useEffect",
+          "lineNumber": 121
+        },
+        {
+          "caller": "handleWindowFocus",
+          "callee": "flushWatchedDurations",
+          "lineNumber": 128
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "window.addEventListener",
+          "lineNumber": 132
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "document.addEventListener",
+          "lineNumber": 137
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "window.removeEventListener",
+          "lineNumber": 143
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "document.removeEventListener",
+          "lineNumber": 148
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "flushWatchedDurations",
+          "lineNumber": 154
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useCallback",
+          "lineNumber": 162
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "messageText.trim",
+          "lineNumber": 167
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "setError",
+          "lineNumber": 176
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "setMessages",
+          "lineNumber": 179
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "setLoading",
+          "lineNumber": 191
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "sendStudentAIMessage",
+          "lineNumber": 195
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "setMessages",
+          "lineNumber": 199
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "setVideoRecommendations",
+          "lineNumber": 210
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "console.error",
+          "lineNumber": 216
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "setError",
+          "lineNumber": 221
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "setLoading",
+          "lineNumber": 227
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "useEffect",
+          "lineNumber": 233
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 245
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "sessionStorage.setItem",
+          "lineNumber": 253
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "setTimeout",
+          "lineNumber": 262
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "sendMessage",
+          "lineNumber": 263
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "e.preventDefault",
+          "lineNumber": 283
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "(\r\n            inputRef.current?.value || \"\"\r\n        ).trim",
+          "lineNumber": 285
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "sendMessage",
+          "lineNumber": 299
+        },
+        {
+          "caller": "handleRetry",
+          "callee": "sendMessage",
+          "lineNumber": 307
+        },
+        {
+          "caller": "handleVideoClick",
+          "callee": "trackVideoInteraction",
+          "lineNumber": 322
+        },
+        {
+          "caller": "handleVideoClick",
+          "callee": "setActiveVideo",
+          "lineNumber": 340
+        },
+        {
+          "caller": "handleVideoClick",
+          "callee": "activeVideosRef.current.set",
+          "lineNumber": 346
+        },
+        {
+          "caller": "handleVideoClick",
+          "callee": "console.error",
+          "lineNumber": 357
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "messages.map",
+          "lineNumber": 423
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "videoRecommendations.some",
+          "lineNumber": 514
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "videoRecommendations.map",
+          "lineNumber": 527
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "handleVideoClick",
+          "lineNumber": 537
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "Date.now",
+          "lineNumber": 539
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "handleVideoClick",
+          "lineNumber": 615
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "Date.now",
+          "lineNumber": 617
+        },
+        {
+          "caller": "StudentAIChat",
+          "callee": "setActiveVideo",
+          "lineNumber": 690
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/ai/VideoPlayerModal.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 296,
+      "nonEmptyLines": 253,
+      "functions": [
+        {
+          "name": "loadYouTubeApi",
+          "startLine": 8,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "VideoPlayerModal",
+          "startLine": 44,
+          "endLine": 294,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadYouTubeApi",
+          "callee": "Promise.resolve",
+          "lineNumber": 15
+        },
+        {
+          "caller": "loadYouTubeApi",
+          "callee": "resolve",
+          "lineNumber": 23
+        },
+        {
+          "caller": "loadYouTubeApi",
+          "callee": "document.createElement",
+          "lineNumber": 26
+        },
+        {
+          "caller": "loadYouTubeApi",
+          "callee": "document.head.appendChild",
+          "lineNumber": 35
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "useRef",
+          "lineNumber": 50
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "useEffect",
+          "lineNumber": 52
+        },
+        {
+          "caller": "reportWatchTime",
+          "callee": "updateVideoDuration(\n                    interactionId,\n                    Math.round(\n                        watchedSeconds\n                    )\n                ).catch",
+          "lineNumber": 73
+        },
+        {
+          "caller": "reportWatchTime",
+          "callee": "updateVideoDuration",
+          "lineNumber": 73
+        },
+        {
+          "caller": "reportWatchTime",
+          "callee": "Math.round",
+          "lineNumber": 75
+        },
+        {
+          "caller": "reportWatchTime",
+          "callee": "console.error",
+          "lineNumber": 79
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "loadYouTubeApi()\n            .then((YT) => {\n                if (\n                    disposed ||\n                    !containerRef.current ||\n                    !YT?.Player\n                ) {\n                    return;\n                }\n\n                player = new YT.Player(\n                    containerRef.current,\n                    {\n                        videoId:\n                            video.videoId,\n\n                        playerVars: {\n                            autoplay: 1,\n                            rel: 0\n                        },\n\n                        events: {\n                            onReady:\n                                (event) => {\n                                    const iframe =\n                                        event\n                                            ?.target\n                                            ?.getIframe?.();\n\n                                    if (iframe) {\n                                        iframe.style.width =\n                                            \"100%\";\n\n                                        iframe.style.height =\n                                            \"100%\";\n                                    }\n                                },\n\n                            onStateChange:\n                                () => {\n                                    if (\n                                        !player\n                                    ) {\n                                        return;\n                                    }\n\n                                    const state =\n                                        player.getPlayerState\n                                            ? player.getPlayerState()\n                                            : -1;\n\n                                    const time =\n                                        player.getCurrentTime\n                                            ? player.getCurrentTime()\n                                            : 0;\n\n                                    if (\n                                        state ===\n                                        YT.PlayerState\n                                            .PLAYING &&\n                                        time >\n                                        lastPosition\n                                    ) {\n                                        watchedSeconds +=\n                                            time -\n                                            lastPosition;\n                                    }\n\n                                    lastPosition =\n                                        time;\n\n                                    //send as soon as playback ends\n                                    if (\n                                        state ===\n                                        YT.PlayerState\n                                            .ENDED\n                                    ) {\n                                        reportWatchTime();\n                                    }\n                                }\n                        }\n                    }\n                );\n            })\n            .catch",
+          "lineNumber": 86
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "loadYouTubeApi()\n            .then",
+          "lineNumber": 86
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "loadYouTubeApi",
+          "lineNumber": 86
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "event\n                                            ?.target\n                                            ?.getIframe",
+          "lineNumber": 111
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "player.getPlayerState",
+          "lineNumber": 134
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "player.getCurrentTime",
+          "lineNumber": 139
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "reportWatchTime",
+          "lineNumber": 163
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "console.error",
+          "lineNumber": 171
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "setInterval",
+          "lineNumber": 178
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "player.getPlayerState",
+          "lineNumber": 189
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "player.getCurrentTime",
+          "lineNumber": 194
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "reportWatchTime",
+          "lineNumber": 214
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "clearInterval",
+          "lineNumber": 223
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "player?.destroy",
+          "lineNumber": 226
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "reportWatchTime",
+          "lineNumber": 232
+        },
+        {
+          "caller": "VideoPlayerModal",
+          "callee": "event.stopPropagation",
+          "lineNumber": 244
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/notes/NotesPage.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 269,
+      "nonEmptyLines": 219,
+      "functions": [
+        {
+          "name": "NotesPage",
+          "startLine": 13,
+          "endLine": 267,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NotesPage",
+          "callee": "useNavigate",
+          "lineNumber": 14
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "useState",
+          "lineNumber": 16
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "useState",
+          "lineNumber": 17
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "useState",
+          "lineNumber": 18
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "useState",
+          "lineNumber": 19
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "useRef",
+          "lineNumber": 21
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "useRef",
+          "lineNumber": 25
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "useCallback",
+          "lineNumber": 27
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "setLoading",
+          "lineNumber": 28
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "setError",
+          "lineNumber": 29
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "setNotes",
+          "lineNumber": 32
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "getNotes",
+          "lineNumber": 32
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "setError",
+          "lineNumber": 34
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "setLoading",
+          "lineNumber": 38
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "useEffect",
+          "lineNumber": 42
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "setTimeout",
+          "lineNumber": 45
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "loadNotes",
+          "lineNumber": 46
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "clearTimeout",
+          "lineNumber": 49
+        },
+        {
+          "caller": "handleUpload",
+          "callee": "e.preventDefault",
+          "lineNumber": 53
+        },
+        {
+          "caller": "handleUpload",
+          "callee": "setError",
+          "lineNumber": 58
+        },
+        {
+          "caller": "handleUpload",
+          "callee": "setUploading",
+          "lineNumber": 65
+        },
+        {
+          "caller": "handleUpload",
+          "callee": "setError",
+          "lineNumber": 66
+        },
+        {
+          "caller": "handleUpload",
+          "callee": "readFormValues",
+          "lineNumber": 69
+        },
+        {
+          "caller": "handleUpload",
+          "callee": "uploadNote",
+          "lineNumber": 71
+        },
+        {
+          "caller": "handleUpload",
+          "callee": "setNotes",
+          "lineNumber": 74
+        },
+        {
+          "caller": "handleUpload",
+          "callee": "formRef.current?.reset",
+          "lineNumber": 77
+        },
+        {
+          "caller": "handleUpload",
+          "callee": "setError",
+          "lineNumber": 80
+        },
+        {
+          "caller": "handleUpload",
+          "callee": "setUploading",
+          "lineNumber": 84
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "notes.map",
+          "lineNumber": 212
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "new Date(\n                      note.createdAt\n                    ).toLocaleDateString",
+          "lineNumber": 230
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "navigate",
+          "lineNumber": 240
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "window.confirm",
+          "lineNumber": 249
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "deleteNote",
+          "lineNumber": 250
+        },
+        {
+          "caller": "NotesPage",
+          "callee": "loadNotes",
+          "lineNumber": 251
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/student/AchievementsPage.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 178,
+      "nonEmptyLines": 143,
+      "functions": [
+        {
+          "name": "AchievementsPage",
+          "startLine": 11,
+          "endLine": 175,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AchievementsPage",
+          "callee": "achievements.map",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/student/DashboardPage.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 334,
+      "nonEmptyLines": 262,
+      "functions": [
+        {
+          "name": "DashboardPage",
+          "startLine": 29,
+          "endLine": 331,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DashboardPage",
+          "callee": "SUBJECTS\n        .map((subject) => ({\n            ...subject,\n            grade: student?.[subject.key]\n        }))\n        .filter",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "SUBJECTS\n        .map",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "(\n            gradedSubjects.reduce(\n                (total, subject) =>\n                    total + subject.grade,\n                0\n            ) / gradedSubjects.length\n        ).toFixed",
+          "lineNumber": 47
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "gradedSubjects.reduce",
+          "lineNumber": 48
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "gradedSubjects.reduce",
+          "lineNumber": 57
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "gradedSubjects.reduce",
+          "lineNumber": 66
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "xp.toLocaleString",
+          "lineNumber": 85
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "cards.map",
+          "lineNumber": 133
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "SUBJECTS.map",
+          "lineNumber": 221
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/student/LeaderboardPage.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 212,
+      "nonEmptyLines": 156,
+      "functions": [
+        {
+          "name": "rankClass",
+          "startLine": 15,
+          "endLine": 29,
+          "params": [
+            "rank"
+          ]
+        },
+        {
+          "name": "LeaderboardPage",
+          "startLine": 32,
+          "endLine": 209,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LeaderboardPage",
+          "callee": "useState",
+          "lineNumber": 33
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "useState",
+          "lineNumber": 34
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "useState",
+          "lineNumber": 35
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "useCallback",
+          "lineNumber": 37
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "setLoading",
+          "lineNumber": 39
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "setError",
+          "lineNumber": 40
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "setEntries",
+          "lineNumber": 43
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "getLeaderboard",
+          "lineNumber": 43
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "setError",
+          "lineNumber": 45
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "setLoading",
+          "lineNumber": 50
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "useEffect",
+          "lineNumber": 56
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "setTimeout",
+          "lineNumber": 59
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "loadLeaderboard",
+          "lineNumber": 60
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "clearTimeout",
+          "lineNumber": 63
+        },
+        {
+          "caller": "isCurrent",
+          "callee": "String",
+          "lineNumber": 69
+        },
+        {
+          "caller": "isCurrent",
+          "callee": "String",
+          "lineNumber": 69
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "entries.map",
+          "lineNumber": 140
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "isCurrent",
+          "lineNumber": 144
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "rankClass",
+          "lineNumber": 153
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "isCurrent",
+          "lineNumber": 167
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "entry.xp.toLocaleString",
+          "lineNumber": 188
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/student/LearnPage.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 569,
+      "nonEmptyLines": 400,
+      "functions": [
+        {
+          "name": "LearnPage",
+          "startLine": 11,
+          "endLine": 566,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LearnPage",
+          "callee": "subjects.map",
+          "lineNumber": 89
+        },
+        {
+          "caller": "LearnPage",
+          "callee": "onOpenSubject",
+          "lineNumber": 98
+        },
+        {
+          "caller": "LearnPage",
+          "callee": "completedLessons.map",
+          "lineNumber": 290
+        },
+        {
+          "caller": "LearnPage",
+          "callee": "recentActivities.map",
+          "lineNumber": 536
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/student/ProfilePage.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "ProfilePage",
+          "startLine": 8,
+          "endLine": 112,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/student/StudentDashboard.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 574,
+      "nonEmptyLines": 449,
+      "functions": [
+        {
+          "name": "SubjectRoute",
+          "startLine": 82,
+          "endLine": 91,
+          "params": []
+        },
+        {
+          "name": "StudentDashboard",
+          "startLine": 94,
+          "endLine": 571,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SubjectRoute",
+          "callee": "useParams",
+          "lineNumber": 83
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "useLocation",
+          "lineNumber": 98
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "useNavigate",
+          "lineNumber": 99
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "useMatch",
+          "lineNumber": 101
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "useState",
+          "lineNumber": 106
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "location.pathname.startsWith",
+          "lineNumber": 172
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "location.pathname.startsWith",
+          "lineNumber": 178
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "location.pathname.startsWith",
+          "lineNumber": 191
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "menuItems.map",
+          "lineNumber": 227
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "setSubjectsOpen",
+          "lineNumber": 279
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "subjectNavItems.map",
+          "lineNumber": 324
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "(student?.xp || 0).toLocaleString",
+          "lineNumber": 413
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "student?.name\n                                    ?.charAt(0)\n                                    ?.toUpperCase",
+          "lineNumber": 434
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "student?.name\n                                    ?.charAt",
+          "lineNumber": 434
+        },
+        {
+          "caller": "StudentDashboard",
+          "callee": "navigate",
+          "lineNumber": 469
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/student/StudentGrade.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 132,
+      "functions": [
+        {
+          "name": "StudentGrade",
+          "startLine": 8,
+          "endLine": 157,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "calculateAverage",
+          "callee": "[\n            student.Math,\n            student.Literature,\n            student.Science\n        ].filter",
+          "lineNumber": 25
+        },
+        {
+          "caller": "calculateAverage",
+          "callee": "grades.reduce",
+          "lineNumber": 39
+        },
+        {
+          "caller": "calculateAverage",
+          "callee": "(\n            total / grades.length\n        ).toFixed",
+          "lineNumber": 45
+        },
+        {
+          "caller": "StudentGrade",
+          "callee": "subjects.map",
+          "lineNumber": 90
+        },
+        {
+          "caller": "StudentGrade",
+          "callee": "displayGrade",
+          "lineNumber": 106
+        },
+        {
+          "caller": "StudentGrade",
+          "callee": "calculateAverage",
+          "lineNumber": 150
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/users/ClassManagement.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 451,
+      "nonEmptyLines": 359,
+      "functions": [
+        {
+          "name": "ClassManagement",
+          "startLine": 13,
+          "endLine": 449,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ClassManagement",
+          "callee": "useRef",
+          "lineNumber": 16
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "useState",
+          "lineNumber": 18
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "useState",
+          "lineNumber": 19
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "useCallback",
+          "lineNumber": 21
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "setLoading",
+          "lineNumber": 23
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "fetchClasses",
+          "lineNumber": 24
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "setClasses",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "alert",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "setLoading",
+          "lineNumber": 29
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "useEffect",
+          "lineNumber": 33
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "setTimeout",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "loadClasses",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "clearTimeout",
+          "lineNumber": 40
+        },
+        {
+          "caller": "handleCreateClass",
+          "callee": "e.preventDefault",
+          "lineNumber": 44
+        },
+        {
+          "caller": "handleCreateClass",
+          "callee": "readFormValues",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handleCreateClass",
+          "callee": "alert",
+          "lineNumber": 53
+        },
+        {
+          "caller": "handleCreateClass",
+          "callee": "setLoading",
+          "lineNumber": 59
+        },
+        {
+          "caller": "handleCreateClass",
+          "callee": "createClass",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleCreateClass",
+          "callee": "formRef.current?.reset",
+          "lineNumber": 68
+        },
+        {
+          "caller": "handleCreateClass",
+          "callee": "loadClasses",
+          "lineNumber": 70
+        },
+        {
+          "caller": "handleCreateClass",
+          "callee": "alert",
+          "lineNumber": 72
+        },
+        {
+          "caller": "handleCreateClass",
+          "callee": "setLoading",
+          "lineNumber": 74
+        },
+        {
+          "caller": "handleDeleteClass",
+          "callee": "window.confirm",
+          "lineNumber": 79
+        },
+        {
+          "caller": "handleDeleteClass",
+          "callee": "setLoading",
+          "lineNumber": 82
+        },
+        {
+          "caller": "handleDeleteClass",
+          "callee": "removeClass",
+          "lineNumber": 83
+        },
+        {
+          "caller": "handleDeleteClass",
+          "callee": "loadClasses",
+          "lineNumber": 84
+        },
+        {
+          "caller": "handleDeleteClass",
+          "callee": "alert",
+          "lineNumber": 86
+        },
+        {
+          "caller": "handleDeleteClass",
+          "callee": "setLoading",
+          "lineNumber": 88
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "classes.reduce",
+          "lineNumber": 159
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "teachers.map",
+          "lineNumber": 276
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "classes.map",
+          "lineNumber": 340
+        },
+        {
+          "caller": "ClassManagement",
+          "callee": "handleDeleteClass",
+          "lineNumber": 375
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/users/GradeModel.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 94,
+      "functions": [
+        {
+          "name": "GradeModel",
+          "startLine": 9,
+          "endLine": 113,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GradeModel",
+          "callee": "useRef",
+          "lineNumber": 16
+        },
+        {
+          "caller": "handleFormSubmit",
+          "callee": "event.preventDefault",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handleFormSubmit",
+          "callee": "onSubmit",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handleFormSubmit",
+          "callee": "readFormValues",
+          "lineNumber": 29
+        },
+        {
+          "caller": "GradeModel",
+          "callee": "subjects.map",
+          "lineNumber": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/users/Login.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "Login",
+          "startLine": 8,
+          "endLine": 106,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Login",
+          "callee": "useRef",
+          "lineNumber": 9
+        },
+        {
+          "caller": "Login",
+          "callee": "useState",
+          "lineNumber": 11
+        },
+        {
+          "caller": "Login",
+          "callee": "useState",
+          "lineNumber": 12
+        },
+        {
+          "caller": "handleLogin",
+          "callee": "e.preventDefault",
+          "lineNumber": 15
+        },
+        {
+          "caller": "handleLogin",
+          "callee": "setError",
+          "lineNumber": 17
+        },
+        {
+          "caller": "handleLogin",
+          "callee": "setLoading",
+          "lineNumber": 18
+        },
+        {
+          "caller": "handleLogin",
+          "callee": "loginUser",
+          "lineNumber": 21
+        },
+        {
+          "caller": "handleLogin",
+          "callee": "readFormValues",
+          "lineNumber": 22
+        },
+        {
+          "caller": "handleLogin",
+          "callee": "localStorage.setItem",
+          "lineNumber": 26
+        },
+        {
+          "caller": "handleLogin",
+          "callee": "JSON.stringify",
+          "lineNumber": 28
+        },
+        {
+          "caller": "handleLogin",
+          "callee": "onLogin",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handleLogin",
+          "callee": "setError",
+          "lineNumber": 34
+        },
+        {
+          "caller": "handleLogin",
+          "callee": "setLoading",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/users/SearchBar.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 136,
+      "nonEmptyLines": 119,
+      "functions": [
+        {
+          "name": "SearchBar",
+          "startLine": 3,
+          "endLine": 134,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SearchBar",
+          "callee": "Math.min",
+          "lineNumber": 23
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "onChange",
+          "lineNumber": 41
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "onClassroomChange",
+          "lineNumber": 64
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "classrooms.map",
+          "lineNumber": 70
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "onRoleChange",
+          "lineNumber": 84
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "roles.map",
+          "lineNumber": 90
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "role.charAt(0).toUpperCase",
+          "lineNumber": 95
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "role.charAt",
+          "lineNumber": 95
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "role.slice",
+          "lineNumber": 96
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "onItemPerPageChange",
+          "lineNumber": 119
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "Number",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/users/StatsCard.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "StatsCard",
+          "startLine": 1,
+          "endLine": 18,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/users/UserModel.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 172,
+      "nonEmptyLines": 149,
+      "functions": [
+        {
+          "name": "UserModel",
+          "startLine": 10,
+          "endLine": 170,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "UserModel",
+          "callee": "useRef",
+          "lineNumber": 19
+        },
+        {
+          "caller": "UserModel",
+          "callee": "Boolean",
+          "lineNumber": 23
+        },
+        {
+          "caller": "handleFormSubmit",
+          "callee": "event.preventDefault",
+          "lineNumber": 26
+        },
+        {
+          "caller": "handleFormSubmit",
+          "callee": "onSubmit",
+          "lineNumber": 28
+        },
+        {
+          "caller": "handleFormSubmit",
+          "callee": "readFormValues",
+          "lineNumber": 28
+        },
+        {
+          "caller": "UserModel",
+          "callee": "classrooms.map",
+          "lineNumber": 112
+        },
+        {
+          "caller": "UserModel",
+          "callee": "[\"student\", \"teacher\", \"admin\"].map",
+          "lineNumber": 130
+        },
+        {
+          "caller": "UserModel",
+          "callee": "role.charAt(0).toUpperCase",
+          "lineNumber": 131
+        },
+        {
+          "caller": "UserModel",
+          "callee": "role.charAt",
+          "lineNumber": 131
+        },
+        {
+          "caller": "UserModel",
+          "callee": "role.slice",
+          "lineNumber": 131
+        },
+        {
+          "caller": "UserModel",
+          "callee": "status.map",
+          "lineNumber": 143
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/users/UserTable.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 268,
+      "nonEmptyLines": 228,
+      "functions": [
+        {
+          "name": "UserTable",
+          "startLine": 8,
+          "endLine": 266,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "UserTable",
+          "callee": "users.map",
+          "lineNumber": 69
+        },
+        {
+          "caller": "UserTable",
+          "callee": "new Date(\r\n                    u.createdAt\r\n                  ).toLocaleDateString",
+          "lineNumber": 109
+        },
+        {
+          "caller": "UserTable",
+          "callee": "onGrade",
+          "lineNumber": 122
+        },
+        {
+          "caller": "UserTable",
+          "callee": "onEdit",
+          "lineNumber": 133
+        },
+        {
+          "caller": "UserTable",
+          "callee": "onDelete",
+          "lineNumber": 145
+        },
+        {
+          "caller": "UserTable",
+          "callee": "onChange",
+          "lineNumber": 205
+        },
+        {
+          "caller": "UserTable",
+          "callee": "[...Array(Math.max(0, totalPages))].map",
+          "lineNumber": 213
+        },
+        {
+          "caller": "UserTable",
+          "callee": "Array",
+          "lineNumber": 213
+        },
+        {
+          "caller": "UserTable",
+          "callee": "Math.max",
+          "lineNumber": 213
+        },
+        {
+          "caller": "UserTable",
+          "callee": "onChange",
+          "lineNumber": 234
+        },
+        {
+          "caller": "UserTable",
+          "callee": "onChange",
+          "lineNumber": 254
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/features/users/userAPI.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 207,
+      "nonEmptyLines": 167,
+      "functions": [
+        {
+          "name": "filterParams",
+          "startLine": 8,
+          "endLine": 11,
+          "params": [
+            "classroom",
+            "role"
+          ]
+        },
+        {
+          "name": "getUsers",
+          "startLine": 14,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "searchUsers",
+          "startLine": 31,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "getStats",
+          "startLine": 52,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "getFilterOptions",
+          "startLine": 60,
+          "endLine": 66,
+          "params": []
+        },
+        {
+          "name": "getTeachers",
+          "startLine": 69,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "getLeaderboard",
+          "startLine": 78,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "addUser",
+          "startLine": 87,
+          "endLine": 94,
+          "params": [
+            "userData"
+          ]
+        },
+        {
+          "name": "updateUser",
+          "startLine": 96,
+          "endLine": 103,
+          "params": [
+            "id",
+            "userData"
+          ]
+        },
+        {
+          "name": "deleteUser",
+          "startLine": 105,
+          "endLine": 111,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateGrades",
+          "startLine": 114,
+          "endLine": 121,
+          "params": [
+            "id",
+            "grades"
+          ]
+        },
+        {
+          "name": "createClass",
+          "startLine": 124,
+          "endLine": 131,
+          "params": [
+            "classData"
+          ]
+        },
+        {
+          "name": "fetchClasses",
+          "startLine": 133,
+          "endLine": 139,
+          "params": []
+        },
+        {
+          "name": "removeClass",
+          "startLine": 141,
+          "endLine": 147,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "loginUser",
+          "startLine": 150,
+          "endLine": 157,
+          "params": [
+            "credentials"
+          ]
+        },
+        {
+          "name": "logoutUser",
+          "startLine": 161,
+          "endLine": 167,
+          "params": []
+        },
+        {
+          "name": "getCurrentUser",
+          "startLine": 169,
+          "endLine": 173,
+          "params": []
+        },
+        {
+          "name": "sendStudentAIMessage",
+          "startLine": 176,
+          "endLine": 183,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "trackVideoInteraction",
+          "startLine": 186,
+          "endLine": 195,
+          "params": [
+            "interactionData"
+          ]
+        },
+        {
+          "name": "updateVideoDuration",
+          "startLine": 197,
+          "endLine": 207,
+          "params": [
+            "interactionId",
+            "durationSeconds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUsers",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "searchUsers",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "getStats",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getFilterOptions",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "getTeachers",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getLeaderboard",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "addUser",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "updateUser",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "deleteUser",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "updateGrades",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "createClass",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "fetchClasses",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "removeClass",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "loginUser",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "logoutUser",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "getCurrentUser",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "sendStudentAIMessage",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "trackVideoInteraction",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "updateVideoDuration",
+          "line": 197,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getUsers",
+          "callee": "apiClient.get",
+          "lineNumber": 20
+        },
+        {
+          "caller": "getUsers",
+          "callee": "filterParams",
+          "lineNumber": 24
+        },
+        {
+          "caller": "searchUsers",
+          "callee": "apiClient.get",
+          "lineNumber": 38
+        },
+        {
+          "caller": "searchUsers",
+          "callee": "encodeURIComponent",
+          "lineNumber": 39
+        },
+        {
+          "caller": "searchUsers",
+          "callee": "filterParams",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getStats",
+          "callee": "apiClient.get",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getFilterOptions",
+          "callee": "apiClient.get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getTeachers",
+          "callee": "apiClient.get",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getLeaderboard",
+          "callee": "apiClient.get",
+          "lineNumber": 79
+        },
+        {
+          "caller": "addUser",
+          "callee": "apiClient.post",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateUser",
+          "callee": "apiClient.put",
+          "lineNumber": 97
+        },
+        {
+          "caller": "deleteUser",
+          "callee": "apiClient.delete",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateGrades",
+          "callee": "apiClient.put",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createClass",
+          "callee": "apiClient.post",
+          "lineNumber": 125
+        },
+        {
+          "caller": "fetchClasses",
+          "callee": "apiClient.get",
+          "lineNumber": 134
+        },
+        {
+          "caller": "removeClass",
+          "callee": "apiClient.delete",
+          "lineNumber": 142
+        },
+        {
+          "caller": "loginUser",
+          "callee": "apiClient.post",
+          "lineNumber": 151
+        },
+        {
+          "caller": "logoutUser",
+          "callee": "apiClient.post",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "apiClient.get",
+          "lineNumber": 170
+        },
+        {
+          "caller": "sendStudentAIMessage",
+          "callee": "apiClient.post",
+          "lineNumber": 177
+        },
+        {
+          "caller": "trackVideoInteraction",
+          "callee": "apiClient.post",
+          "lineNumber": 189
+        },
+        {
+          "caller": "updateVideoDuration",
+          "callee": "apiClient.put",
+          "lineNumber": 201
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 19,
+        "functionCount": 20,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/main.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "client/src/shared/form/readFormValues.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "readFormValues",
+          "startLine": 11,
+          "endLine": 19,
+          "params": [
+            "form"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "readFormValues",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readFormValues",
+          "callee": "Object.fromEntries",
+          "lineNumber": 16
+        },
+        {
+          "caller": "readFormValues",
+          "callee": "new FormData(form).entries",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

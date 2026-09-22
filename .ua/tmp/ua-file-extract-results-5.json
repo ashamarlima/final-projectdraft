@@ -1,0 +1,1630 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 9,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 9,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "server/features/materials/LessonMaterial.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 141,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/materials/materialControllers.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 883,
+      "nonEmptyLines": 736,
+      "functions": [
+        {
+          "name": "currentUserId",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "subjectValues",
+          "startLine": 41,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "normalizeSubject",
+          "startLine": 52,
+          "endLine": 62,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "scopeToUser",
+          "startLine": 65,
+          "endLine": 73,
+          "params": [
+            "req",
+            "filter"
+          ]
+        },
+        {
+          "name": "toMaterialSummary",
+          "startLine": 77,
+          "endLine": 98,
+          "params": [
+            "material"
+          ]
+        },
+        {
+          "name": "stripExtension",
+          "startLine": 100,
+          "endLine": 105,
+          "params": [
+            "fileName"
+          ]
+        },
+        {
+          "name": "safeFileName",
+          "startLine": 108,
+          "endLine": 115,
+          "params": [
+            "title"
+          ]
+        },
+        {
+          "name": "looksLikePdf",
+          "startLine": 120,
+          "endLine": 129,
+          "params": [
+            "buffer"
+          ]
+        },
+        {
+          "name": "parseMaterialFields",
+          "startLine": 133,
+          "endLine": 221,
+          "params": [
+            "body"
+          ]
+        },
+        {
+          "name": "buildStorageKey",
+          "startLine": 224,
+          "endLine": 254,
+          "params": []
+        },
+        {
+          "name": "nextPositionFor",
+          "startLine": 260,
+          "endLine": 276,
+          "params": []
+        },
+        {
+          "name": "findAccessibleMaterialById",
+          "startLine": 489,
+          "endLine": 495,
+          "params": [
+            "req",
+            "id"
+          ]
+        },
+        {
+          "name": "findAccessibleMaterial",
+          "startLine": 497,
+          "endLine": 502,
+          "params": [
+            "req"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "subjectValues",
+          "callee": "LessonMaterial.schema\n            .path",
+          "lineNumber": 43
+        },
+        {
+          "caller": "normalizeSubject",
+          "callee": "String(value ?? '').trim",
+          "lineNumber": 53
+        },
+        {
+          "caller": "normalizeSubject",
+          "callee": "String",
+          "lineNumber": 53
+        },
+        {
+          "caller": "normalizeSubject",
+          "callee": "subjectValues().find",
+          "lineNumber": 56
+        },
+        {
+          "caller": "normalizeSubject",
+          "callee": "subjectValues",
+          "lineNumber": 56
+        },
+        {
+          "caller": "normalizeSubject",
+          "callee": "subject.toLowerCase",
+          "lineNumber": 58
+        },
+        {
+          "caller": "normalizeSubject",
+          "callee": "wanted.toLowerCase",
+          "lineNumber": 59
+        },
+        {
+          "caller": "scopeToUser",
+          "callee": "String",
+          "lineNumber": 67
+        },
+        {
+          "caller": "toMaterialSummary",
+          "callee": "Boolean",
+          "lineNumber": 94
+        },
+        {
+          "caller": "toMaterialSummary",
+          "callee": "String(material.extractedText || '').trim",
+          "lineNumber": 95
+        },
+        {
+          "caller": "toMaterialSummary",
+          "callee": "String",
+          "lineNumber": 95
+        },
+        {
+          "caller": "stripExtension",
+          "callee": "String(fileName || '').replace",
+          "lineNumber": 101
+        },
+        {
+          "caller": "stripExtension",
+          "callee": "String",
+          "lineNumber": 101
+        },
+        {
+          "caller": "safeFileName",
+          "callee": "String(title || 'material')\n            .replace(/[^\\w.\\- ]+/g, '_')\n            .slice(0, 100)\n            .trim",
+          "lineNumber": 110
+        },
+        {
+          "caller": "safeFileName",
+          "callee": "String(title || 'material')\n            .replace(/[^\\w.\\- ]+/g, '_')\n            .slice",
+          "lineNumber": 110
+        },
+        {
+          "caller": "safeFileName",
+          "callee": "String(title || 'material')\n            .replace",
+          "lineNumber": 110
+        },
+        {
+          "caller": "safeFileName",
+          "callee": "String",
+          "lineNumber": 110
+        },
+        {
+          "caller": "looksLikePdf",
+          "callee": "Buffer.isBuffer",
+          "lineNumber": 121
+        },
+        {
+          "caller": "looksLikePdf",
+          "callee": "buffer\n        .subarray(0, PDF_HEADER_SEARCH)\n        .toString('latin1')\n        .includes",
+          "lineNumber": 125
+        },
+        {
+          "caller": "looksLikePdf",
+          "callee": "buffer\n        .subarray(0, PDF_HEADER_SEARCH)\n        .toString",
+          "lineNumber": 125
+        },
+        {
+          "caller": "looksLikePdf",
+          "callee": "buffer\n        .subarray",
+          "lineNumber": 125
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "normalizeSubject",
+          "lineNumber": 145
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "String(\n        body.grade ?? fallback.grade ?? ''\n    ).trim",
+          "lineNumber": 147
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "String",
+          "lineNumber": 147
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "Number",
+          "lineNumber": 161
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "Number",
+          "lineNumber": 163
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "String(\n        body.title ?? fallback.title ?? ''\n    ).trim",
+          "lineNumber": 167
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "String",
+          "lineNumber": 167
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "LessonMaterial.schema.path",
+          "lineNumber": 172
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "grades.includes",
+          "lineNumber": 174
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "grades.join",
+          "lineNumber": 176
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "subjectValues().join",
+          "lineNumber": 182
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "subjectValues",
+          "lineNumber": 182
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "Number.isInteger",
+          "lineNumber": 189
+        },
+        {
+          "caller": "parseMaterialFields",
+          "callee": "Number.isInteger",
+          "lineNumber": 199
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "String(originalName || 'material.pdf')\n            .toLowerCase()\n            .replace(/[^a-z0-9.]+/g, '-')\n            .replace(/^[-.]+|[-.]+$/g, '')\n            .slice",
+          "lineNumber": 232
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "String(originalName || 'material.pdf')\n            .toLowerCase()\n            .replace(/[^a-z0-9.]+/g, '-')\n            .replace",
+          "lineNumber": 232
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "String(originalName || 'material.pdf')\n            .toLowerCase()\n            .replace",
+          "lineNumber": 232
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "String(originalName || 'material.pdf')\n            .toLowerCase",
+          "lineNumber": 232
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "String",
+          "lineNumber": 232
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "subject\n            .toLowerCase()\n            .replace",
+          "lineNumber": 239
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "subject\n            .toLowerCase",
+          "lineNumber": 239
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "[\n        'materials',\n        safeSubject,\n        `grade-${grade}`,\n        `unit-${String(unit).padStart(2, '0')}`,\n        `lesson-${String(lesson).padStart(2, '0')}`,\n        `${crypto.randomUUID()}-${safeName}`\n    ].join",
+          "lineNumber": 246
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "String(unit).padStart",
+          "lineNumber": 250
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "String",
+          "lineNumber": 250
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "String(lesson).padStart",
+          "lineNumber": 251
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "String",
+          "lineNumber": 251
+        },
+        {
+          "caller": "buildStorageKey",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 252
+        },
+        {
+          "caller": "nextPositionFor",
+          "callee": "LessonMaterial.findOne({\n        subject,\n        grade,\n        unit,\n        lesson\n    }).sort",
+          "lineNumber": 266
+        },
+        {
+          "caller": "nextPositionFor",
+          "callee": "LessonMaterial.findOne",
+          "lineNumber": 266
+        },
+        {
+          "caller": "nextPositionFor",
+          "callee": "Number",
+          "lineNumber": 274
+        },
+        {
+          "caller": "findAccessibleMaterialById",
+          "callee": "scopeToUser",
+          "lineNumber": 492
+        },
+        {
+          "caller": "findAccessibleMaterialById",
+          "callee": "LessonMaterial.findOne",
+          "lineNumber": 494
+        },
+        {
+          "caller": "findAccessibleMaterial",
+          "callee": "findAccessibleMaterialById",
+          "lineNumber": 498
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/features/materials/materials.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 2006,
+      "nonEmptyLines": 1665,
+      "functions": [
+        {
+          "name": "stubModule",
+          "startLine": 45,
+          "endLine": 60,
+          "params": [
+            "relativeFile",
+            "value"
+          ]
+        },
+        {
+          "name": "fakeDriver",
+          "startLine": 134,
+          "endLine": 178,
+          "params": []
+        },
+        {
+          "name": "objectId",
+          "startLine": 188,
+          "endLine": 189,
+          "params": [
+            "suffix"
+          ]
+        },
+        {
+          "name": "sortDocuments",
+          "startLine": 194,
+          "endLine": 232,
+          "params": [
+            "documents"
+          ]
+        },
+        {
+          "name": "tokenFor",
+          "startLine": 417,
+          "endLine": 418,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "adminToken",
+          "startLine": 420,
+          "endLine": 420,
+          "params": []
+        },
+        {
+          "name": "studentToken",
+          "startLine": 421,
+          "endLine": 421,
+          "params": []
+        },
+        {
+          "name": "pdfForm",
+          "startLine": 429,
+          "endLine": 450,
+          "params": []
+        },
+        {
+          "name": "upload",
+          "startLine": 452,
+          "endLine": 475,
+          "params": [
+            "form"
+          ]
+        },
+        {
+          "name": "requestJson",
+          "startLine": 477,
+          "endLine": 509,
+          "params": [
+            "method",
+            "url",
+            "body",
+            "token"
+          ]
+        },
+        {
+          "name": "seedMaterial",
+          "startLine": 512,
+          "endLine": 538,
+          "params": []
+        },
+        {
+          "name": "fileUrl",
+          "startLine": 1661,
+          "endLine": 1672,
+          "params": [
+            "key"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "stubModule",
+          "callee": "require.resolve",
+          "lineNumber": 47
+        },
+        {
+          "caller": "stubModule",
+          "callee": "path.join",
+          "lineNumber": 48
+        },
+        {
+          "caller": "putObject",
+          "callee": "storageCalls.put.push",
+          "lineNumber": 143
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "storageCalls.remove.push",
+          "lineNumber": 152
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "storageCalls.view.push",
+          "lineNumber": 156
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "storageCalls.read.push",
+          "lineNumber": 166
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "Buffer.from",
+          "lineNumber": 168
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "Readable.from",
+          "lineNumber": 173
+        },
+        {
+          "caller": "objectId",
+          "callee": "String(suffix).padStart",
+          "lineNumber": 189
+        },
+        {
+          "caller": "objectId",
+          "callee": "String",
+          "lineNumber": 189
+        },
+        {
+          "caller": "sortDocuments",
+          "callee": "Object.entries",
+          "lineNumber": 195
+        },
+        {
+          "caller": "sortDocuments",
+          "callee": "[...documents].sort",
+          "lineNumber": 201
+        },
+        {
+          "caller": "sortDocuments",
+          "callee": "Number",
+          "lineNumber": 221
+        },
+        {
+          "caller": "sortDocuments",
+          "callee": "Number",
+          "lineNumber": 221
+        },
+        {
+          "caller": "matches",
+          "callee": "Object.entries(filter).every",
+          "lineNumber": 246
+        },
+        {
+          "caller": "matches",
+          "callee": "Object.entries",
+          "lineNumber": 246
+        },
+        {
+          "caller": "matches",
+          "callee": "String",
+          "lineNumber": 248
+        },
+        {
+          "caller": "matches",
+          "callee": "String",
+          "lineNumber": 249
+        },
+        {
+          "caller": "decorate",
+          "callee": "this.documents.filter",
+          "lineNumber": 263
+        },
+        {
+          "caller": "create",
+          "callee": "this.createCalls.push",
+          "lineNumber": 272
+        },
+        {
+          "caller": "create",
+          "callee": "objectId",
+          "lineNumber": 279
+        },
+        {
+          "caller": "create",
+          "callee": "this.documents.push",
+          "lineNumber": 286
+        },
+        {
+          "caller": "create",
+          "callee": "this.decorate",
+          "lineNumber": 288
+        },
+        {
+          "caller": "run",
+          "callee": "sortDocuments(\n                this.documents.filter((document) =>\n                    this.matches(document, filter)\n                ),\n                spec\n            ).map",
+          "lineNumber": 295
+        },
+        {
+          "caller": "run",
+          "callee": "sortDocuments",
+          "lineNumber": 295
+        },
+        {
+          "caller": "run",
+          "callee": "this.documents.filter",
+          "lineNumber": 296
+        },
+        {
+          "caller": "run",
+          "callee": "this.matches",
+          "lineNumber": 297
+        },
+        {
+          "caller": "run",
+          "callee": "this.decorate",
+          "lineNumber": 301
+        },
+        {
+          "caller": "find",
+          "callee": "Promise.resolve",
+          "lineNumber": 304
+        },
+        {
+          "caller": "find",
+          "callee": "run",
+          "lineNumber": 304
+        },
+        {
+          "caller": "find",
+          "callee": "Promise.resolve",
+          "lineNumber": 307
+        },
+        {
+          "caller": "find",
+          "callee": "run",
+          "lineNumber": 307
+        },
+        {
+          "caller": "run",
+          "callee": "this.decorate",
+          "lineNumber": 314
+        },
+        {
+          "caller": "run",
+          "callee": "sortDocuments",
+          "lineNumber": 315
+        },
+        {
+          "caller": "run",
+          "callee": "this.documents.filter",
+          "lineNumber": 316
+        },
+        {
+          "caller": "run",
+          "callee": "this.matches",
+          "lineNumber": 318
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve",
+          "lineNumber": 327
+        },
+        {
+          "caller": "findOne",
+          "callee": "run",
+          "lineNumber": 327
+        },
+        {
+          "caller": "findOne",
+          "callee": "Promise.resolve",
+          "lineNumber": 332
+        },
+        {
+          "caller": "findOne",
+          "callee": "run",
+          "lineNumber": 332
+        },
+        {
+          "caller": "findById",
+          "callee": "Promise.resolve",
+          "lineNumber": 338
+        },
+        {
+          "caller": "findById",
+          "callee": "this.decorate",
+          "lineNumber": 339
+        },
+        {
+          "caller": "findById",
+          "callee": "this.documents.find",
+          "lineNumber": 340
+        },
+        {
+          "caller": "findById",
+          "callee": "String",
+          "lineNumber": 342
+        },
+        {
+          "caller": "findById",
+          "callee": "String",
+          "lineNumber": 343
+        },
+        {
+          "caller": "tokenFor",
+          "callee": "jwt.sign",
+          "lineNumber": 418
+        },
+        {
+          "caller": "adminToken",
+          "callee": "tokenFor",
+          "lineNumber": 420
+        },
+        {
+          "caller": "studentToken",
+          "callee": "tokenFor",
+          "lineNumber": 421
+        },
+        {
+          "caller": "pdfForm",
+          "callee": "Object.entries",
+          "lineNumber": 439
+        },
+        {
+          "caller": "pdfForm",
+          "callee": "form.append",
+          "lineNumber": 440
+        },
+        {
+          "caller": "pdfForm",
+          "callee": "String",
+          "lineNumber": 440
+        },
+        {
+          "caller": "pdfForm",
+          "callee": "form.append",
+          "lineNumber": 443
+        },
+        {
+          "caller": "upload",
+          "callee": "adminToken",
+          "lineNumber": 452
+        },
+        {
+          "caller": "upload",
+          "callee": "fetch",
+          "lineNumber": 460
+        },
+        {
+          "caller": "upload",
+          "callee": "response\n            .json()\n            .catch",
+          "lineNumber": 471
+        },
+        {
+          "caller": "upload",
+          "callee": "response\n            .json",
+          "lineNumber": 471
+        },
+        {
+          "caller": "requestJson",
+          "callee": "JSON.stringify",
+          "lineNumber": 495
+        },
+        {
+          "caller": "requestJson",
+          "callee": "fetch",
+          "lineNumber": 498
+        },
+        {
+          "caller": "requestJson",
+          "callee": "response\n            .json()\n            .catch",
+          "lineNumber": 505
+        },
+        {
+          "caller": "requestJson",
+          "callee": "response\n            .json",
+          "lineNumber": 505
+        },
+        {
+          "caller": "seedMaterial",
+          "callee": "objectId",
+          "lineNumber": 514
+        },
+        {
+          "caller": "seedMaterial",
+          "callee": "fakeMaterials.documents.push",
+          "lineNumber": 535
+        },
+        {
+          "caller": "fileUrl",
+          "callee": "Math.floor",
+          "lineNumber": 1663
+        },
+        {
+          "caller": "fileUrl",
+          "callee": "Date.now",
+          "lineNumber": 1663
+        },
+        {
+          "caller": "fileUrl",
+          "callee": "String",
+          "lineNumber": 1667
+        },
+        {
+          "caller": "fileUrl",
+          "callee": "createSignature",
+          "lineNumber": 1668
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/scripts/backfillMaterialText.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 115,
+      "functions": [
+        {
+          "name": "databaseUrl",
+          "startLine": 37,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "readStoredObject",
+          "startLine": 55,
+          "endLine": 68,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "backfill",
+          "startLine": 70,
+          "endLine": 143,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "databaseUrl",
+          "callee": "console.error",
+          "lineNumber": 44
+        },
+        {
+          "caller": "databaseUrl",
+          "callee": "process.exit",
+          "lineNumber": 48
+        },
+        {
+          "caller": "databaseUrl",
+          "callee": "url.replace",
+          "lineNumber": 51
+        },
+        {
+          "caller": "readStoredObject",
+          "callee": "getStorageDriver().createReadStream",
+          "lineNumber": 57
+        },
+        {
+          "caller": "readStoredObject",
+          "callee": "getStorageDriver",
+          "lineNumber": 57
+        },
+        {
+          "caller": "readStoredObject",
+          "callee": "chunks.push",
+          "lineNumber": 64
+        },
+        {
+          "caller": "readStoredObject",
+          "callee": "Buffer.concat",
+          "lineNumber": 67
+        },
+        {
+          "caller": "backfill",
+          "callee": "mongoose.connect",
+          "lineNumber": 71
+        },
+        {
+          "caller": "backfill",
+          "callee": "databaseUrl",
+          "lineNumber": 71
+        },
+        {
+          "caller": "backfill",
+          "callee": "console.log",
+          "lineNumber": 73
+        },
+        {
+          "caller": "backfill",
+          "callee": "LessonMaterial.find",
+          "lineNumber": 78
+        },
+        {
+          "caller": "backfill",
+          "callee": "console.log",
+          "lineNumber": 85
+        },
+        {
+          "caller": "backfill",
+          "callee": "readStoredObject",
+          "lineNumber": 100
+        },
+        {
+          "caller": "backfill",
+          "callee": "(\n                await extractPdfText(buffer)\n            ).slice",
+          "lineNumber": 104
+        },
+        {
+          "caller": "backfill",
+          "callee": "extractPdfText",
+          "lineNumber": 105
+        },
+        {
+          "caller": "backfill",
+          "callee": "material.save",
+          "lineNumber": 113
+        },
+        {
+          "caller": "backfill",
+          "callee": "console.log",
+          "lineNumber": 118
+        },
+        {
+          "caller": "backfill",
+          "callee": "console.log",
+          "lineNumber": 124
+        },
+        {
+          "caller": "backfill",
+          "callee": "console.error",
+          "lineNumber": 132
+        },
+        {
+          "caller": "backfill",
+          "callee": "console.log",
+          "lineNumber": 138
+        },
+        {
+          "caller": "backfill",
+          "callee": "mongoose.disconnect",
+          "lineNumber": 142
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/shared/pdf.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "cleanExtractedText",
+          "startLine": 13,
+          "endLine": 18,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "pdfReadError",
+          "startLine": 24,
+          "endLine": 52,
+          "params": [
+            "error"
+          ]
+        },
+        {
+          "name": "extractPdfText",
+          "startLine": 56,
+          "endLine": 69,
+          "params": [
+            "buffer"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cleanExtractedText",
+          "callee": "(text || '')\n        .replace(/^--\\s*\\d+\\s+of\\s+\\d+\\s*--$/gm, '')\n        .replace(/\\n{3,}/g, '\\n\\n')\n        .trim",
+          "lineNumber": 14
+        },
+        {
+          "caller": "cleanExtractedText",
+          "callee": "(text || '')\n        .replace(/^--\\s*\\d+\\s+of\\s+\\d+\\s*--$/gm, '')\n        .replace",
+          "lineNumber": 14
+        },
+        {
+          "caller": "cleanExtractedText",
+          "callee": "(text || '')\n        .replace",
+          "lineNumber": 14
+        },
+        {
+          "caller": "pdfReadError",
+          "callee": "Object.assign",
+          "lineNumber": 26
+        },
+        {
+          "caller": "pdfReadError",
+          "callee": "Object.assign",
+          "lineNumber": 38
+        },
+        {
+          "caller": "pdfReadError",
+          "callee": "Object.assign",
+          "lineNumber": 46
+        },
+        {
+          "caller": "extractPdfText",
+          "callee": "parser.getText",
+          "lineNumber": 60
+        },
+        {
+          "caller": "extractPdfText",
+          "callee": "cleanExtractedText",
+          "lineNumber": 62
+        },
+        {
+          "caller": "extractPdfText",
+          "callee": "pdfReadError",
+          "lineNumber": 64
+        },
+        {
+          "caller": "extractPdfText",
+          "callee": "parser.destroy",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/shared/storage/index.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "getStorageDriver",
+          "startLine": 24,
+          "endLine": 42,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getStorageDriver",
+          "callee": "String(name).toLowerCase",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getStorageDriver",
+          "callee": "String",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getStorageDriver",
+          "callee": "Object.keys(\n                DRIVERS\n            ).join",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getStorageDriver",
+          "callee": "Object.keys",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getStorageDriver",
+          "callee": "driver.create",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/shared/storage/localDriver.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 135,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "rootDirectory",
+          "startLine": 26,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "resolveKey",
+          "startLine": 35,
+          "endLine": 61,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "putObject",
+          "startLine": 63,
+          "endLine": 77,
+          "params": []
+        },
+        {
+          "name": "deleteObject",
+          "startLine": 79,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "createReadStream",
+          "startLine": 85,
+          "endLine": 94,
+          "params": []
+        },
+        {
+          "name": "createViewUrl",
+          "startLine": 96,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "create",
+          "startLine": 121,
+          "endLine": 133,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "rootDirectory",
+          "callee": "path.resolve",
+          "lineNumber": 27
+        },
+        {
+          "caller": "resolveKey",
+          "callee": "rootDirectory",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveKey",
+          "callee": "path.resolve",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveKey",
+          "callee": "path.relative",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveKey",
+          "callee": "relative.startsWith",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveKey",
+          "callee": "path.isAbsolute",
+          "lineNumber": 49
+        },
+        {
+          "caller": "putObject",
+          "callee": "resolveKey",
+          "lineNumber": 64
+        },
+        {
+          "caller": "putObject",
+          "callee": "fsPromises.mkdir",
+          "lineNumber": 66
+        },
+        {
+          "caller": "putObject",
+          "callee": "path.dirname",
+          "lineNumber": 66
+        },
+        {
+          "caller": "putObject",
+          "callee": "fsPromises.writeFile",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "fsPromises.rm",
+          "lineNumber": 82
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "resolveKey",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "resolveKey",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "fsPromises.stat",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "fs.createReadStream",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "resolveKey",
+          "lineNumber": 99
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "Math.floor",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "Date.now",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "String",
+          "lineNumber": 106
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "createSignature",
+          "lineNumber": 107
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "(\n        process.env.PUBLIC_API_URL || ''\n    ).replace",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/shared/storage/signUrl.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "signingSecret",
+          "startLine": 11,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "createSignature",
+          "startLine": 31,
+          "endLine": 36,
+          "params": [
+            "key",
+            "expires"
+          ]
+        },
+        {
+          "name": "verifySignature",
+          "startLine": 38,
+          "endLine": 55,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createSignature",
+          "callee": "crypto\n        .createHmac('sha256', signingSecret())\n        .update(`${key}\\n${expires}`)\n        .digest",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createSignature",
+          "callee": "crypto\n        .createHmac('sha256', signingSecret())\n        .update",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createSignature",
+          "callee": "crypto\n        .createHmac",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createSignature",
+          "callee": "signingSecret",
+          "lineNumber": 33
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "createSignature",
+          "lineNumber": 43
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "String",
+          "lineNumber": 44
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "crypto.timingSafeEqual",
+          "lineNumber": 51
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "Buffer.from",
+          "lineNumber": 52
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "Buffer.from",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/shared/storage/supabaseDriver.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 233,
+      "nonEmptyLines": 189,
+      "functions": [
+        {
+          "name": "loadSdk",
+          "startLine": 19,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "configuration",
+          "startLine": 35,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "storageError",
+          "startLine": 67,
+          "endLine": 80,
+          "params": [
+            "error",
+            "fallbackMessage"
+          ]
+        },
+        {
+          "name": "client",
+          "startLine": 84,
+          "endLine": 107,
+          "params": []
+        },
+        {
+          "name": "putObject",
+          "startLine": 109,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "deleteObject",
+          "startLine": 136,
+          "endLine": 151,
+          "params": []
+        },
+        {
+          "name": "createReadStream",
+          "startLine": 157,
+          "endLine": 181,
+          "params": []
+        },
+        {
+          "name": "createViewUrl",
+          "startLine": 183,
+          "endLine": 207,
+          "params": []
+        },
+        {
+          "name": "create",
+          "startLine": 209,
+          "endLine": 228,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadSdk",
+          "callee": "require",
+          "lineNumber": 21
+        },
+        {
+          "caller": "configuration",
+          "callee": "Object.entries({\n        SUPABASE_URL: url,\n        SUPABASE_SERVICE_ROLE_KEY: serviceRoleKey\n    })\n        .filter(([, value]) => !value)\n        .map",
+          "lineNumber": 45
+        },
+        {
+          "caller": "configuration",
+          "callee": "Object.entries({\n        SUPABASE_URL: url,\n        SUPABASE_SERVICE_ROLE_KEY: serviceRoleKey\n    })\n        .filter",
+          "lineNumber": 45
+        },
+        {
+          "caller": "configuration",
+          "callee": "Object.entries",
+          "lineNumber": 45
+        },
+        {
+          "caller": "configuration",
+          "callee": "missing.join",
+          "lineNumber": 54
+        },
+        {
+          "caller": "storageError",
+          "callee": "/not found|does not exist/i.test",
+          "lineNumber": 73
+        },
+        {
+          "caller": "client",
+          "callee": "loadSdk",
+          "lineNumber": 89
+        },
+        {
+          "caller": "client",
+          "callee": "configuration",
+          "lineNumber": 92
+        },
+        {
+          "caller": "client",
+          "callee": "createClient",
+          "lineNumber": 94
+        },
+        {
+          "caller": "putObject",
+          "callee": "configuration",
+          "lineNumber": 110
+        },
+        {
+          "caller": "putObject",
+          "callee": "client()\n        .storage.from(bucket)\n        .upload",
+          "lineNumber": 114
+        },
+        {
+          "caller": "putObject",
+          "callee": "client()\n        .storage.from",
+          "lineNumber": 114
+        },
+        {
+          "caller": "putObject",
+          "callee": "client",
+          "lineNumber": 114
+        },
+        {
+          "caller": "putObject",
+          "callee": "storageError",
+          "lineNumber": 123
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "configuration",
+          "lineNumber": 137
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "client()\n        .storage.from(bucket)\n        .remove",
+          "lineNumber": 139
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "client()\n        .storage.from",
+          "lineNumber": 139
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "client",
+          "lineNumber": 139
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "/not found/i.test",
+          "lineNumber": 145
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "storageError",
+          "lineNumber": 146
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "configuration",
+          "lineNumber": 158
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "client()\n        .storage.from(bucket)\n        .download",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "client()\n        .storage.from",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "client",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "storageError",
+          "lineNumber": 165
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "require",
+          "lineNumber": 171
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "Buffer.from",
+          "lineNumber": 173
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "data.arrayBuffer",
+          "lineNumber": 174
+        },
+        {
+          "caller": "createReadStream",
+          "callee": "Readable.from",
+          "lineNumber": 178
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "configuration",
+          "lineNumber": 187
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "client()\n        .storage.from(bucket)\n        .createSignedUrl",
+          "lineNumber": 191
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "client()\n        .storage.from",
+          "lineNumber": 191
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "client",
+          "lineNumber": 191
+        },
+        {
+          "caller": "createViewUrl",
+          "callee": "storageError",
+          "lineNumber": 196
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    }
+  ]
+}

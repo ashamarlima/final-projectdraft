@@ -1,0 +1,19 @@
+{
+  "projectRoot": "C:/Users/MSi/Downloads/Final project",
+  "batchFiles": [
+    {"path": "client/src/features/materials/LessonSection.jsx", "language": "javascript", "sizeLines": 297, "fileCategory": "code"},
+    {"path": "client/src/features/materials/MaterialManager.jsx", "language": "javascript", "sizeLines": 1201, "fileCategory": "code"},
+    {"path": "client/src/features/materials/UnitLessonPdfs.jsx", "language": "javascript", "sizeLines": 95, "fileCategory": "code"},
+    {"path": "client/src/features/materials/subjects.js", "language": "javascript", "sizeLines": 51, "fileCategory": "code"},
+    {"path": "client/src/features/materials/useLessonMaterials.js", "language": "javascript", "sizeLines": 129, "fileCategory": "code"},
+    {"path": "client/src/features/student/SubjectPage.jsx", "language": "javascript", "sizeLines": 331, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "client/src/features/materials/LessonSection.jsx": [],
+    "client/src/features/materials/MaterialManager.jsx": ["client/src/features/materials/LessonSection.jsx", "client/src/features/materials/materialsAPI.js", "client/src/features/materials/subjects.js", "client/src/shared/form/readFormValues.js"],
+    "client/src/features/materials/UnitLessonPdfs.jsx": [],
+    "client/src/features/materials/subjects.js": [],
+    "client/src/features/materials/useLessonMaterials.js": ["client/src/features/materials/materialsAPI.js"],
+    "client/src/features/student/SubjectPage.jsx": ["client/src/features/materials/UnitLessonPdfs.jsx", "client/src/features/materials/subjects.js", "client/src/features/materials/useLessonMaterials.js"]
+  }
+}

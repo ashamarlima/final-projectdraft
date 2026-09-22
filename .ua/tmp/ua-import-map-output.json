@@ -1,0 +1,313 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 104,
+    "filesWithImports": 59,
+    "totalEdges": 139
+  },
+  "failures": [],
+  "importMap": {
+    ".ua/config.json": [],
+    ".ua/tmp/dir_tree_ctx.txt": [],
+    ".ua/tmp/entry_point_ctx.txt": [],
+    ".ua/tmp/manifest_ctx.txt": [],
+    ".ua/tmp/readme_ctx.txt": [],
+    ".ua/tmp/ua-import-map-input.json": [],
+    ".ua/tmp/ua-scan-files.json": [],
+    "client/.env.example": [],
+    "client/README.md": [],
+    "client/eslint.config.js": [],
+    "client/index.html": [],
+    "client/package.json": [],
+    "client/src/App.css": [],
+    "client/src/App.jsx": [
+      "client/src/features/materials/MaterialManager.jsx",
+      "client/src/features/student/StudentDashboard.jsx",
+      "client/src/features/users/ClassManagement.jsx",
+      "client/src/features/users/GradeModel.jsx",
+      "client/src/features/users/Login.jsx",
+      "client/src/features/users/SearchBar.jsx",
+      "client/src/features/users/StatsCard.jsx",
+      "client/src/features/users/UserModel.jsx",
+      "client/src/features/users/UserTable.jsx",
+      "client/src/features/users/userAPI.js"
+    ],
+    "client/src/features/ai/StudentAIChat.jsx": [
+      "client/src/features/ai/VideoPlayerModal.jsx",
+      "client/src/features/users/userAPI.js"
+    ],
+    "client/src/features/ai/VideoPlayerModal.jsx": [
+      "client/src/features/users/userAPI.js"
+    ],
+    "client/src/features/materials/LessonAIChat.jsx": [
+      "client/src/features/materials/materialsAPI.js"
+    ],
+    "client/src/features/materials/LessonAIView.jsx": [
+      "client/src/features/materials/LessonAIChat.jsx",
+      "client/src/features/materials/MaterialViewerModal.jsx",
+      "client/src/features/materials/materialsAPI.js",
+      "client/src/features/notes/Flashcards.jsx",
+      "client/src/features/notes/Quiz.jsx"
+    ],
+    "client/src/features/materials/LessonSection.jsx": [],
+    "client/src/features/materials/MaterialManager.jsx": [
+      "client/src/features/materials/LessonSection.jsx",
+      "client/src/features/materials/materialsAPI.js",
+      "client/src/features/materials/subjects.js",
+      "client/src/shared/form/readFormValues.js"
+    ],
+    "client/src/features/materials/MaterialViewerModal.jsx": [
+      "client/src/features/materials/PdfViewer.jsx",
+      "client/src/features/materials/materialsAPI.js"
+    ],
+    "client/src/features/materials/PdfViewer.jsx": [],
+    "client/src/features/materials/UnitLessonPdfs.jsx": [],
+    "client/src/features/materials/materialsAPI.js": [
+      "client/src/shared/api/apiClient.js"
+    ],
+    "client/src/features/materials/subjects.js": [],
+    "client/src/features/materials/useLessonMaterials.js": [
+      "client/src/features/materials/materialsAPI.js"
+    ],
+    "client/src/features/notes/Flashcards.jsx": [
+      "client/src/features/materials/materialsAPI.js",
+      "client/src/features/notes/notesAPI.js"
+    ],
+    "client/src/features/notes/NoteAIChat.jsx": [
+      "client/src/features/notes/notesAPI.js"
+    ],
+    "client/src/features/notes/NoteView.jsx": [
+      "client/src/features/notes/Flashcards.jsx",
+      "client/src/features/notes/NoteAIChat.jsx",
+      "client/src/features/notes/Quiz.jsx",
+      "client/src/features/notes/notesAPI.js"
+    ],
+    "client/src/features/notes/NoteViewPage.jsx": [
+      "client/src/features/notes/NoteView.jsx",
+      "client/src/features/notes/notesAPI.js"
+    ],
+    "client/src/features/notes/NotesPage.jsx": [
+      "client/src/features/notes/notesAPI.js",
+      "client/src/shared/form/readFormValues.js"
+    ],
+    "client/src/features/notes/Quiz.jsx": [
+      "client/src/features/quizzes/quizzesAPI.js"
+    ],
+    "client/src/features/notes/notesAPI.js": [
+      "client/src/shared/api/apiClient.js"
+    ],
+    "client/src/features/quizzes/quizzesAPI.js": [
+      "client/src/shared/api/apiClient.js"
+    ],
+    "client/src/features/student/AchievementsPage.jsx": [],
+    "client/src/features/student/DashboardPage.jsx": [],
+    "client/src/features/student/LeaderboardPage.jsx": [
+      "client/src/features/users/userAPI.js"
+    ],
+    "client/src/features/student/LearnPage.jsx": [],
+    "client/src/features/student/ProfilePage.jsx": [],
+    "client/src/features/student/QuizPage.jsx": [
+      "client/src/features/notes/Quiz.jsx",
+      "client/src/features/notes/notesAPI.js",
+      "client/src/features/quizzes/quizzesAPI.js"
+    ],
+    "client/src/features/student/StudentDashboard.jsx": [
+      "client/src/features/ai/StudentAIChat.jsx",
+      "client/src/features/materials/LessonAIView.jsx",
+      "client/src/features/notes/NoteViewPage.jsx",
+      "client/src/features/notes/NotesPage.jsx",
+      "client/src/features/student/AchievementsPage.jsx",
+      "client/src/features/student/DashboardPage.jsx",
+      "client/src/features/student/LeaderboardPage.jsx",
+      "client/src/features/student/LearnPage.jsx",
+      "client/src/features/student/ProfilePage.jsx",
+      "client/src/features/student/QuizPage.jsx",
+      "client/src/features/student/StudentGrade.jsx",
+      "client/src/features/student/SubjectPage.jsx"
+    ],
+    "client/src/features/student/StudentGrade.jsx": [],
+    "client/src/features/student/SubjectPage.jsx": [
+      "client/src/features/materials/UnitLessonPdfs.jsx",
+      "client/src/features/materials/subjects.js",
+      "client/src/features/materials/useLessonMaterials.js"
+    ],
+    "client/src/features/users/ClassManagement.jsx": [
+      "client/src/features/users/userAPI.js",
+      "client/src/shared/form/readFormValues.js"
+    ],
+    "client/src/features/users/GradeModel.jsx": [
+      "client/src/shared/form/readFormValues.js"
+    ],
+    "client/src/features/users/Login.jsx": [
+      "client/src/features/users/userAPI.js",
+      "client/src/shared/form/readFormValues.js"
+    ],
+    "client/src/features/users/SearchBar.jsx": [],
+    "client/src/features/users/StatsCard.jsx": [],
+    "client/src/features/users/UserModel.jsx": [
+      "client/src/shared/form/readFormValues.js"
+    ],
+    "client/src/features/users/UserTable.jsx": [],
+    "client/src/features/users/userAPI.js": [
+      "client/src/shared/api/apiClient.js"
+    ],
+    "client/src/index.css": [],
+    "client/src/main.jsx": [
+      "client/src/App.jsx",
+      "client/src/index.css"
+    ],
+    "client/src/shared/api/apiClient.js": [],
+    "client/src/shared/form/readFormValues.js": [],
+    "client/vite.config.js": [],
+    "server/.env": [],
+    "server/.env.example": [],
+    "server/app.js": [
+      "server/features/chat/aiRoutes.js",
+      "server/features/materials/materialRoutes.js",
+      "server/features/notes/noteAiRoutes.js",
+      "server/features/notes/noteRoutes.js",
+      "server/features/quizzes/quizRoutes.js",
+      "server/features/users/userRoutes.js",
+      "server/features/videos/VideoInteractionRoutes.js"
+    ],
+    "server/features/chat/Chat.js": [],
+    "server/features/chat/aiChat.test.js": [
+      "server/features/chat/aiRoutes.js"
+    ],
+    "server/features/chat/aiController.js": [
+      "server/features/users/userModels.js"
+    ],
+    "server/features/chat/aiRoutes.js": [
+      "server/features/chat/aiController.js",
+      "server/shared/authMiddleware.js"
+    ],
+    "server/features/materials/LessonMaterial.js": [],
+    "server/features/materials/lessonAi.test.js": [
+      "server/app.js"
+    ],
+    "server/features/materials/materialAiControllers.js": [
+      "server/features/chat/Chat.js",
+      "server/features/materials/materialControllers.js",
+      "server/shared/ai.js"
+    ],
+    "server/features/materials/materialControllers.js": [
+      "server/features/materials/LessonMaterial.js",
+      "server/shared/pdf.js",
+      "server/shared/storage/index.js",
+      "server/shared/storage/signUrl.js"
+    ],
+    "server/features/materials/materialRoutes.js": [
+      "server/features/materials/materialAiControllers.js",
+      "server/features/materials/materialControllers.js",
+      "server/shared/authMiddleware.js",
+      "server/shared/uploadMiddleware.js"
+    ],
+    "server/features/materials/materials.test.js": [
+      "server/app.js",
+      "server/shared/storage/signUrl.js"
+    ],
+    "server/features/notes/Note.js": [],
+    "server/features/notes/noteAiControllers.js": [
+      "server/features/chat/Chat.js",
+      "server/features/notes/Note.js",
+      "server/shared/ai.js"
+    ],
+    "server/features/notes/noteAiRoutes.js": [
+      "server/features/notes/noteAiControllers.js",
+      "server/shared/authMiddleware.js"
+    ],
+    "server/features/notes/noteControllers.js": [
+      "server/features/notes/Note.js",
+      "server/shared/pdf.js"
+    ],
+    "server/features/notes/noteRoutes.js": [
+      "server/features/notes/noteControllers.js",
+      "server/shared/authMiddleware.js",
+      "server/shared/uploadMiddleware.js"
+    ],
+    "server/features/notes/notes.test.js": [
+      "server/app.js"
+    ],
+    "server/features/quizzes/QuizAttempt.js": [],
+    "server/features/quizzes/quizControllers.js": [
+      "server/features/materials/materialControllers.js",
+      "server/features/notes/Note.js",
+      "server/features/quizzes/QuizAttempt.js",
+      "server/features/users/userModels.js",
+      "server/shared/ai.js",
+      "server/shared/xp.js"
+    ],
+    "server/features/quizzes/quizRoutes.js": [
+      "server/features/quizzes/quizControllers.js",
+      "server/shared/authMiddleware.js"
+    ],
+    "server/features/quizzes/quizzes.test.js": [
+      "server/app.js"
+    ],
+    "server/features/users/Class.js": [],
+    "server/features/users/classManagement.test.js": [
+      "server/features/users/userRoutes.js"
+    ],
+    "server/features/users/loginAuth.test.js": [
+      "server/features/users/userRoutes.js"
+    ],
+    "server/features/users/userControllers.js": [
+      "server/features/users/Class.js",
+      "server/features/users/userModels.js",
+      "server/shared/authMiddleware.js",
+      "server/shared/xp.js"
+    ],
+    "server/features/users/userModels.js": [
+      "server/shared/xp.js"
+    ],
+    "server/features/users/userRoutes.js": [
+      "server/features/users/userControllers.js",
+      "server/shared/authMiddleware.js"
+    ],
+    "server/features/users/xpLeaderboard.test.js": [
+      "server/features/users/userRoutes.js"
+    ],
+    "server/features/videos/VideoInteraction.js": [],
+    "server/features/videos/VideoInteractionControllers.js": [
+      "server/features/users/userModels.js",
+      "server/features/videos/VideoInteraction.js",
+      "server/shared/xp.js"
+    ],
+    "server/features/videos/VideoInteractionRoutes.js": [
+      "server/features/videos/VideoInteractionControllers.js",
+      "server/shared/authMiddleware.js"
+    ],
+    "server/features/videos/videoInteractions.test.js": [
+      "server/features/videos/VideoInteractionRoutes.js"
+    ],
+    "server/package.json": [],
+    "server/scripts/backfillMaterialText.js": [
+      "server/features/materials/LessonMaterial.js",
+      "server/shared/pdf.js",
+      "server/shared/storage/index.js"
+    ],
+    "server/scripts/checkModulePaths.js": [],
+    "server/seed.js": [
+      "server/features/users/userModels.js"
+    ],
+    "server/server.js": [
+      "server/app.js"
+    ],
+    "server/shared/ai.js": [],
+    "server/shared/authMiddleware.js": [
+      "server/features/users/userModels.js"
+    ],
+    "server/shared/pdf.js": [],
+    "server/shared/storage/index.js": [
+      "server/shared/storage/localDriver.js",
+      "server/shared/storage/supabaseDriver.js"
+    ],
+    "server/shared/storage/localDriver.js": [
+      "server/shared/storage/signUrl.js"
+    ],
+    "server/shared/storage/signUrl.js": [],
+    "server/shared/storage/supabaseDriver.js": [],
+    "server/shared/uploadMiddleware.js": [],
+    "server/shared/xp.js": []
+  }
+}

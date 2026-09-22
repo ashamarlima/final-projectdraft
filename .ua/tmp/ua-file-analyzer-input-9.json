@@ -1,0 +1,13 @@
+{
+  "projectRoot": "C:/Users/MSi/Downloads/Final project",
+  "batchFiles": [
+    {"path": "server/.env", "language": "config", "sizeLines": 9, "fileCategory": "config"},
+    {"path": "server/.env.example", "language": "config", "sizeLines": 55, "fileCategory": "config"},
+    {"path": "server/package.json", "language": "json", "sizeLines": 32, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    "server/.env": [],
+    "server/.env.example": [],
+    "server/package.json": []
+  }
+}

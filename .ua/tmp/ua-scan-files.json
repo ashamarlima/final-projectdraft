@@ -1,0 +1,652 @@
+{
+  "scriptCompleted": true,
+  "contentDigest": "ef4393b28091679081e9b5c3ea3817c1a12ab6afeecf9a4017506ad77ed01b77",
+  "files": [
+    {
+      "path": ".ua/config.json",
+      "language": "json",
+      "sizeLines": 1,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/dir_tree_ctx.txt",
+      "language": "txt",
+      "sizeLines": 18,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".ua/tmp/entry_point_ctx.txt",
+      "language": "txt",
+      "sizeLines": 1,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".ua/tmp/manifest_ctx.txt",
+      "language": "txt",
+      "sizeLines": 1,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".ua/tmp/readme_ctx.txt",
+      "language": "txt",
+      "sizeLines": 1,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".ua/tmp/ua-import-map-input.json",
+      "language": "json",
+      "sizeLines": 1,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-scan-files.json",
+      "language": "json",
+      "sizeLines": 639,
+      "fileCategory": "config"
+    },
+    {
+      "path": "client/.env.example",
+      "language": "config",
+      "sizeLines": 5,
+      "fileCategory": "config"
+    },
+    {
+      "path": "client/README.md",
+      "language": "markdown",
+      "sizeLines": 16,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "client/eslint.config.js",
+      "language": "javascript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/index.html",
+      "language": "html",
+      "sizeLines": 13,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "client/package.json",
+      "language": "json",
+      "sizeLines": 31,
+      "fileCategory": "config"
+    },
+    {
+      "path": "client/src/App.css",
+      "language": "css",
+      "sizeLines": 184,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "client/src/App.jsx",
+      "language": "javascript",
+      "sizeLines": 873,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/ai/StudentAIChat.jsx",
+      "language": "javascript",
+      "sizeLines": 697,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/ai/VideoPlayerModal.jsx",
+      "language": "javascript",
+      "sizeLines": 296,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/materials/LessonAIChat.jsx",
+      "language": "javascript",
+      "sizeLines": 181,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/materials/LessonAIView.jsx",
+      "language": "javascript",
+      "sizeLines": 334,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/materials/LessonSection.jsx",
+      "language": "javascript",
+      "sizeLines": 297,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/materials/MaterialManager.jsx",
+      "language": "javascript",
+      "sizeLines": 1201,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/materials/MaterialViewerModal.jsx",
+      "language": "javascript",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/materials/PdfViewer.jsx",
+      "language": "javascript",
+      "sizeLines": 132,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/materials/UnitLessonPdfs.jsx",
+      "language": "javascript",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/materials/materialsAPI.js",
+      "language": "javascript",
+      "sizeLines": 145,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/materials/subjects.js",
+      "language": "javascript",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/materials/useLessonMaterials.js",
+      "language": "javascript",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/notes/Flashcards.jsx",
+      "language": "javascript",
+      "sizeLines": 179,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/notes/NoteAIChat.jsx",
+      "language": "javascript",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/notes/NoteView.jsx",
+      "language": "javascript",
+      "sizeLines": 207,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/notes/NoteViewPage.jsx",
+      "language": "javascript",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/notes/NotesPage.jsx",
+      "language": "javascript",
+      "sizeLines": 269,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/notes/Quiz.jsx",
+      "language": "javascript",
+      "sizeLines": 323,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/notes/notesAPI.js",
+      "language": "javascript",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/quizzes/quizzesAPI.js",
+      "language": "javascript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/student/AchievementsPage.jsx",
+      "language": "javascript",
+      "sizeLines": 177,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/student/DashboardPage.jsx",
+      "language": "javascript",
+      "sizeLines": 334,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/student/LeaderboardPage.jsx",
+      "language": "javascript",
+      "sizeLines": 212,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/student/LearnPage.jsx",
+      "language": "javascript",
+      "sizeLines": 568,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/student/ProfilePage.jsx",
+      "language": "javascript",
+      "sizeLines": 114,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/student/QuizPage.jsx",
+      "language": "javascript",
+      "sizeLines": 343,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/student/StudentDashboard.jsx",
+      "language": "javascript",
+      "sizeLines": 574,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/student/StudentGrade.jsx",
+      "language": "javascript",
+      "sizeLines": 159,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/student/SubjectPage.jsx",
+      "language": "javascript",
+      "sizeLines": 331,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/users/ClassManagement.jsx",
+      "language": "javascript",
+      "sizeLines": 450,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/users/GradeModel.jsx",
+      "language": "javascript",
+      "sizeLines": 115,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/users/Login.jsx",
+      "language": "javascript",
+      "sizeLines": 109,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/users/SearchBar.jsx",
+      "language": "javascript",
+      "sizeLines": 135,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/users/StatsCard.jsx",
+      "language": "javascript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/users/UserModel.jsx",
+      "language": "javascript",
+      "sizeLines": 172,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/users/UserTable.jsx",
+      "language": "javascript",
+      "sizeLines": 267,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/features/users/userAPI.js",
+      "language": "javascript",
+      "sizeLines": 207,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/index.css",
+      "language": "css",
+      "sizeLines": 187,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "client/src/main.jsx",
+      "language": "javascript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/shared/api/apiClient.js",
+      "language": "javascript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/src/shared/form/readFormValues.js",
+      "language": "javascript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client/vite.config.js",
+      "language": "javascript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/.env",
+      "language": "config",
+      "sizeLines": 9,
+      "fileCategory": "config"
+    },
+    {
+      "path": "server/.env.example",
+      "language": "config",
+      "sizeLines": 55,
+      "fileCategory": "config"
+    },
+    {
+      "path": "server/app.js",
+      "language": "javascript",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/chat/Chat.js",
+      "language": "javascript",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/chat/aiChat.test.js",
+      "language": "javascript",
+      "sizeLines": 994,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/chat/aiController.js",
+      "language": "javascript",
+      "sizeLines": 429,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/chat/aiRoutes.js",
+      "language": "javascript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/materials/LessonMaterial.js",
+      "language": "javascript",
+      "sizeLines": 151,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/materials/lessonAi.test.js",
+      "language": "javascript",
+      "sizeLines": 751,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/materials/materialAiControllers.js",
+      "language": "javascript",
+      "sizeLines": 198,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/materials/materialControllers.js",
+      "language": "javascript",
+      "sizeLines": 883,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/materials/materialRoutes.js",
+      "language": "javascript",
+      "sizeLines": 122,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/materials/materials.test.js",
+      "language": "javascript",
+      "sizeLines": 2006,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/notes/Note.js",
+      "language": "javascript",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/notes/noteAiControllers.js",
+      "language": "javascript",
+      "sizeLines": 198,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/notes/noteAiRoutes.js",
+      "language": "javascript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/notes/noteControllers.js",
+      "language": "javascript",
+      "sizeLines": 186,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/notes/noteRoutes.js",
+      "language": "javascript",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/notes/notes.test.js",
+      "language": "javascript",
+      "sizeLines": 1027,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/quizzes/QuizAttempt.js",
+      "language": "javascript",
+      "sizeLines": 113,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/quizzes/quizControllers.js",
+      "language": "javascript",
+      "sizeLines": 414,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/quizzes/quizRoutes.js",
+      "language": "javascript",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/quizzes/quizzes.test.js",
+      "language": "javascript",
+      "sizeLines": 1027,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/users/Class.js",
+      "language": "javascript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/users/classManagement.test.js",
+      "language": "javascript",
+      "sizeLines": 363,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/users/loginAuth.test.js",
+      "language": "javascript",
+      "sizeLines": 517,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/users/userControllers.js",
+      "language": "javascript",
+      "sizeLines": 768,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/users/userModels.js",
+      "language": "javascript",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/users/userRoutes.js",
+      "language": "javascript",
+      "sizeLines": 149,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/users/xpLeaderboard.test.js",
+      "language": "javascript",
+      "sizeLines": 474,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/videos/VideoInteraction.js",
+      "language": "javascript",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/videos/VideoInteractionControllers.js",
+      "language": "javascript",
+      "sizeLines": 345,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/videos/VideoInteractionRoutes.js",
+      "language": "javascript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/features/videos/videoInteractions.test.js",
+      "language": "javascript",
+      "sizeLines": 1040,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/package.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "server/scripts/backfillMaterialText.js",
+      "language": "javascript",
+      "sizeLines": 151,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/scripts/checkModulePaths.js",
+      "language": "javascript",
+      "sizeLines": 406,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/seed.js",
+      "language": "javascript",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/server.js",
+      "language": "javascript",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/shared/ai.js",
+      "language": "javascript",
+      "sizeLines": 286,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/shared/authMiddleware.js",
+      "language": "javascript",
+      "sizeLines": 199,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/shared/pdf.js",
+      "language": "javascript",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/shared/storage/index.js",
+      "language": "javascript",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/shared/storage/localDriver.js",
+      "language": "javascript",
+      "sizeLines": 135,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/shared/storage/signUrl.js",
+      "language": "javascript",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/shared/storage/supabaseDriver.js",
+      "language": "javascript",
+      "sizeLines": 233,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/shared/uploadMiddleware.js",
+      "language": "javascript",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/shared/xp.js",
+      "language": "javascript",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 104,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "moderate",
+  "failures": [],
+  "stats": {
+    "filesScanned": 104,
+    "byCategory": {
+      "config": 8,
+      "docs": 5,
+      "code": 88,
+      "markup": 3
+    },
+    "byLanguage": {
+      "json": 5,
+      "txt": 4,
+      "config": 3,
+      "markdown": 1,
+      "javascript": 88,
+      "html": 1,
+      "css": 2
+    }
+  }
+}

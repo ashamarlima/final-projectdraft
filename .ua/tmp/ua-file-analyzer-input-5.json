@@ -1,0 +1,25 @@
+{
+  "projectRoot": "C:/Users/MSi/Downloads/Final project",
+  "batchFiles": [
+    {"path": "server/features/materials/LessonMaterial.js", "language": "javascript", "sizeLines": 151, "fileCategory": "code"},
+    {"path": "server/features/materials/materialControllers.js", "language": "javascript", "sizeLines": 883, "fileCategory": "code"},
+    {"path": "server/features/materials/materials.test.js", "language": "javascript", "sizeLines": 2006, "fileCategory": "code"},
+    {"path": "server/scripts/backfillMaterialText.js", "language": "javascript", "sizeLines": 151, "fileCategory": "code"},
+    {"path": "server/shared/pdf.js", "language": "javascript", "sizeLines": 75, "fileCategory": "code"},
+    {"path": "server/shared/storage/index.js", "language": "javascript", "sizeLines": 47, "fileCategory": "code"},
+    {"path": "server/shared/storage/localDriver.js", "language": "javascript", "sizeLines": 135, "fileCategory": "code"},
+    {"path": "server/shared/storage/signUrl.js", "language": "javascript", "sizeLines": 60, "fileCategory": "code"},
+    {"path": "server/shared/storage/supabaseDriver.js", "language": "javascript", "sizeLines": 233, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "server/features/materials/LessonMaterial.js": [],
+    "server/features/materials/materialControllers.js": ["server/features/materials/LessonMaterial.js", "server/shared/pdf.js", "server/shared/storage/index.js", "server/shared/storage/signUrl.js"],
+    "server/features/materials/materials.test.js": ["server/app.js", "server/shared/storage/signUrl.js"],
+    "server/scripts/backfillMaterialText.js": ["server/features/materials/LessonMaterial.js", "server/shared/pdf.js", "server/shared/storage/index.js"],
+    "server/shared/pdf.js": [],
+    "server/shared/storage/index.js": ["server/shared/storage/localDriver.js", "server/shared/storage/supabaseDriver.js"],
+    "server/shared/storage/localDriver.js": ["server/shared/storage/signUrl.js"],
+    "server/shared/storage/signUrl.js": [],
+    "server/shared/storage/supabaseDriver.js": []
+  }
+}

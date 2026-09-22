@@ -1,0 +1,9 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 5,
+  "edgesRestored": 5,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": ["Recovered missing file node for index.css and several missing function nodes in materialsAPI.js and readFormValues.js. Restored all dropped edges from the merge report."]
+}

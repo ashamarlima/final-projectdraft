@@ -1,0 +1,13 @@
+node_modules
+
+# real environment values (see .env.example for the template)
+.env
+.env.local
+
+# lesson PDFs written by the local storage driver
+#
+# The leading slash anchors this to server/storage: an unanchored
+# "storage" also matches server/shared/storage, which holds the storage
+# driver's own source (index.js, localDriver.js, signUrl.js,
+# supabaseDriver.js) and must be committed.
+/storage/

@@ -1,0 +1,37 @@
+{
+  "projectRoot": "C:/Users/MSi/Downloads/Final project",
+  "batchFiles": [
+    {"path": "server/app.js", "language": "javascript", "sizeLines": 65, "fileCategory": "code"},
+    {"path": "server/features/chat/Chat.js", "language": "javascript", "sizeLines": 24, "fileCategory": "code"},
+    {"path": "server/features/materials/lessonAi.test.js", "language": "javascript", "sizeLines": 751, "fileCategory": "code"},
+    {"path": "server/features/materials/materialAiControllers.js", "language": "javascript", "sizeLines": 198, "fileCategory": "code"},
+    {"path": "server/features/materials/materialRoutes.js", "language": "javascript", "sizeLines": 122, "fileCategory": "code"},
+    {"path": "server/features/notes/Note.js", "language": "javascript", "sizeLines": 24, "fileCategory": "code"},
+    {"path": "server/features/notes/noteAiControllers.js", "language": "javascript", "sizeLines": 198, "fileCategory": "code"},
+    {"path": "server/features/notes/noteAiRoutes.js", "language": "javascript", "sizeLines": 45, "fileCategory": "code"},
+    {"path": "server/features/notes/noteControllers.js", "language": "javascript", "sizeLines": 186, "fileCategory": "code"},
+    {"path": "server/features/notes/noteRoutes.js", "language": "javascript", "sizeLines": 53, "fileCategory": "code"},
+    {"path": "server/features/notes/notes.test.js", "language": "javascript", "sizeLines": 1027, "fileCategory": "code"},
+    {"path": "server/features/quizzes/quizzes.test.js", "language": "javascript", "sizeLines": 1027, "fileCategory": "code"},
+    {"path": "server/server.js", "language": "javascript", "sizeLines": 62, "fileCategory": "code"},
+    {"path": "server/shared/ai.js", "language": "javascript", "sizeLines": 286, "fileCategory": "code"},
+    {"path": "server/shared/uploadMiddleware.js", "language": "javascript", "sizeLines": 72, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "server/app.js": ["server/features/chat/aiRoutes.js", "server/features/materials/materialRoutes.js", "server/features/notes/noteAiRoutes.js", "server/features/notes/noteRoutes.js", "server/features/quizzes/quizRoutes.js", "server/features/users/userRoutes.js", "server/features/videos/VideoInteractionRoutes.js"],
+    "server/features/chat/Chat.js": [],
+    "server/features/materials/lessonAi.test.js": ["server/app.js"],
+    "server/features/materials/materialAiControllers.js": ["server/features/chat/Chat.js", "server/features/materials/materialControllers.js", "server/shared/ai.js"],
+    "server/features/materials/materialRoutes.js": ["server/features/materials/materialAiControllers.js", "server/features/materials/materialControllers.js", "server/shared/authMiddleware.js", "server/shared/uploadMiddleware.js"],
+    "server/features/notes/Note.js": [],
+    "server/features/notes/noteAiControllers.js": ["server/features/chat/Chat.js", "server/features/notes/Note.js", "server/shared/ai.js"],
+    "server/features/notes/noteAiRoutes.js": ["server/features/notes/noteAiControllers.js", "server/shared/authMiddleware.js"],
+    "server/features/notes/noteControllers.js": ["server/features/notes/Note.js", "server/shared/pdf.js"],
+    "server/features/notes/noteRoutes.js": ["server/features/notes/noteControllers.js", "server/shared/authMiddleware.js", "server/shared/uploadMiddleware.js"],
+    "server/features/notes/notes.test.js": ["server/app.js"],
+    "server/features/quizzes/quizzes.test.js": ["server/app.js"],
+    "server/server.js": ["server/app.js"],
+    "server/shared/ai.js": [],
+    "server/shared/uploadMiddleware.js": []
+  }
+}

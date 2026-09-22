@@ -1,0 +1,384 @@
+{
+  "nodes": [
+    {
+      "id": "file:client/src/features/materials/LessonSection.jsx",
+      "type": "file",
+      "name": "LessonSection.jsx",
+      "filePath": "client/src/features/materials/LessonSection.jsx",
+      "summary": "A React component that renders a section of materials for a specific lesson, allowing for previews and management of material items.",
+      "tags": ["component", "materials", "ui"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/LessonSection.jsx:formatSize",
+      "type": "function",
+      "name": "formatSize",
+      "filePath": "client/src/features/materials/LessonSection.jsx",
+      "lineRange": [9, 19],
+      "summary": "Converts a byte size into a human-readable string format (e.g., MB).",
+      "tags": ["utility", "formatting"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/LessonSection.jsx:LessonSection",
+      "type": "function",
+      "name": "LessonSection",
+      "filePath": "client/src/features/materials/LessonSection.jsx",
+      "lineRange": [26, 295],
+      "summary": "Main component for rendering a group of materials within a lesson, including handling move, preview, edit, and delete actions.",
+      "tags": ["component", "materials", "ui"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/materials/MaterialManager.jsx",
+      "type": "file",
+      "name": "MaterialManager.jsx",
+      "filePath": "client/src/features/materials/MaterialManager.jsx",
+      "summary": "Comprehensive management interface for educational materials, enabling administrators to upload, reorder, edit, and delete materials across grades and subjects.",
+      "tags": ["admin", "materials-management", "component"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "type": "function",
+      "name": "MaterialManager",
+      "filePath": "client/src/features/materials/MaterialManager.jsx",
+      "lineRange": [37, 1199],
+      "summary": "Main admin component for managing the materials library, featuring filtering by subject/grade and full CRUD operations for materials.",
+      "tags": ["component", "admin-ui", "materials"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/materials/UnitLessonPdfs.jsx",
+      "type": "file",
+      "name": "UnitLessonPdfs.jsx",
+      "filePath": "client/src/features/materials/UnitLessonPdfs.jsx",
+      "summary": "A component that displays a list of PDF materials associated with a specific unit and lesson for student access.",
+      "tags": ["component", "student-view", "materials"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/UnitLessonPdfs.jsx:formatSize",
+      "type": "function",
+      "name": "formatSize",
+      "filePath": "client/src/features/materials/UnitLessonPdfs.jsx",
+      "lineRange": [3, 13],
+      "summary": "Converts byte size to a human-readable string.",
+      "tags": ["utility", "formatting"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/UnitLessonPdfs.jsx:UnitLessonPdfs",
+      "type": "function",
+      "name": "UnitLessonPdfs",
+      "filePath": "client/src/features/materials/UnitLessonPdfs.jsx",
+      "lineRange": [21, 93],
+      "summary": "Renders a list of available PDFs for the current lesson context.",
+      "tags": ["component", "ui"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/materials/subjects.js",
+      "type": "file",
+      "name": "subjects.js",
+      "filePath": "client/src/features/materials/subjects.js",
+      "summary": "Provides subject definitions and utility functions for mapping page subjects to library subjects and grade keys.",
+      "tags": ["config", "utility", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/subjects.js:librarySubjectFor",
+      "type": "function",
+      "name": "librarySubjectFor",
+      "filePath": "client/src/features/materials/subjects.js",
+      "lineRange": [28, 33],
+      "summary": "Maps a page-specific subject to its corresponding library subject.",
+      "tags": ["utility", "mapping"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/subjects.js:gradeKeyForPageSubject",
+      "type": "function",
+      "name": "gradeKeyForPageSubject",
+      "filePath": "client/src/features/materials/subjects.js",
+      "lineRange": [49, 51],
+      "summary": "Retrieves the grade key associated with a given page subject.",
+      "tags": ["utility", "mapping"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/materials/useLessonMaterials.js",
+      "type": "file",
+      "name": "useLessonMaterials.js",
+      "filePath": "client/src/features/materials/useLessonMaterials.js",
+      "summary": "A custom React hook for fetching and organizing lesson materials by unit and lesson for a given subject.",
+      "tags": ["hook", "data-fetching", "materials"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/useLessonMaterials.js:unitOf",
+      "type": "function",
+      "name": "unitOf",
+      "filePath": "client/src/features/materials/useLessonMaterials.js",
+      "lineRange": [24, 27],
+      "summary": "Helper function to extract the unit number from a material object.",
+      "tags": ["utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/useLessonMaterials.js:useLessonMaterials",
+      "type": "function",
+      "name": "useLessonMaterials",
+      "filePath": "client/src/features/materials/useLessonMaterials.js",
+      "lineRange": [29, 127],
+      "summary": "Custom hook that fetches materials for a subject and organizes them into units and lessons.",
+      "tags": ["hook", "materials"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/student/SubjectPage.jsx",
+      "type": "file",
+      "name": "SubjectPage.jsx",
+      "filePath": "client/src/features/student/SubjectPage.jsx",
+      "summary": "The student-facing subject landing page that provides access to the subject's learning materials organized by unit.",
+      "tags": ["component", "student-dashboard", "materials"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "type": "function",
+      "name": "SubjectPage",
+      "filePath": "client/src/features/student/SubjectPage.jsx",
+      "lineRange": [30, 329],
+      "summary": "Main page component for a subject, utilizing useLessonMaterials to display content organized by unit.",
+      "tags": ["component", "ui"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:client/src/features/materials/LessonSection.jsx",
+      "target": "function:client/src/features/materials/LessonSection.jsx:formatSize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/LessonSection.jsx",
+      "target": "function:client/src/features/materials/LessonSection.jsx:LessonSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialManager.jsx",
+      "target": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialManager.jsx",
+      "target": "file:client/src/features/materials/LessonSection.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialManager.jsx",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialManager.jsx",
+      "target": "file:client/src/features/materials/subjects.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialManager.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:getMaterials",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:uploadMaterial",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:updateMaterial",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:reorderMaterials",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:deleteMaterial",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:getMaterialViewUrl",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/shared/form/readFormValues.js:readFormValues",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:client/src/features/materials/UnitLessonPdfs.jsx",
+      "target": "function:client/src/features/materials/UnitLessonPdfs.jsx:formatSize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/UnitLessonPdfs.jsx",
+      "target": "function:client/src/features/materials/UnitLessonPdfs.jsx:UnitLessonPdfs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/subjects.js",
+      "target": "function:client/src/features/materials/subjects.js:librarySubjectFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/subjects.js",
+      "target": "function:client/src/features/materials/subjects.js:gradeKeyForPageSubject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/subjects.js",
+      "target": "function:client/src/features/materials/subjects.js:librarySubjectFor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:client/src/features/materials/subjects.js",
+      "target": "function:client/src/features/materials/subjects.js:gradeKeyForPageSubject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:client/src/features/materials/useLessonMaterials.js",
+      "target": "function:client/src/features/materials/useLessonMaterials.js:unitOf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/useLessonMaterials.js",
+      "target": "function:client/src/features/materials/useLessonMaterials.js:useLessonMaterials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/useLessonMaterials.js",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:client/src/features/materials/useLessonMaterials.js:useLessonMaterials",
+      "target": "function:client/src/features/materials/materialsAPI.js:getMaterials",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:client/src/features/student/SubjectPage.jsx",
+      "target": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/SubjectPage.jsx",
+      "target": "file:client/src/features/materials/UnitLessonPdfs.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/SubjectPage.jsx",
+      "target": "file:client/src/features/materials/subjects.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/SubjectPage.jsx",
+      "target": "file:client/src/features/materials/useLessonMaterials.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "target": "function:client/src/features/materials/subjects.js:gradeKeyForPageSubject",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "target": "function:client/src/features/materials/subjects.js:librarySubjectFor",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "target": "function:client/src/features/materials/useLessonMaterials.js:useLessonMaterials",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "target": "function:client/src/features/materials/UnitLessonPdfs.jsx:UnitLessonPdfs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

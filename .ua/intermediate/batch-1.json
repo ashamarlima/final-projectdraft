@@ -1,0 +1,904 @@
+{
+  "nodes": [
+    {
+      "id": "file:client/src/App.jsx",
+      "type": "file",
+      "name": "App.jsx",
+      "filePath": "client/src/App.jsx",
+      "summary": "Main application component that handles routing and top-level state management.",
+      "tags": [
+        "entry-point",
+        "router",
+        "state-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/App.jsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "client/src/App.jsx",
+      "lineRange": [
+        49,
+        872
+      ],
+      "summary": "Main component function App in client/src/App.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/ai/StudentAIChat.jsx",
+      "type": "file",
+      "name": "StudentAIChat.jsx",
+      "filePath": "client/src/features/ai/StudentAIChat.jsx",
+      "summary": "AI-powered chat interface for students to interact with course materials.",
+      "tags": [
+        "ai-chat",
+        "interactive",
+        "student-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/ai/StudentAIChat.jsx:StudentAIChat",
+      "type": "function",
+      "name": "StudentAIChat",
+      "filePath": "client/src/features/ai/StudentAIChat.jsx",
+      "lineRange": [
+        22,
+        696
+      ],
+      "summary": "Main component function StudentAIChat in client/src/features/ai/StudentAIChat.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/ai/VideoPlayerModal.jsx",
+      "type": "file",
+      "name": "VideoPlayerModal.jsx",
+      "filePath": "client/src/features/ai/VideoPlayerModal.jsx",
+      "summary": "Modal component for displaying educational videos within the AI chat context.",
+      "tags": [
+        "component",
+        "video-player",
+        "ui-modal"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/ai/VideoPlayerModal.jsx:VideoPlayerModal",
+      "type": "function",
+      "name": "VideoPlayerModal",
+      "filePath": "client/src/features/ai/VideoPlayerModal.jsx",
+      "lineRange": [
+        44,
+        294
+      ],
+      "summary": "Main component function VideoPlayerModal in client/src/features/ai/VideoPlayerModal.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/notes/NotesPage.jsx",
+      "type": "file",
+      "name": "NotesPage.jsx",
+      "filePath": "client/src/features/notes/NotesPage.jsx",
+      "summary": "Page for managing and viewing student notes and AI-generated summaries.",
+      "tags": [
+        "notes",
+        "management",
+        "student-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/notes/NotesPage.jsx:NotesPage",
+      "type": "function",
+      "name": "NotesPage",
+      "filePath": "client/src/features/notes/NotesPage.jsx",
+      "lineRange": [
+        13,
+        267
+      ],
+      "summary": "Main component function NotesPage in client/src/features/notes/NotesPage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/AchievementsPage.jsx",
+      "type": "file",
+      "name": "AchievementsPage.jsx",
+      "filePath": "client/src/features/student/AchievementsPage.jsx",
+      "summary": "Displays student achievements and gamification progress.",
+      "tags": [
+        "gamification",
+        "achievements",
+        "student-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/student/AchievementsPage.jsx:AchievementsPage",
+      "type": "function",
+      "name": "AchievementsPage",
+      "filePath": "client/src/features/student/AchievementsPage.jsx",
+      "lineRange": [
+        11,
+        175
+      ],
+      "summary": "Main component function AchievementsPage in client/src/features/student/AchievementsPage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/DashboardPage.jsx",
+      "type": "file",
+      "name": "DashboardPage.jsx",
+      "filePath": "client/src/features/student/DashboardPage.jsx",
+      "summary": "Core student dashboard providing an overview of learning progress.",
+      "tags": [
+        "dashboard",
+        "overview",
+        "student-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/student/DashboardPage.jsx:DashboardPage",
+      "type": "function",
+      "name": "DashboardPage",
+      "filePath": "client/src/features/student/DashboardPage.jsx",
+      "lineRange": [
+        29,
+        331
+      ],
+      "summary": "Main component function DashboardPage in client/src/features/student/DashboardPage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/LeaderboardPage.jsx",
+      "type": "file",
+      "name": "LeaderboardPage.jsx",
+      "filePath": "client/src/features/student/LeaderboardPage.jsx",
+      "summary": "Competitive leaderboard showing rankings among students.",
+      "tags": [
+        "gamification",
+        "leaderboard",
+        "student-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/student/LeaderboardPage.jsx:LeaderboardPage",
+      "type": "function",
+      "name": "LeaderboardPage",
+      "filePath": "client/src/features/student/LeaderboardPage.jsx",
+      "lineRange": [
+        32,
+        209
+      ],
+      "summary": "Main component function LeaderboardPage in client/src/features/student/LeaderboardPage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/LearnPage.jsx",
+      "type": "file",
+      "name": "LearnPage.jsx",
+      "filePath": "client/src/features/student/LearnPage.jsx",
+      "summary": "Main learning interface where students engage with course content.",
+      "tags": [
+        "learning",
+        "course-content",
+        "student-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/student/LearnPage.jsx:LearnPage",
+      "type": "function",
+      "name": "LearnPage",
+      "filePath": "client/src/features/student/LearnPage.jsx",
+      "lineRange": [
+        11,
+        566
+      ],
+      "summary": "Main component function LearnPage in client/src/features/student/LearnPage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/ProfilePage.jsx",
+      "type": "file",
+      "name": "ProfilePage.jsx",
+      "filePath": "client/src/features/student/ProfilePage.jsx",
+      "summary": "Student profile page for managing personal information.",
+      "tags": [
+        "profile",
+        "user-settings",
+        "student-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/student/ProfilePage.jsx:ProfilePage",
+      "type": "function",
+      "name": "ProfilePage",
+      "filePath": "client/src/features/student/ProfilePage.jsx",
+      "lineRange": [
+        8,
+        112
+      ],
+      "summary": "Main component function ProfilePage in client/src/features/student/ProfilePage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/StudentDashboard.jsx",
+      "type": "file",
+      "name": "StudentDashboard.jsx",
+      "filePath": "client/src/features/student/StudentDashboard.jsx",
+      "summary": "High-level orchestrator for the student experience, managing navigation between various feature pages.",
+      "tags": [
+        "orchestrator",
+        "navigation",
+        "student-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/student/StudentDashboard.jsx:StudentDashboard",
+      "type": "function",
+      "name": "StudentDashboard",
+      "filePath": "client/src/features/student/StudentDashboard.jsx",
+      "lineRange": [
+        94,
+        571
+      ],
+      "summary": "Main component function StudentDashboard in client/src/features/student/StudentDashboard.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/StudentGrade.jsx",
+      "type": "file",
+      "name": "StudentGrade.jsx",
+      "filePath": "client/src/features/student/StudentGrade.jsx",
+      "summary": "Component for viewing and managing individual student grades.",
+      "tags": [
+        "grades",
+        "academic-record",
+        "student-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/student/StudentGrade.jsx:StudentGrade",
+      "type": "function",
+      "name": "StudentGrade",
+      "filePath": "client/src/features/student/StudentGrade.jsx",
+      "lineRange": [
+        8,
+        157
+      ],
+      "summary": "Main component function StudentGrade in client/src/features/student/StudentGrade.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/users/ClassManagement.jsx",
+      "type": "file",
+      "name": "ClassManagement.jsx",
+      "filePath": "client/src/features/users/ClassManagement.jsx",
+      "summary": "Administrative interface for managing classes and student enrollments.",
+      "tags": [
+        "admin",
+        "class-management",
+        "user-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/users/ClassManagement.jsx:ClassManagement",
+      "type": "function",
+      "name": "ClassManagement",
+      "filePath": "client/src/features/users/ClassManagement.jsx",
+      "lineRange": [
+        13,
+        449
+      ],
+      "summary": "Main component function ClassManagement in client/src/features/users/ClassManagement.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/users/GradeModel.jsx",
+      "type": "file",
+      "name": "GradeModel.jsx",
+      "filePath": "client/src/features/users/GradeModel.jsx",
+      "summary": "Model for editing and updating grade information.",
+      "tags": [
+        "data-model",
+        "grade-editing",
+        "user-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/users/GradeModel.jsx:GradeModel",
+      "type": "function",
+      "name": "GradeModel",
+      "filePath": "client/src/features/users/GradeModel.jsx",
+      "lineRange": [
+        9,
+        113
+      ],
+      "summary": "Main component function GradeModel in client/src/features/users/GradeModel.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/users/Login.jsx",
+      "type": "file",
+      "name": "Login.jsx",
+      "filePath": "client/src/features/users/Login.jsx",
+      "summary": "Authentication component for user login.",
+      "tags": [
+        "auth",
+        "login",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/users/Login.jsx:Login",
+      "type": "function",
+      "name": "Login",
+      "filePath": "client/src/features/users/Login.jsx",
+      "lineRange": [
+        8,
+        106
+      ],
+      "summary": "Main component function Login in client/src/features/users/Login.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/users/SearchBar.jsx",
+      "type": "file",
+      "name": "SearchBar.jsx",
+      "filePath": "client/src/features/users/SearchBar.jsx",
+      "summary": "Reusable search component for finding users or materials.",
+      "tags": [
+        "utility",
+        "search",
+        "ui-component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/users/StatsCard.jsx",
+      "type": "file",
+      "name": "StatsCard.jsx",
+      "filePath": "client/src/features/users/StatsCard.jsx",
+      "summary": "Small UI component to display key statistics.",
+      "tags": [
+        "ui-component",
+        "statistics",
+        "visual"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/users/UserModel.jsx",
+      "type": "file",
+      "name": "UserModel.jsx",
+      "filePath": "client/src/features/users/UserModel.jsx",
+      "summary": "Model for managing user profile and account details.",
+      "tags": [
+        "data-model",
+        "user-profile",
+        "user-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/users/UserModel.jsx:UserModel",
+      "type": "function",
+      "name": "UserModel",
+      "filePath": "client/src/features/users/UserModel.jsx",
+      "lineRange": [
+        10,
+        170
+      ],
+      "summary": "Main component function UserModel in client/src/features/users/UserModel.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/users/UserTable.jsx",
+      "type": "file",
+      "name": "UserTable.jsx",
+      "filePath": "client/src/features/users/UserTable.jsx",
+      "summary": "Table component for displaying and filtering lists of users.",
+      "tags": [
+        "ui-component",
+        "data-table",
+        "user-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/users/UserTable.jsx:UserTable",
+      "type": "function",
+      "name": "UserTable",
+      "filePath": "client/src/features/users/UserTable.jsx",
+      "lineRange": [
+        8,
+        266
+      ],
+      "summary": "Main component function UserTable in client/src/features/users/UserTable.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/users/userAPI.js",
+      "type": "file",
+      "name": "userAPI.js",
+      "filePath": "client/src/features/users/userAPI.js",
+      "summary": "API service layer for user-related network requests.",
+      "tags": [
+        "api-handler",
+        "service",
+        "network"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/main.jsx",
+      "type": "file",
+      "name": "main.jsx",
+      "filePath": "client/src/main.jsx",
+      "summary": "React entry point that mounts the application to the DOM.",
+      "tags": [
+        "entry-point",
+        "bootstrap"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/shared/form/readFormValues.js",
+      "type": "file",
+      "name": "readFormValues.js",
+      "filePath": "client/src/shared/form/readFormValues.js",
+      "summary": "Utility function to extract and sanitize values from form elements.",
+      "tags": [
+        "utility",
+        "form-handling"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "function:client/src/App.jsx:App",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/materials/MaterialManager.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/student/StudentDashboard.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/ClassManagement.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/GradeModel.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/Login.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/SearchBar.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/StatsCard.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/UserModel.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/UserTable.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/ai/StudentAIChat.jsx",
+      "target": "function:client/src/features/ai/StudentAIChat.jsx:StudentAIChat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/ai/StudentAIChat.jsx",
+      "target": "file:client/src/features/ai/VideoPlayerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/ai/StudentAIChat.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/ai/VideoPlayerModal.jsx",
+      "target": "function:client/src/features/ai/VideoPlayerModal.jsx:VideoPlayerModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/ai/VideoPlayerModal.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NotesPage.jsx",
+      "target": "function:client/src/features/notes/NotesPage.jsx:NotesPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/NotesPage.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NotesPage.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/AchievementsPage.jsx",
+      "target": "function:client/src/features/student/AchievementsPage.jsx:AchievementsPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/DashboardPage.jsx",
+      "target": "function:client/src/features/student/DashboardPage.jsx:DashboardPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/LeaderboardPage.jsx",
+      "target": "function:client/src/features/student/LeaderboardPage.jsx:LeaderboardPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/LeaderboardPage.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/LearnPage.jsx",
+      "target": "function:client/src/features/student/LearnPage.jsx:LearnPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/ProfilePage.jsx",
+      "target": "function:client/src/features/student/ProfilePage.jsx:ProfilePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "function:client/src/features/student/StudentDashboard.jsx:StudentDashboard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/ai/StudentAIChat.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/materials/LessonAIView.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/notes/NoteViewPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/notes/NotesPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/AchievementsPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/DashboardPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/LeaderboardPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/LearnPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/ProfilePage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/QuizPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/StudentGrade.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/SubjectPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentGrade.jsx",
+      "target": "function:client/src/features/student/StudentGrade.jsx:StudentGrade",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/ClassManagement.jsx",
+      "target": "function:client/src/features/users/ClassManagement.jsx:ClassManagement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/ClassManagement.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/ClassManagement.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/GradeModel.jsx",
+      "target": "function:client/src/features/users/GradeModel.jsx:GradeModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/GradeModel.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/Login.jsx",
+      "target": "function:client/src/features/users/Login.jsx:Login",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/Login.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/Login.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/UserModel.jsx",
+      "target": "function:client/src/features/users/UserModel.jsx:UserModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/UserModel.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/UserTable.jsx",
+      "target": "function:client/src/features/users/UserTable.jsx:UserTable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/userAPI.js",
+      "target": "file:client/src/shared/api/apiClient.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/main.jsx",
+      "target": "file:client/src/App.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/main.jsx",
+      "target": "file:client/src/index.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

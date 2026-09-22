@@ -1,0 +1,15 @@
+{
+  "projectRoot": "C:/Users/MSi/Downloads/Final project",
+  "batchFiles": [
+    {"path": "client/.env.example", "language": "config", "sizeLines": 5, "fileCategory": "config"},
+    {"path": "client/README.md", "language": "markdown", "sizeLines": 16, "fileCategory": "docs"},
+    {"path": "client/index.html", "language": "HTML", "sizeLines": 13, "fileCategory": "markup"},
+    {"path": "client/package.json", "language": "json", "sizeLines": 31, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    "client/.env.example": [],
+    "client/README.md": [],
+    "client/index.html": [],
+    "client/package.json": []
+  }
+}

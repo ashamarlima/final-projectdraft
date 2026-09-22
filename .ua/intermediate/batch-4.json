@@ -1,0 +1,769 @@
+{
+  "nodes": [
+    {
+      "id": "file:client/src/features/materials/LessonAIChat.jsx",
+      "type": "file",
+      "name": "LessonAIChat.jsx",
+      "filePath": "client/src/features/materials/LessonAIChat.jsx",
+      "summary": "AI-powered chat component for interactive learning and questioning.",
+      "tags": [
+        "ai-chat",
+        "interactive",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/LessonAIChat.jsx:LessonAIChat",
+      "type": "function",
+      "name": "LessonAIChat",
+      "filePath": "client/src/features/materials/LessonAIChat.jsx",
+      "lineRange": [
+        14,
+        179
+      ],
+      "summary": "Function LessonAIChat implemented in client/src/features/materials/LessonAIChat.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/materials/LessonAIView.jsx",
+      "type": "file",
+      "name": "LessonAIView.jsx",
+      "filePath": "client/src/features/materials/LessonAIView.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/materials/LessonAIView.jsx:LessonPdf",
+      "type": "function",
+      "name": "LessonPdf",
+      "filePath": "client/src/features/materials/LessonAIView.jsx",
+      "lineRange": [
+        28,
+        147
+      ],
+      "summary": "Function LessonPdf implemented in client/src/features/materials/LessonAIView.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/LessonAIView.jsx:LessonAIView",
+      "type": "function",
+      "name": "LessonAIView",
+      "filePath": "client/src/features/materials/LessonAIView.jsx",
+      "lineRange": [
+        156,
+        332
+      ],
+      "summary": "Function LessonAIView implemented in client/src/features/materials/LessonAIView.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/materials/MaterialViewerModal.jsx",
+      "type": "file",
+      "name": "MaterialViewerModal.jsx",
+      "filePath": "client/src/features/materials/MaterialViewerModal.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/MaterialViewerModal.jsx:MaterialViewerModal",
+      "type": "function",
+      "name": "MaterialViewerModal",
+      "filePath": "client/src/features/materials/MaterialViewerModal.jsx",
+      "lineRange": [
+        11,
+        56
+      ],
+      "summary": "Function MaterialViewerModal implemented in client/src/features/materials/MaterialViewerModal.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/materials/PdfViewer.jsx",
+      "type": "file",
+      "name": "PdfViewer.jsx",
+      "filePath": "client/src/features/materials/PdfViewer.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/PdfViewer.jsx:PdfViewer",
+      "type": "function",
+      "name": "PdfViewer",
+      "filePath": "client/src/features/materials/PdfViewer.jsx",
+      "lineRange": [
+        13,
+        130
+      ],
+      "summary": "Function PdfViewer implemented in client/src/features/materials/PdfViewer.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/materials/materialsAPI.js",
+      "type": "file",
+      "name": "materialsAPI.js",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "summary": "API service layer for handling network requests related to this feature.",
+      "tags": [
+        "api-handler",
+        "service",
+        "network"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:getMaterials",
+      "type": "function",
+      "name": "getMaterials",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "lineRange": [
+        9,
+        27
+      ],
+      "summary": "Function getMaterials implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:uploadMaterial",
+      "type": "function",
+      "name": "uploadMaterial",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "lineRange": [
+        31,
+        59
+      ],
+      "summary": "Function uploadMaterial implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:reorderMaterials",
+      "type": "function",
+      "name": "reorderMaterials",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "lineRange": [
+        76,
+        89
+      ],
+      "summary": "Function reorderMaterials implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:askMaterialQuestion",
+      "type": "function",
+      "name": "askMaterialQuestion",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "lineRange": [
+        127,
+        137
+      ],
+      "summary": "Function askMaterialQuestion implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/notes/Flashcards.jsx",
+      "type": "file",
+      "name": "Flashcards.jsx",
+      "filePath": "client/src/features/notes/Flashcards.jsx",
+      "summary": "Interactive flashcard component for study and recall.",
+      "tags": [
+        "component",
+        "study-tool",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/Flashcards.jsx:Flashcards",
+      "type": "function",
+      "name": "Flashcards",
+      "filePath": "client/src/features/notes/Flashcards.jsx",
+      "lineRange": [
+        16,
+        177
+      ],
+      "summary": "Function Flashcards implemented in client/src/features/notes/Flashcards.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/notes/NoteAIChat.jsx",
+      "type": "file",
+      "name": "NoteAIChat.jsx",
+      "filePath": "client/src/features/notes/NoteAIChat.jsx",
+      "summary": "AI-powered chat component for interactive learning and questioning.",
+      "tags": [
+        "ai-chat",
+        "interactive",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/NoteAIChat.jsx:NoteAIChat",
+      "type": "function",
+      "name": "NoteAIChat",
+      "filePath": "client/src/features/notes/NoteAIChat.jsx",
+      "lineRange": [
+        9,
+        173
+      ],
+      "summary": "Function NoteAIChat implemented in client/src/features/notes/NoteAIChat.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/notes/NoteView.jsx",
+      "type": "file",
+      "name": "NoteView.jsx",
+      "filePath": "client/src/features/notes/NoteView.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/NoteView.jsx:NoteSummary",
+      "type": "function",
+      "name": "NoteSummary",
+      "filePath": "client/src/features/notes/NoteView.jsx",
+      "lineRange": [
+        21,
+        115
+      ],
+      "summary": "Function NoteSummary implemented in client/src/features/notes/NoteView.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/NoteView.jsx:NoteView",
+      "type": "function",
+      "name": "NoteView",
+      "filePath": "client/src/features/notes/NoteView.jsx",
+      "lineRange": [
+        117,
+        205
+      ],
+      "summary": "Function NoteView implemented in client/src/features/notes/NoteView.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/notes/NoteViewPage.jsx",
+      "type": "file",
+      "name": "NoteViewPage.jsx",
+      "filePath": "client/src/features/notes/NoteViewPage.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/NoteViewPage.jsx:NoteViewPage",
+      "type": "function",
+      "name": "NoteViewPage",
+      "filePath": "client/src/features/notes/NoteViewPage.jsx",
+      "lineRange": [
+        11,
+        80
+      ],
+      "summary": "Function NoteViewPage implemented in client/src/features/notes/NoteViewPage.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/notes/Quiz.jsx",
+      "type": "file",
+      "name": "Quiz.jsx",
+      "filePath": "client/src/features/notes/Quiz.jsx",
+      "summary": "Quiz component for assessing knowledge and tracking progress.",
+      "tags": [
+        "component",
+        "assessment",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/notes/Quiz.jsx:Quiz",
+      "type": "function",
+      "name": "Quiz",
+      "filePath": "client/src/features/notes/Quiz.jsx",
+      "lineRange": [
+        32,
+        321
+      ],
+      "summary": "Function Quiz implemented in client/src/features/notes/Quiz.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/notes/notesAPI.js",
+      "type": "file",
+      "name": "notesAPI.js",
+      "filePath": "client/src/features/notes/notesAPI.js",
+      "summary": "API service layer for handling network requests related to this feature.",
+      "tags": [
+        "api-handler",
+        "service",
+        "network"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/notesAPI.js:uploadNote",
+      "type": "function",
+      "name": "uploadNote",
+      "filePath": "client/src/features/notes/notesAPI.js",
+      "lineRange": [
+        24,
+        41
+      ],
+      "summary": "Function uploadNote implemented in client/src/features/notes/notesAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/notes/notesAPI.js:askQuestion",
+      "type": "function",
+      "name": "askQuestion",
+      "filePath": "client/src/features/notes/notesAPI.js",
+      "lineRange": [
+        54,
+        67
+      ],
+      "summary": "Function askQuestion implemented in client/src/features/notes/notesAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/quizzes/quizzesAPI.js",
+      "type": "file",
+      "name": "quizzesAPI.js",
+      "filePath": "client/src/features/quizzes/quizzesAPI.js",
+      "summary": "API service layer for handling network requests related to this feature.",
+      "tags": [
+        "api-handler",
+        "service",
+        "network"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/student/QuizPage.jsx",
+      "type": "file",
+      "name": "QuizPage.jsx",
+      "filePath": "client/src/features/student/QuizPage.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/student/QuizPage.jsx:QuizPage",
+      "type": "function",
+      "name": "QuizPage",
+      "filePath": "client/src/features/student/QuizPage.jsx",
+      "lineRange": [
+        38,
+        341
+      ],
+      "summary": "Function QuizPage implemented in client/src/features/student/QuizPage.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/shared/api/apiClient.js",
+      "type": "file",
+      "name": "apiClient.js",
+      "filePath": "client/src/shared/api/apiClient.js",
+      "summary": "Source file for client/src/shared/api/apiClient.js",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:client/src/features/materials/LessonAIChat.jsx",
+      "target": "function:client/src/features/materials/LessonAIChat.jsx:LessonAIChat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIChat.jsx",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "function:client/src/features/materials/LessonAIView.jsx:LessonPdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "function:client/src/features/materials/LessonAIView.jsx:LessonAIView",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "file:client/src/features/materials/LessonAIChat.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "file:client/src/features/materials/MaterialViewerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "file:client/src/features/notes/Flashcards.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "file:client/src/features/notes/Quiz.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialViewerModal.jsx",
+      "target": "function:client/src/features/materials/MaterialViewerModal.jsx:MaterialViewerModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialViewerModal.jsx",
+      "target": "file:client/src/features/materials/PdfViewer.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialViewerModal.jsx",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/PdfViewer.jsx",
+      "target": "function:client/src/features/materials/PdfViewer.jsx:PdfViewer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/materialsAPI.js",
+      "target": "function:client/src/features/materials/materialsAPI.js:getMaterials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/materialsAPI.js",
+      "target": "function:client/src/features/materials/materialsAPI.js:uploadMaterial",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/materialsAPI.js",
+      "target": "function:client/src/features/materials/materialsAPI.js:reorderMaterials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/materialsAPI.js",
+      "target": "function:client/src/features/materials/materialsAPI.js:askMaterialQuestion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/materialsAPI.js",
+      "target": "file:client/src/shared/api/apiClient.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/Flashcards.jsx",
+      "target": "function:client/src/features/notes/Flashcards.jsx:Flashcards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/Flashcards.jsx",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/Flashcards.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteAIChat.jsx",
+      "target": "function:client/src/features/notes/NoteAIChat.jsx:NoteAIChat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/NoteAIChat.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "function:client/src/features/notes/NoteView.jsx:NoteSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "function:client/src/features/notes/NoteView.jsx:NoteView",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "file:client/src/features/notes/Flashcards.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "file:client/src/features/notes/NoteAIChat.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "file:client/src/features/notes/Quiz.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteViewPage.jsx",
+      "target": "function:client/src/features/notes/NoteViewPage.jsx:NoteViewPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/NoteViewPage.jsx",
+      "target": "file:client/src/features/notes/NoteView.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteViewPage.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/Quiz.jsx",
+      "target": "function:client/src/features/notes/Quiz.jsx:Quiz",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/Quiz.jsx",
+      "target": "file:client/src/features/quizzes/quizzesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/notesAPI.js",
+      "target": "function:client/src/features/notes/notesAPI.js:uploadNote",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/notesAPI.js",
+      "target": "function:client/src/features/notes/notesAPI.js:askQuestion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/notesAPI.js",
+      "target": "file:client/src/shared/api/apiClient.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/quizzes/quizzesAPI.js",
+      "target": "file:client/src/shared/api/apiClient.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/QuizPage.jsx",
+      "target": "function:client/src/features/student/QuizPage.jsx:QuizPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/QuizPage.jsx",
+      "target": "file:client/src/features/notes/Quiz.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/QuizPage.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/QuizPage.jsx",
+      "target": "file:client/src/features/quizzes/quizzesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

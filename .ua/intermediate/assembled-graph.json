@@ -1,0 +1,4873 @@
+{
+  "nodes": [
+    {
+      "id": "file:client/src/App.jsx",
+      "type": "file",
+      "name": "App.jsx",
+      "filePath": "client/src/App.jsx",
+      "summary": "Main application component that handles routing and top-level state management.",
+      "tags": [
+        "entry-point",
+        "router",
+        "state-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/App.jsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "client/src/App.jsx",
+      "lineRange": [
+        49,
+        872
+      ],
+      "summary": "Main component function App in client/src/App.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/ai/StudentAIChat.jsx",
+      "type": "file",
+      "name": "StudentAIChat.jsx",
+      "filePath": "client/src/features/ai/StudentAIChat.jsx",
+      "summary": "AI-powered chat interface for students to interact with course materials.",
+      "tags": [
+        "ai-chat",
+        "interactive",
+        "student-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/ai/StudentAIChat.jsx:StudentAIChat",
+      "type": "function",
+      "name": "StudentAIChat",
+      "filePath": "client/src/features/ai/StudentAIChat.jsx",
+      "lineRange": [
+        22,
+        696
+      ],
+      "summary": "Main component function StudentAIChat in client/src/features/ai/StudentAIChat.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/ai/VideoPlayerModal.jsx",
+      "type": "file",
+      "name": "VideoPlayerModal.jsx",
+      "filePath": "client/src/features/ai/VideoPlayerModal.jsx",
+      "summary": "Modal component for displaying educational videos within the AI chat context.",
+      "tags": [
+        "component",
+        "video-player",
+        "ui-modal"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/ai/VideoPlayerModal.jsx:VideoPlayerModal",
+      "type": "function",
+      "name": "VideoPlayerModal",
+      "filePath": "client/src/features/ai/VideoPlayerModal.jsx",
+      "lineRange": [
+        44,
+        294
+      ],
+      "summary": "Main component function VideoPlayerModal in client/src/features/ai/VideoPlayerModal.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/notes/NotesPage.jsx",
+      "type": "file",
+      "name": "NotesPage.jsx",
+      "filePath": "client/src/features/notes/NotesPage.jsx",
+      "summary": "Page for managing and viewing student notes and AI-generated summaries.",
+      "tags": [
+        "notes",
+        "management",
+        "student-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/notes/NotesPage.jsx:NotesPage",
+      "type": "function",
+      "name": "NotesPage",
+      "filePath": "client/src/features/notes/NotesPage.jsx",
+      "lineRange": [
+        13,
+        267
+      ],
+      "summary": "Main component function NotesPage in client/src/features/notes/NotesPage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/AchievementsPage.jsx",
+      "type": "file",
+      "name": "AchievementsPage.jsx",
+      "filePath": "client/src/features/student/AchievementsPage.jsx",
+      "summary": "Displays student achievements and gamification progress.",
+      "tags": [
+        "gamification",
+        "achievements",
+        "student-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/student/AchievementsPage.jsx:AchievementsPage",
+      "type": "function",
+      "name": "AchievementsPage",
+      "filePath": "client/src/features/student/AchievementsPage.jsx",
+      "lineRange": [
+        11,
+        175
+      ],
+      "summary": "Main component function AchievementsPage in client/src/features/student/AchievementsPage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/DashboardPage.jsx",
+      "type": "file",
+      "name": "DashboardPage.jsx",
+      "filePath": "client/src/features/student/DashboardPage.jsx",
+      "summary": "Core student dashboard providing an overview of learning progress.",
+      "tags": [
+        "dashboard",
+        "overview",
+        "student-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/student/DashboardPage.jsx:DashboardPage",
+      "type": "function",
+      "name": "DashboardPage",
+      "filePath": "client/src/features/student/DashboardPage.jsx",
+      "lineRange": [
+        29,
+        331
+      ],
+      "summary": "Main component function DashboardPage in client/src/features/student/DashboardPage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/LeaderboardPage.jsx",
+      "type": "file",
+      "name": "LeaderboardPage.jsx",
+      "filePath": "client/src/features/student/LeaderboardPage.jsx",
+      "summary": "Competitive leaderboard showing rankings among students.",
+      "tags": [
+        "gamification",
+        "leaderboard",
+        "student-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/student/LeaderboardPage.jsx:LeaderboardPage",
+      "type": "function",
+      "name": "LeaderboardPage",
+      "filePath": "client/src/features/student/LeaderboardPage.jsx",
+      "lineRange": [
+        32,
+        209
+      ],
+      "summary": "Main component function LeaderboardPage in client/src/features/student/LeaderboardPage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/LearnPage.jsx",
+      "type": "file",
+      "name": "LearnPage.jsx",
+      "filePath": "client/src/features/student/LearnPage.jsx",
+      "summary": "Main learning interface where students engage with course content.",
+      "tags": [
+        "learning",
+        "course-content",
+        "student-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/student/LearnPage.jsx:LearnPage",
+      "type": "function",
+      "name": "LearnPage",
+      "filePath": "client/src/features/student/LearnPage.jsx",
+      "lineRange": [
+        11,
+        566
+      ],
+      "summary": "Main component function LearnPage in client/src/features/student/LearnPage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/ProfilePage.jsx",
+      "type": "file",
+      "name": "ProfilePage.jsx",
+      "filePath": "client/src/features/student/ProfilePage.jsx",
+      "summary": "Student profile page for managing personal information.",
+      "tags": [
+        "profile",
+        "user-settings",
+        "student-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/student/ProfilePage.jsx:ProfilePage",
+      "type": "function",
+      "name": "ProfilePage",
+      "filePath": "client/src/features/student/ProfilePage.jsx",
+      "lineRange": [
+        8,
+        112
+      ],
+      "summary": "Main component function ProfilePage in client/src/features/student/ProfilePage.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/StudentDashboard.jsx",
+      "type": "file",
+      "name": "StudentDashboard.jsx",
+      "filePath": "client/src/features/student/StudentDashboard.jsx",
+      "summary": "High-level orchestrator for the student experience, managing navigation between various feature pages.",
+      "tags": [
+        "orchestrator",
+        "navigation",
+        "student-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/student/StudentDashboard.jsx:StudentDashboard",
+      "type": "function",
+      "name": "StudentDashboard",
+      "filePath": "client/src/features/student/StudentDashboard.jsx",
+      "lineRange": [
+        94,
+        571
+      ],
+      "summary": "Main component function StudentDashboard in client/src/features/student/StudentDashboard.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/student/StudentGrade.jsx",
+      "type": "file",
+      "name": "StudentGrade.jsx",
+      "filePath": "client/src/features/student/StudentGrade.jsx",
+      "summary": "Component for viewing and managing individual student grades.",
+      "tags": [
+        "grades",
+        "academic-record",
+        "student-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/student/StudentGrade.jsx:StudentGrade",
+      "type": "function",
+      "name": "StudentGrade",
+      "filePath": "client/src/features/student/StudentGrade.jsx",
+      "lineRange": [
+        8,
+        157
+      ],
+      "summary": "Main component function StudentGrade in client/src/features/student/StudentGrade.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/users/ClassManagement.jsx",
+      "type": "file",
+      "name": "ClassManagement.jsx",
+      "filePath": "client/src/features/users/ClassManagement.jsx",
+      "summary": "Administrative interface for managing classes and student enrollments.",
+      "tags": [
+        "admin",
+        "class-management",
+        "user-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/users/ClassManagement.jsx:ClassManagement",
+      "type": "function",
+      "name": "ClassManagement",
+      "filePath": "client/src/features/users/ClassManagement.jsx",
+      "lineRange": [
+        13,
+        449
+      ],
+      "summary": "Main component function ClassManagement in client/src/features/users/ClassManagement.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/users/GradeModel.jsx",
+      "type": "file",
+      "name": "GradeModel.jsx",
+      "filePath": "client/src/features/users/GradeModel.jsx",
+      "summary": "Model for editing and updating grade information.",
+      "tags": [
+        "data-model",
+        "grade-editing",
+        "user-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/users/GradeModel.jsx:GradeModel",
+      "type": "function",
+      "name": "GradeModel",
+      "filePath": "client/src/features/users/GradeModel.jsx",
+      "lineRange": [
+        9,
+        113
+      ],
+      "summary": "Main component function GradeModel in client/src/features/users/GradeModel.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/users/Login.jsx",
+      "type": "file",
+      "name": "Login.jsx",
+      "filePath": "client/src/features/users/Login.jsx",
+      "summary": "Authentication component for user login.",
+      "tags": [
+        "auth",
+        "login",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/users/Login.jsx:Login",
+      "type": "function",
+      "name": "Login",
+      "filePath": "client/src/features/users/Login.jsx",
+      "lineRange": [
+        8,
+        106
+      ],
+      "summary": "Main component function Login in client/src/features/users/Login.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/users/SearchBar.jsx",
+      "type": "file",
+      "name": "SearchBar.jsx",
+      "filePath": "client/src/features/users/SearchBar.jsx",
+      "summary": "Reusable search component for finding users or materials.",
+      "tags": [
+        "utility",
+        "search",
+        "ui-component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/users/StatsCard.jsx",
+      "type": "file",
+      "name": "StatsCard.jsx",
+      "filePath": "client/src/features/users/StatsCard.jsx",
+      "summary": "Small UI component to display key statistics.",
+      "tags": [
+        "ui-component",
+        "statistics",
+        "visual"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/users/UserModel.jsx",
+      "type": "file",
+      "name": "UserModel.jsx",
+      "filePath": "client/src/features/users/UserModel.jsx",
+      "summary": "Model for managing user profile and account details.",
+      "tags": [
+        "data-model",
+        "user-profile",
+        "user-feature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/users/UserModel.jsx:UserModel",
+      "type": "function",
+      "name": "UserModel",
+      "filePath": "client/src/features/users/UserModel.jsx",
+      "lineRange": [
+        10,
+        170
+      ],
+      "summary": "Main component function UserModel in client/src/features/users/UserModel.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/users/UserTable.jsx",
+      "type": "file",
+      "name": "UserTable.jsx",
+      "filePath": "client/src/features/users/UserTable.jsx",
+      "summary": "Table component for displaying and filtering lists of users.",
+      "tags": [
+        "ui-component",
+        "data-table",
+        "user-feature"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/users/UserTable.jsx:UserTable",
+      "type": "function",
+      "name": "UserTable",
+      "filePath": "client/src/features/users/UserTable.jsx",
+      "lineRange": [
+        8,
+        266
+      ],
+      "summary": "Main component function UserTable in client/src/features/users/UserTable.jsx.",
+      "tags": [
+        "component",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/users/userAPI.js",
+      "type": "file",
+      "name": "userAPI.js",
+      "filePath": "client/src/features/users/userAPI.js",
+      "summary": "API service layer for user-related network requests.",
+      "tags": [
+        "api-handler",
+        "service",
+        "network"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/main.jsx",
+      "type": "file",
+      "name": "main.jsx",
+      "filePath": "client/src/main.jsx",
+      "summary": "React entry point that mounts the application to the DOM.",
+      "tags": [
+        "entry-point",
+        "bootstrap"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/shared/form/readFormValues.js",
+      "type": "file",
+      "name": "readFormValues.js",
+      "filePath": "client/src/shared/form/readFormValues.js",
+      "summary": "Utility function to extract and sanitize values from form elements.",
+      "tags": [
+        "utility",
+        "form-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/chat/aiChat.test.js",
+      "type": "file",
+      "name": "aiChat.test.js",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "summary": "Test suite for aiChat.",
+      "tags": [
+        "test",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:stubModule",
+      "type": "function",
+      "name": "stubModule",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        34,
+        52
+      ],
+      "summary": "Function stubModule in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:defaultStudent",
+      "type": "function",
+      "name": "defaultStudent",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        54,
+        65
+      ],
+      "summary": "Function defaultStudent in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:stubFetch",
+      "type": "function",
+      "name": "stubFetch",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        111,
+        180
+      ],
+      "summary": "Function stubFetch in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:okResponse",
+      "type": "function",
+      "name": "okResponse",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        182,
+        194
+      ],
+      "summary": "Function okResponse in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        196,
+        206
+      ],
+      "summary": "Function buildApp in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:headers",
+      "type": "function",
+      "name": "headers",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        278,
+        290
+      ],
+      "summary": "Function headers in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/chat/aiChat.test.js:postChat",
+      "type": "function",
+      "name": "postChat",
+      "filePath": "server/features/chat/aiChat.test.js",
+      "lineRange": [
+        292,
+        317
+      ],
+      "summary": "Function postChat in server/features/chat/aiChat.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/chat/aiController.js",
+      "type": "file",
+      "name": "aiController.js",
+      "filePath": "server/features/chat/aiController.js",
+      "summary": "Handles business logic for ai.",
+      "tags": [
+        "api-handler",
+        "logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/chat/aiController.js:fetchYouTubeVideos",
+      "type": "function",
+      "name": "fetchYouTubeVideos",
+      "filePath": "server/features/chat/aiController.js",
+      "lineRange": [
+        6,
+        47
+      ],
+      "summary": "Function fetchYouTubeVideos in server/features/chat/aiController.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/chat/aiController.js:buildSearchFallback",
+      "type": "function",
+      "name": "buildSearchFallback",
+      "filePath": "server/features/chat/aiController.js",
+      "lineRange": [
+        51,
+        85
+      ],
+      "summary": "Function buildSearchFallback in server/features/chat/aiController.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/chat/aiRoutes.js",
+      "type": "file",
+      "name": "aiRoutes.js",
+      "filePath": "server/features/chat/aiRoutes.js",
+      "summary": "Defines API endpoints for ai.",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/quizzes/QuizAttempt.js",
+      "type": "file",
+      "name": "QuizAttempt.js",
+      "filePath": "server/features/quizzes/QuizAttempt.js",
+      "summary": "Data model definition for QuizAttempt.js.",
+      "tags": [
+        "data-model",
+        "schema"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/quizzes/quizControllers.js",
+      "type": "file",
+      "name": "quizControllers.js",
+      "filePath": "server/features/quizzes/quizControllers.js",
+      "summary": "Handles business logic for quiz.",
+      "tags": [
+        "api-handler",
+        "logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/quizzes/quizControllers.js:sendAiError",
+      "type": "function",
+      "name": "sendAiError",
+      "filePath": "server/features/quizzes/quizControllers.js",
+      "lineRange": [
+        32,
+        43
+      ],
+      "summary": "Function sendAiError in server/features/quizzes/quizControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/quizzes/quizControllers.js:loadNoteSource",
+      "type": "function",
+      "name": "loadNoteSource",
+      "filePath": "server/features/quizzes/quizControllers.js",
+      "lineRange": [
+        48,
+        82
+      ],
+      "summary": "Function loadNoteSource in server/features/quizzes/quizControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/quizzes/quizControllers.js:loadLessonSource",
+      "type": "function",
+      "name": "loadLessonSource",
+      "filePath": "server/features/quizzes/quizControllers.js",
+      "lineRange": [
+        87,
+        136
+      ],
+      "summary": "Function loadLessonSource in server/features/quizzes/quizControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/quizzes/quizRoutes.js",
+      "type": "file",
+      "name": "quizRoutes.js",
+      "filePath": "server/features/quizzes/quizRoutes.js",
+      "summary": "Defines API endpoints for quiz.",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/users/Class.js",
+      "type": "file",
+      "name": "Class.js",
+      "filePath": "server/features/users/Class.js",
+      "summary": "Data model definition for Class.js.",
+      "tags": [
+        "data-model",
+        "schema"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/users/classManagement.test.js",
+      "type": "file",
+      "name": "classManagement.test.js",
+      "filePath": "server/features/users/classManagement.test.js",
+      "summary": "Test suite for classManagement.",
+      "tags": [
+        "test",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/users/classManagement.test.js:stubModule",
+      "type": "function",
+      "name": "stubModule",
+      "filePath": "server/features/users/classManagement.test.js",
+      "lineRange": [
+        32,
+        50
+      ],
+      "summary": "Function stubModule in server/features/users/classManagement.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/classManagement.test.js:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "server/features/users/classManagement.test.js",
+      "lineRange": [
+        122,
+        132
+      ],
+      "summary": "Function buildApp in server/features/users/classManagement.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/classManagement.test.js:createClass",
+      "type": "function",
+      "name": "createClass",
+      "filePath": "server/features/users/classManagement.test.js",
+      "lineRange": [
+        170,
+        201
+      ],
+      "summary": "Function createClass in server/features/users/classManagement.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/users/loginAuth.test.js",
+      "type": "file",
+      "name": "loginAuth.test.js",
+      "filePath": "server/features/users/loginAuth.test.js",
+      "summary": "Test suite for loginAuth.",
+      "tags": [
+        "test",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/users/loginAuth.test.js:stubModule",
+      "type": "function",
+      "name": "stubModule",
+      "filePath": "server/features/users/loginAuth.test.js",
+      "lineRange": [
+        44,
+        62
+      ],
+      "summary": "Function stubModule in server/features/users/loginAuth.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/loginAuth.test.js:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "server/features/users/loginAuth.test.js",
+      "lineRange": [
+        140,
+        152
+      ],
+      "summary": "Function buildApp in server/features/users/loginAuth.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/loginAuth.test.js:login",
+      "type": "function",
+      "name": "login",
+      "filePath": "server/features/users/loginAuth.test.js",
+      "lineRange": [
+        199,
+        226
+      ],
+      "summary": "Function login in server/features/users/loginAuth.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/loginAuth.test.js:getMe",
+      "type": "function",
+      "name": "getMe",
+      "filePath": "server/features/users/loginAuth.test.js",
+      "lineRange": [
+        228,
+        240
+      ],
+      "summary": "Function getMe in server/features/users/loginAuth.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/users/userControllers.js",
+      "type": "file",
+      "name": "userControllers.js",
+      "filePath": "server/features/users/userControllers.js",
+      "summary": "Handles business logic for user.",
+      "tags": [
+        "api-handler",
+        "logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:server/features/users/userModels.js",
+      "type": "file",
+      "name": "userModels.js",
+      "filePath": "server/features/users/userModels.js",
+      "summary": "Data model definition for userModels.js.",
+      "tags": [
+        "data-model",
+        "schema"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/users/userRoutes.js",
+      "type": "file",
+      "name": "userRoutes.js",
+      "filePath": "server/features/users/userRoutes.js",
+      "summary": "Defines API endpoints for user.",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/users/xpLeaderboard.test.js",
+      "type": "file",
+      "name": "xpLeaderboard.test.js",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "summary": "Test suite for xpLeaderboard.",
+      "tags": [
+        "test",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/users/xpLeaderboard.test.js:stubModule",
+      "type": "function",
+      "name": "stubModule",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "lineRange": [
+        34,
+        52
+      ],
+      "summary": "Function stubModule in server/features/users/xpLeaderboard.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/xpLeaderboard.test.js:makeUsers",
+      "type": "function",
+      "name": "makeUsers",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "lineRange": [
+        71,
+        115
+      ],
+      "summary": "Function makeUsers in server/features/users/xpLeaderboard.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/users/xpLeaderboard.test.js:matchesFilter",
+      "type": "function",
+      "name": "matchesFilter",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "lineRange": [
+        118,
+        138
+      ],
+      "summary": "Function matchesFilter in server/features/users/xpLeaderboard.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/xpLeaderboard.test.js:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "lineRange": [
+        208,
+        218
+      ],
+      "summary": "Function buildApp in server/features/users/xpLeaderboard.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/users/xpLeaderboard.test.js:requestJson",
+      "type": "function",
+      "name": "requestJson",
+      "filePath": "server/features/users/xpLeaderboard.test.js",
+      "lineRange": [
+        257,
+        290
+      ],
+      "summary": "Function requestJson in server/features/users/xpLeaderboard.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/videos/VideoInteraction.js",
+      "type": "file",
+      "name": "VideoInteraction.js",
+      "filePath": "server/features/videos/VideoInteraction.js",
+      "summary": "Data model definition for VideoInteraction.js.",
+      "tags": [
+        "data-model",
+        "schema"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/features/videos/VideoInteractionControllers.js",
+      "type": "file",
+      "name": "VideoInteractionControllers.js",
+      "filePath": "server/features/videos/VideoInteractionControllers.js",
+      "summary": "Handles business logic for VideoInteraction.",
+      "tags": [
+        "api-handler",
+        "logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/videos/VideoInteractionControllers.js:lastReportedAtMs",
+      "type": "function",
+      "name": "lastReportedAtMs",
+      "filePath": "server/features/videos/VideoInteractionControllers.js",
+      "lineRange": [
+        40,
+        52
+      ],
+      "summary": "Function lastReportedAtMs in server/features/videos/VideoInteractionControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/VideoInteractionControllers.js:storedWatchSeconds",
+      "type": "function",
+      "name": "storedWatchSeconds",
+      "filePath": "server/features/videos/VideoInteractionControllers.js",
+      "lineRange": [
+        55,
+        68
+      ],
+      "summary": "Function storedWatchSeconds in server/features/videos/VideoInteractionControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/VideoInteractionControllers.js:capReportedWatchSeconds",
+      "type": "function",
+      "name": "capReportedWatchSeconds",
+      "filePath": "server/features/videos/VideoInteractionControllers.js",
+      "lineRange": [
+        74,
+        106
+      ],
+      "summary": "Function capReportedWatchSeconds in server/features/videos/VideoInteractionControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/videos/VideoInteractionControllers.js:awardWatchedXp",
+      "type": "function",
+      "name": "awardWatchedXp",
+      "filePath": "server/features/videos/VideoInteractionControllers.js",
+      "lineRange": [
+        110,
+        135
+      ],
+      "summary": "Function awardWatchedXp in server/features/videos/VideoInteractionControllers.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/videos/VideoInteractionRoutes.js",
+      "type": "file",
+      "name": "VideoInteractionRoutes.js",
+      "filePath": "server/features/videos/VideoInteractionRoutes.js",
+      "summary": "Defines API endpoints for VideoInteraction.",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/videos/videoInteractions.test.js",
+      "type": "file",
+      "name": "videoInteractions.test.js",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "summary": "Test suite for videoInteractions.",
+      "tags": [
+        "test",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:stubModule",
+      "type": "function",
+      "name": "stubModule",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        37,
+        55
+      ],
+      "summary": "Function stubModule in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        148,
+        158
+      ],
+      "summary": "Function buildApp in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:headers",
+      "type": "function",
+      "name": "headers",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        239,
+        251
+      ],
+      "summary": "Function headers in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:requestJson",
+      "type": "function",
+      "name": "requestJson",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        253,
+        280
+      ],
+      "summary": "Function requestJson in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:postJson",
+      "type": "function",
+      "name": "postJson",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        282,
+        292
+      ],
+      "summary": "Function postJson in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/videos/videoInteractions.test.js:putJson",
+      "type": "function",
+      "name": "putJson",
+      "filePath": "server/features/videos/videoInteractions.test.js",
+      "lineRange": [
+        294,
+        304
+      ],
+      "summary": "Function putJson in server/features/videos/videoInteractions.test.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/seed.js",
+      "type": "file",
+      "name": "seed.js",
+      "filePath": "server/seed.js",
+      "summary": "Database seeding script for initial admin and test data.",
+      "tags": [
+        "script",
+        "database",
+        "setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/seed.js:seedAdmin",
+      "type": "function",
+      "name": "seedAdmin",
+      "filePath": "server/seed.js",
+      "lineRange": [
+        22,
+        77
+      ],
+      "summary": "Function seedAdmin in server/seed.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/shared/authMiddleware.js",
+      "type": "file",
+      "name": "authMiddleware.js",
+      "filePath": "server/shared/authMiddleware.js",
+      "summary": "Authentication middleware for protecting API routes.",
+      "tags": [
+        "middleware",
+        "security",
+        "auth"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/shared/authMiddleware.js:durationToMs",
+      "type": "function",
+      "name": "durationToMs",
+      "filePath": "server/shared/authMiddleware.js",
+      "lineRange": [
+        13,
+        33
+      ],
+      "summary": "Function durationToMs in server/shared/authMiddleware.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/authMiddleware.js:sameSitePolicy",
+      "type": "function",
+      "name": "sameSitePolicy",
+      "filePath": "server/shared/authMiddleware.js",
+      "lineRange": [
+        44,
+        58
+      ],
+      "summary": "Function sameSitePolicy in server/shared/authMiddleware.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/authMiddleware.js:cookieOptions",
+      "type": "function",
+      "name": "cookieOptions",
+      "filePath": "server/shared/authMiddleware.js",
+      "lineRange": [
+        62,
+        87
+      ],
+      "summary": "Function cookieOptions in server/shared/authMiddleware.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/authMiddleware.js:clearAuthCookie",
+      "type": "function",
+      "name": "clearAuthCookie",
+      "filePath": "server/shared/authMiddleware.js",
+      "lineRange": [
+        96,
+        110
+      ],
+      "summary": "Function clearAuthCookie in server/shared/authMiddleware.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/authMiddleware.js:readToken",
+      "type": "function",
+      "name": "readToken",
+      "filePath": "server/shared/authMiddleware.js",
+      "lineRange": [
+        115,
+        135
+      ],
+      "summary": "Function readToken in server/shared/authMiddleware.js.",
+      "tags": [
+        "logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/shared/xp.js",
+      "type": "file",
+      "name": "xp.js",
+      "filePath": "server/shared/xp.js",
+      "summary": "XP and leveling logic for the gamification system.",
+      "tags": [
+        "utility",
+        "gamification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/app.js",
+      "type": "file",
+      "name": "app.js",
+      "filePath": "server/app.js",
+      "summary": "Express application configuration that sets up global middleware and mounts all feature-specific API routes.",
+      "tags": [
+        "entry-point",
+        "config",
+        "middleware"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/server.js",
+      "type": "file",
+      "name": "server.js",
+      "filePath": "server/server.js",
+      "summary": "The main server entry point responsible for environment configuration, MongoDB connection, and starting the HTTP server.",
+      "tags": [
+        "entry-point",
+        "configuration",
+        "infrastructure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/shared/ai.js",
+      "type": "file",
+      "name": "ai.js",
+      "filePath": "server/shared/ai.js",
+      "summary": "Shared AI utility providing a unified interface to the Gemini API for generating summaries, answering questions, flashcards, and quizzes.",
+      "tags": [
+        "utility",
+        "ai-service",
+        "gemini-api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/shared/ai.js:callGemini",
+      "type": "function",
+      "name": "callGemini",
+      "filePath": "server/shared/ai.js",
+      "lineRange": [
+        51,
+        128
+      ],
+      "summary": "Core helper that handles the HTTP request/response cycle with the Gemini API, including system instructions and JSON mode.",
+      "tags": [
+        "ai-handler",
+        "api-call"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/shared/ai.js:generateSummary",
+      "type": "function",
+      "name": "generateSummary",
+      "filePath": "server/shared/ai.js",
+      "lineRange": [
+        157,
+        174
+      ],
+      "summary": "Generates a concise bulleted summary of provided text using Gemini.",
+      "tags": [
+        "ai-handler",
+        "summarization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/ai.js:askQuestion",
+      "type": "function",
+      "name": "askQuestion",
+      "filePath": "server/shared/ai.js",
+      "lineRange": [
+        177,
+        202
+      ],
+      "summary": "Answers a user question, grounding the response in provided context if available.",
+      "tags": [
+        "ai-handler",
+        "q-and-a"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/ai.js:generateFlashcards",
+      "type": "function",
+      "name": "generateFlashcards",
+      "filePath": "server/shared/ai.js",
+      "lineRange": [
+        205,
+        238
+      ],
+      "summary": "Creates a set of flashcards (question/answer pairs) from the provided text in JSON format.",
+      "tags": [
+        "ai-handler",
+        "education"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/shared/ai.js:generateQuiz",
+      "type": "function",
+      "name": "generateQuiz",
+      "filePath": "server/shared/ai.js",
+      "lineRange": [
+        241,
+        282
+      ],
+      "summary": "Generates a multiple-choice quiz with four options and a correct answer from the provided text.",
+      "tags": [
+        "ai-handler",
+        "education"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/shared/uploadMiddleware.js",
+      "type": "file",
+      "name": "uploadMiddleware.js",
+      "filePath": "server/shared/uploadMiddleware.js",
+      "summary": "Provides Multer-based file upload configurations for notes and materials with specific size and type restrictions.",
+      "tags": [
+        "middleware",
+        "upload",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:server/features/chat/Chat.js:Chat",
+      "type": "class",
+      "name": "Chat",
+      "filePath": "server/features/chat/Chat.js",
+      "summary": "Mongoose schema for storing AI chat history, including user ID, question, and AI response.",
+      "tags": [
+        "data-model",
+        "mongodb"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/chat/Chat.js",
+      "type": "file",
+      "name": "Chat.js",
+      "filePath": "server/features/chat/Chat.js",
+      "summary": "Defines the Chat data model for persisting AI interactions.",
+      "tags": [
+        "data-model",
+        "mongodb"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/materials/materialAiControllers.js",
+      "type": "file",
+      "name": "materialAiControllers.js",
+      "filePath": "server/features/materials/materialAiControllers.js",
+      "summary": "Controllers for AI-powered features grounded in lesson materials, such as summaries and flashcards.",
+      "tags": [
+        "api-handler",
+        "ai-service",
+        "tested"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/materials/materialAiControllers.js:generateSummary",
+      "type": "function",
+      "name": "generateSummary",
+      "filePath": "server/features/materials/materialAiControllers.js",
+      "lineRange": [
+        106,
+        126
+      ],
+      "summary": "Generates a summary for a specific lesson material.",
+      "tags": [
+        "api-handler",
+        "ai-service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/materials/materialAiControllers.js:askQuestion",
+      "type": "function",
+      "name": "askQuestion",
+      "filePath": "server/features/materials/materialAiControllers.js",
+      "lineRange": [
+        129,
+        183
+      ],
+      "summary": "Answers a question about a specific lesson and saves the interaction to chat history.",
+      "tags": [
+        "api-handler",
+        "ai-service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/materials/materialAiControllers.js:generateFlashcards",
+      "type": "function",
+      "name": "generateFlashcards",
+      "filePath": "server/features/materials/materialAiControllers.js",
+      "lineRange": [
+        186,
+        206
+      ],
+      "summary": "Generates study flashcards from a specific lesson material.",
+      "tags": [
+        "api-handler",
+        "ai-service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/materials/materialRoutes.js",
+      "type": "file",
+      "name": "materialRoutes.js",
+      "filePath": "server/features/materials/materialRoutes.js",
+      "summary": "API routes for managing materials and accessing AI-powered lesson assistance.",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/notes/Note.js",
+      "type": "file",
+      "name": "Note.js",
+      "filePath": "server/features/notes/Note.js",
+      "summary": "Defines the Note data model for storing user-uploaded study notes and their extracted text.",
+      "tags": [
+        "data-model",
+        "mongodb"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:server/features/notes/Note.js:Note",
+      "type": "class",
+      "name": "Note",
+      "filePath": "server/features/notes/Note.js",
+      "summary": "Mongoose schema for student notes including title and extracted content.",
+      "tags": [
+        "data-model",
+        "mongodb"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/notes/noteAiControllers.js",
+      "type": "file",
+      "name": "noteAiControllers.js",
+      "filePath": "server/features/notes/noteAiControllers.js",
+      "summary": "Controllers for AI-powered features grounded in user notes, such as summarization and Q&A.",
+      "tags": [
+        "api-handler",
+        "ai-service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/notes/noteAiControllers.js:generateSummary",
+      "type": "function",
+      "name": "generateSummary",
+      "filePath": "server/features/notes/noteAiControllers.js",
+      "lineRange": [
+        73,
+        93
+      ],
+      "summary": "Generates a summary of a specific user note using AI.",
+      "tags": [
+        "api-handler",
+        "ai-service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/features/notes/noteAiControllers.js:askQuestion",
+      "type": "function",
+      "name": "askQuestion",
+      "filePath": "server/features/notes/noteAiControllers.js",
+      "lineRange": [
+        96,
+        158
+      ],
+      "summary": "Answers a question grounded in a note's text or general knowledge, saving the result to chat history.",
+      "tags": [
+        "api-handler",
+        "ai-service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/notes/noteAiControllers.js:generateFlashcards",
+      "type": "function",
+      "name": "generateFlashcards",
+      "filePath": "server/features/notes/noteAiControllers.js",
+      "lineRange": [
+        161,
+        181
+      ],
+      "summary": "Generates flashcards based on the content of a specific user note.",
+      "tags": [
+        "api-handler",
+        "ai-service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/notes/noteAiRoutes.js",
+      "type": "file",
+      "name": "noteAiRoutes.js",
+      "filePath": "server/features/notes/noteAiRoutes.js",
+      "summary": "Routes for AI-powered note assistance (summary, ask, flashcards).",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/notes/noteControllers.js",
+      "type": "file",
+      "name": "noteControllers.js",
+      "filePath": "server/features/notes/noteControllers.js",
+      "summary": "Standard CRUD controllers for user notes, including PDF text extraction during upload.",
+      "tags": [
+        "api-handler",
+        "crud",
+        "tested"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/notes/noteControllers.js:uploadNote",
+      "type": "function",
+      "name": "uploadNote",
+      "filePath": "server/features/notes/noteControllers.js",
+      "lineRange": [
+        41,
+        88
+      ],
+      "summary": "Handles note upload, extracts text from PDF or plain text, and saves to database.",
+      "tags": [
+        "api-handler",
+        "upload"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/notes/noteControllers.js:getNotes",
+      "type": "function",
+      "name": "getNotes",
+      "filePath": "server/features/notes/noteControllers.js",
+      "lineRange": [
+        122,
+        136
+      ],
+      "summary": "Retrieves all notes for the authenticated user, sorted by creation date.",
+      "tags": [
+        "api-handler",
+        "crud"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/notes/noteRoutes.js",
+      "type": "file",
+      "name": "noteRoutes.js",
+      "filePath": "server/features/notes/noteRoutes.js",
+      "summary": "API routes for managing personal study notes.",
+      "tags": [
+        "api-handler",
+        "routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/notes/notes.test.js",
+      "type": "file",
+      "name": "notes.test.js",
+      "filePath": "server/features/notes/notes.test.js",
+      "summary": "Integration tests for the notes feature, covering upload, retrieval, and deletion.",
+      "tags": [
+        "test",
+        "integration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:server/features/materials/lessonAi.test.js",
+      "type": "file",
+      "name": "lessonAi.test.js",
+      "filePath": "server/features/materials/lessonAi.test.js",
+      "summary": "Integration tests for AI-powered lesson features (summary, ask, flashcards).",
+      "tags": [
+        "test",
+        "integration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:server/features/quizzes/quizzes.test.js",
+      "type": "file",
+      "name": "quizzes.test.js",
+      "filePath": "server/features/quizzes/quizzes.test.js",
+      "summary": "Integration tests for the quiz generation and grading system.",
+      "tags": [
+        "test",
+        "integration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/materials/LessonAIChat.jsx",
+      "type": "file",
+      "name": "LessonAIChat.jsx",
+      "filePath": "client/src/features/materials/LessonAIChat.jsx",
+      "summary": "AI-powered chat component for interactive learning and questioning.",
+      "tags": [
+        "ai-chat",
+        "interactive",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/LessonAIChat.jsx:LessonAIChat",
+      "type": "function",
+      "name": "LessonAIChat",
+      "filePath": "client/src/features/materials/LessonAIChat.jsx",
+      "lineRange": [
+        14,
+        179
+      ],
+      "summary": "Function LessonAIChat implemented in client/src/features/materials/LessonAIChat.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/materials/LessonAIView.jsx",
+      "type": "file",
+      "name": "LessonAIView.jsx",
+      "filePath": "client/src/features/materials/LessonAIView.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/materials/LessonAIView.jsx:LessonPdf",
+      "type": "function",
+      "name": "LessonPdf",
+      "filePath": "client/src/features/materials/LessonAIView.jsx",
+      "lineRange": [
+        28,
+        147
+      ],
+      "summary": "Function LessonPdf implemented in client/src/features/materials/LessonAIView.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/LessonAIView.jsx:LessonAIView",
+      "type": "function",
+      "name": "LessonAIView",
+      "filePath": "client/src/features/materials/LessonAIView.jsx",
+      "lineRange": [
+        156,
+        332
+      ],
+      "summary": "Function LessonAIView implemented in client/src/features/materials/LessonAIView.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/materials/MaterialViewerModal.jsx",
+      "type": "file",
+      "name": "MaterialViewerModal.jsx",
+      "filePath": "client/src/features/materials/MaterialViewerModal.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/MaterialViewerModal.jsx:MaterialViewerModal",
+      "type": "function",
+      "name": "MaterialViewerModal",
+      "filePath": "client/src/features/materials/MaterialViewerModal.jsx",
+      "lineRange": [
+        11,
+        56
+      ],
+      "summary": "Function MaterialViewerModal implemented in client/src/features/materials/MaterialViewerModal.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/materials/PdfViewer.jsx",
+      "type": "file",
+      "name": "PdfViewer.jsx",
+      "filePath": "client/src/features/materials/PdfViewer.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/PdfViewer.jsx:PdfViewer",
+      "type": "function",
+      "name": "PdfViewer",
+      "filePath": "client/src/features/materials/PdfViewer.jsx",
+      "lineRange": [
+        13,
+        130
+      ],
+      "summary": "Function PdfViewer implemented in client/src/features/materials/PdfViewer.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/materials/materialsAPI.js",
+      "type": "file",
+      "name": "materialsAPI.js",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "summary": "API service layer for handling network requests related to this feature.",
+      "tags": [
+        "api-handler",
+        "service",
+        "network"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:getMaterials",
+      "type": "function",
+      "name": "getMaterials",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "lineRange": [
+        9,
+        27
+      ],
+      "summary": "Function getMaterials implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:uploadMaterial",
+      "type": "function",
+      "name": "uploadMaterial",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "lineRange": [
+        31,
+        59
+      ],
+      "summary": "Function uploadMaterial implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:reorderMaterials",
+      "type": "function",
+      "name": "reorderMaterials",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "lineRange": [
+        76,
+        89
+      ],
+      "summary": "Function reorderMaterials implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:askMaterialQuestion",
+      "type": "function",
+      "name": "askMaterialQuestion",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "lineRange": [
+        127,
+        137
+      ],
+      "summary": "Function askMaterialQuestion implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/notes/Flashcards.jsx",
+      "type": "file",
+      "name": "Flashcards.jsx",
+      "filePath": "client/src/features/notes/Flashcards.jsx",
+      "summary": "Interactive flashcard component for study and recall.",
+      "tags": [
+        "component",
+        "study-tool",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/Flashcards.jsx:Flashcards",
+      "type": "function",
+      "name": "Flashcards",
+      "filePath": "client/src/features/notes/Flashcards.jsx",
+      "lineRange": [
+        16,
+        177
+      ],
+      "summary": "Function Flashcards implemented in client/src/features/notes/Flashcards.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/notes/NoteAIChat.jsx",
+      "type": "file",
+      "name": "NoteAIChat.jsx",
+      "filePath": "client/src/features/notes/NoteAIChat.jsx",
+      "summary": "AI-powered chat component for interactive learning and questioning.",
+      "tags": [
+        "ai-chat",
+        "interactive",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/NoteAIChat.jsx:NoteAIChat",
+      "type": "function",
+      "name": "NoteAIChat",
+      "filePath": "client/src/features/notes/NoteAIChat.jsx",
+      "lineRange": [
+        9,
+        173
+      ],
+      "summary": "Function NoteAIChat implemented in client/src/features/notes/NoteAIChat.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/notes/NoteView.jsx",
+      "type": "file",
+      "name": "NoteView.jsx",
+      "filePath": "client/src/features/notes/NoteView.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/NoteView.jsx:NoteSummary",
+      "type": "function",
+      "name": "NoteSummary",
+      "filePath": "client/src/features/notes/NoteView.jsx",
+      "lineRange": [
+        21,
+        115
+      ],
+      "summary": "Function NoteSummary implemented in client/src/features/notes/NoteView.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/NoteView.jsx:NoteView",
+      "type": "function",
+      "name": "NoteView",
+      "filePath": "client/src/features/notes/NoteView.jsx",
+      "lineRange": [
+        117,
+        205
+      ],
+      "summary": "Function NoteView implemented in client/src/features/notes/NoteView.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/notes/NoteViewPage.jsx",
+      "type": "file",
+      "name": "NoteViewPage.jsx",
+      "filePath": "client/src/features/notes/NoteViewPage.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/NoteViewPage.jsx:NoteViewPage",
+      "type": "function",
+      "name": "NoteViewPage",
+      "filePath": "client/src/features/notes/NoteViewPage.jsx",
+      "lineRange": [
+        11,
+        80
+      ],
+      "summary": "Function NoteViewPage implemented in client/src/features/notes/NoteViewPage.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/notes/Quiz.jsx",
+      "type": "file",
+      "name": "Quiz.jsx",
+      "filePath": "client/src/features/notes/Quiz.jsx",
+      "summary": "Quiz component for assessing knowledge and tracking progress.",
+      "tags": [
+        "component",
+        "assessment",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/notes/Quiz.jsx:Quiz",
+      "type": "function",
+      "name": "Quiz",
+      "filePath": "client/src/features/notes/Quiz.jsx",
+      "lineRange": [
+        32,
+        321
+      ],
+      "summary": "Function Quiz implemented in client/src/features/notes/Quiz.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/notes/notesAPI.js",
+      "type": "file",
+      "name": "notesAPI.js",
+      "filePath": "client/src/features/notes/notesAPI.js",
+      "summary": "API service layer for handling network requests related to this feature.",
+      "tags": [
+        "api-handler",
+        "service",
+        "network"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/notes/notesAPI.js:uploadNote",
+      "type": "function",
+      "name": "uploadNote",
+      "filePath": "client/src/features/notes/notesAPI.js",
+      "lineRange": [
+        24,
+        41
+      ],
+      "summary": "Function uploadNote implemented in client/src/features/notes/notesAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/notes/notesAPI.js:askQuestion",
+      "type": "function",
+      "name": "askQuestion",
+      "filePath": "client/src/features/notes/notesAPI.js",
+      "lineRange": [
+        54,
+        67
+      ],
+      "summary": "Function askQuestion implemented in client/src/features/notes/notesAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/quizzes/quizzesAPI.js",
+      "type": "file",
+      "name": "quizzesAPI.js",
+      "filePath": "client/src/features/quizzes/quizzesAPI.js",
+      "summary": "API service layer for handling network requests related to this feature.",
+      "tags": [
+        "api-handler",
+        "service",
+        "network"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/student/QuizPage.jsx",
+      "type": "file",
+      "name": "QuizPage.jsx",
+      "filePath": "client/src/features/student/QuizPage.jsx",
+      "summary": "Main view component providing the user interface for this feature.",
+      "tags": [
+        "component",
+        "view",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/student/QuizPage.jsx:QuizPage",
+      "type": "function",
+      "name": "QuizPage",
+      "filePath": "client/src/features/student/QuizPage.jsx",
+      "lineRange": [
+        38,
+        341
+      ],
+      "summary": "Function QuizPage implemented in client/src/features/student/QuizPage.jsx.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/shared/api/apiClient.js",
+      "type": "file",
+      "name": "apiClient.js",
+      "filePath": "client/src/shared/api/apiClient.js",
+      "summary": "Source file for client/src/shared/api/apiClient.js",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/materials/LessonMaterial.js",
+      "type": "file",
+      "name": "LessonMaterial.js",
+      "filePath": "server/features/materials/LessonMaterial.js",
+      "summary": "Mongoose schema definition for lesson materials, managing metadata for PDFs including subject, grade, unit, lesson, and extracted AI text.",
+      "tags": [
+        "data-model",
+        "mongoose",
+        "schema"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/features/materials/materialControllers.js",
+      "type": "file",
+      "name": "materialControllers.js",
+      "filePath": "server/features/materials/materialControllers.js",
+      "summary": "Handles HTTP requests for managing lesson materials, including uploading PDFs, listing, updating, deleting, and generating signed view URLs.",
+      "tags": [
+        "api-handler",
+        "controller",
+        "materials",
+        "tested"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:server/features/materials/materials.test.js",
+      "type": "file",
+      "name": "materials.test.js",
+      "filePath": "server/features/materials/materials.test.js",
+      "summary": "Integration tests for the materials management system, verifying upload, retrieval, and permission logic.",
+      "tags": [
+        "test",
+        "integration-test"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:server/scripts/backfillMaterialText.js",
+      "type": "file",
+      "name": "backfillMaterialText.js",
+      "filePath": "server/scripts/backfillMaterialText.js",
+      "summary": "Maintenance script to extract and backfill AI-readable text from legacy PDF uploads that lack extracted text.",
+      "tags": [
+        "script",
+        "maintenance",
+        "data-migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/shared/pdf.js",
+      "type": "file",
+      "name": "pdf.js",
+      "filePath": "server/shared/pdf.js",
+      "summary": "Utility module for parsing PDFs and extracting clean text for AI processing, handling common PDF parsing errors.",
+      "tags": [
+        "utility",
+        "pdf-parsing",
+        "ai-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/shared/storage/index.js",
+      "type": "file",
+      "name": "storage/index.js",
+      "filePath": "server/shared/storage/index.js",
+      "summary": "Storage abstraction layer that provides a unified interface (getStorageDriver) to switch between local and Supabase storage providers.",
+      "tags": [
+        "abstraction",
+        "storage",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/shared/storage/localDriver.js",
+      "type": "file",
+      "name": "localDriver.js",
+      "filePath": "server/shared/storage/localDriver.js",
+      "summary": "Filesystem-based storage driver implementing the storage interface for local development and volume-mounted deployments.",
+      "tags": [
+        "storage",
+        "filesystem",
+        "driver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/shared/storage/signUrl.js",
+      "type": "file",
+      "name": "signUrl.js",
+      "filePath": "server/shared/storage/signUrl.js",
+      "summary": "Provides HMAC signing and verification for generating short-lived, secure access URLs to local storage files.",
+      "tags": [
+        "security",
+        "hmac",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/shared/storage/supabaseDriver.js",
+      "type": "file",
+      "name": "supabaseDriver.js",
+      "filePath": "server/shared/storage/supabaseDriver.js",
+      "summary": "Supabase-based storage driver implementing the storage interface for production cloud storage using the Supabase SDK.",
+      "tags": [
+        "storage",
+        "supabase",
+        "driver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/materials/materialControllers.js:createMaterial",
+      "type": "function",
+      "name": "createMaterial",
+      "filePath": "server/features/materials/materialControllers.js",
+      "lineRange": [
+        279,
+        416
+      ],
+      "summary": "Handles the upload of a PDF, validates its content, stores it via the storage driver, and extracts text for AI use.",
+      "tags": [
+        "api-handler",
+        "upload"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/materials/materialControllers.js:listMaterials",
+      "type": "function",
+      "name": "listMaterials",
+      "filePath": "server/features/materials/materialControllers.js",
+      "lineRange": [
+        420,
+        483
+      ],
+      "summary": "Retrieves a filtered list of materials, applying grade-based scoping for students.",
+      "tags": [
+        "api-handler",
+        "query"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/materials/materialControllers.js:getMaterialViewUrl",
+      "type": "function",
+      "name": "getMaterialViewUrl",
+      "filePath": "server/features/materials/materialControllers.js",
+      "lineRange": [
+        537,
+        578
+      ],
+      "summary": "Generates a short-lived signed URL for viewing a specific material file.",
+      "tags": [
+        "api-handler",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/features/materials/materialControllers.js:serveMaterialFile",
+      "type": "function",
+      "name": "serveMaterialFile",
+      "filePath": "server/features/materials/materialControllers.js",
+      "lineRange": [
+        702,
+        792
+      ],
+      "summary": "Serves the actual file bytes for the local storage driver after verifying the URL signature.",
+      "tags": [
+        "api-handler",
+        "streaming"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/features/materials/materialControllers.js:reorderMaterials",
+      "type": "function",
+      "name": "reorderMaterials",
+      "filePath": "server/features/materials/materialControllers.js",
+      "lineRange": [
+        799,
+        878
+      ],
+      "summary": "Updates the display order of materials within a specific lesson.",
+      "tags": [
+        "api-handler",
+        "update"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/shared/pdf.js:extractPdfText",
+      "type": "function",
+      "name": "extractPdfText",
+      "filePath": "server/shared/pdf.js",
+      "lineRange": [
+        56,
+        69
+      ],
+      "summary": "Extracts and cleans text from a PDF buffer using the pdf-parse library.",
+      "tags": [
+        "utility",
+        "pdf-parsing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/shared/storage/signUrl.js:verifySignature",
+      "type": "function",
+      "name": "verifySignature",
+      "filePath": "server/shared/storage/signUrl.js",
+      "lineRange": [
+        38,
+        55
+      ],
+      "summary": "Verifies that a provided signature matches the expected HMAC for a given key and expiry.",
+      "tags": [
+        "security",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/materials/LessonSection.jsx",
+      "type": "file",
+      "name": "LessonSection.jsx",
+      "filePath": "client/src/features/materials/LessonSection.jsx",
+      "summary": "A React component that renders a section of materials for a specific lesson, allowing for previews and management of material items.",
+      "tags": [
+        "component",
+        "materials",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/LessonSection.jsx:formatSize",
+      "type": "function",
+      "name": "formatSize",
+      "filePath": "client/src/features/materials/LessonSection.jsx",
+      "lineRange": [
+        9,
+        19
+      ],
+      "summary": "Converts a byte size into a human-readable string format (e.g., MB).",
+      "tags": [
+        "utility",
+        "formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/LessonSection.jsx:LessonSection",
+      "type": "function",
+      "name": "LessonSection",
+      "filePath": "client/src/features/materials/LessonSection.jsx",
+      "lineRange": [
+        26,
+        295
+      ],
+      "summary": "Main component for rendering a group of materials within a lesson, including handling move, preview, edit, and delete actions.",
+      "tags": [
+        "component",
+        "materials",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/materials/MaterialManager.jsx",
+      "type": "file",
+      "name": "MaterialManager.jsx",
+      "filePath": "client/src/features/materials/MaterialManager.jsx",
+      "summary": "Comprehensive management interface for educational materials, enabling administrators to upload, reorder, edit, and delete materials across grades and subjects.",
+      "tags": [
+        "admin",
+        "materials-management",
+        "component"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "type": "function",
+      "name": "MaterialManager",
+      "filePath": "client/src/features/materials/MaterialManager.jsx",
+      "lineRange": [
+        37,
+        1199
+      ],
+      "summary": "Main admin component for managing the materials library, featuring filtering by subject/grade and full CRUD operations for materials.",
+      "tags": [
+        "component",
+        "admin-ui",
+        "materials"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:client/src/features/materials/UnitLessonPdfs.jsx",
+      "type": "file",
+      "name": "UnitLessonPdfs.jsx",
+      "filePath": "client/src/features/materials/UnitLessonPdfs.jsx",
+      "summary": "A component that displays a list of PDF materials associated with a specific unit and lesson for student access.",
+      "tags": [
+        "component",
+        "student-view",
+        "materials"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/UnitLessonPdfs.jsx:formatSize",
+      "type": "function",
+      "name": "formatSize",
+      "filePath": "client/src/features/materials/UnitLessonPdfs.jsx",
+      "lineRange": [
+        3,
+        13
+      ],
+      "summary": "Converts byte size to a human-readable string.",
+      "tags": [
+        "utility",
+        "formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/UnitLessonPdfs.jsx:UnitLessonPdfs",
+      "type": "function",
+      "name": "UnitLessonPdfs",
+      "filePath": "client/src/features/materials/UnitLessonPdfs.jsx",
+      "lineRange": [
+        21,
+        93
+      ],
+      "summary": "Renders a list of available PDFs for the current lesson context.",
+      "tags": [
+        "component",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/materials/subjects.js",
+      "type": "file",
+      "name": "subjects.js",
+      "filePath": "client/src/features/materials/subjects.js",
+      "summary": "Provides subject definitions and utility functions for mapping page subjects to library subjects and grade keys.",
+      "tags": [
+        "config",
+        "utility",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/subjects.js:librarySubjectFor",
+      "type": "function",
+      "name": "librarySubjectFor",
+      "filePath": "client/src/features/materials/subjects.js",
+      "lineRange": [
+        28,
+        33
+      ],
+      "summary": "Maps a page-specific subject to its corresponding library subject.",
+      "tags": [
+        "utility",
+        "mapping"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/subjects.js:gradeKeyForPageSubject",
+      "type": "function",
+      "name": "gradeKeyForPageSubject",
+      "filePath": "client/src/features/materials/subjects.js",
+      "lineRange": [
+        49,
+        51
+      ],
+      "summary": "Retrieves the grade key associated with a given page subject.",
+      "tags": [
+        "utility",
+        "mapping"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/features/materials/useLessonMaterials.js",
+      "type": "file",
+      "name": "useLessonMaterials.js",
+      "filePath": "client/src/features/materials/useLessonMaterials.js",
+      "summary": "A custom React hook for fetching and organizing lesson materials by unit and lesson for a given subject.",
+      "tags": [
+        "hook",
+        "data-fetching",
+        "materials"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/materials/useLessonMaterials.js:unitOf",
+      "type": "function",
+      "name": "unitOf",
+      "filePath": "client/src/features/materials/useLessonMaterials.js",
+      "lineRange": [
+        24,
+        27
+      ],
+      "summary": "Helper function to extract the unit number from a material object.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/useLessonMaterials.js:useLessonMaterials",
+      "type": "function",
+      "name": "useLessonMaterials",
+      "filePath": "client/src/features/materials/useLessonMaterials.js",
+      "lineRange": [
+        29,
+        127
+      ],
+      "summary": "Custom hook that fetches materials for a subject and organizes them into units and lessons.",
+      "tags": [
+        "hook",
+        "materials"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:client/src/features/student/SubjectPage.jsx",
+      "type": "file",
+      "name": "SubjectPage.jsx",
+      "filePath": "client/src/features/student/SubjectPage.jsx",
+      "summary": "The student-facing subject landing page that provides access to the subject's learning materials organized by unit.",
+      "tags": [
+        "component",
+        "student-dashboard",
+        "materials"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "type": "function",
+      "name": "SubjectPage",
+      "filePath": "client/src/features/student/SubjectPage.jsx",
+      "lineRange": [
+        30,
+        329
+      ],
+      "summary": "Main page component for a subject, utilizing useLessonMaterials to display content organized by unit.",
+      "tags": [
+        "component",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.ua/tmp/dir_tree_ctx.txt",
+      "type": "document",
+      "name": "dir_tree_ctx.txt",
+      "filePath": ".ua/tmp/dir_tree_ctx.txt",
+      "summary": "Temporary context file containing the project directory tree structure used by the analysis pipeline.",
+      "tags": [
+        "documentation",
+        "context",
+        "temporary"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.ua/tmp/entry_point_ctx.txt",
+      "type": "document",
+      "name": "entry_point_ctx.txt",
+      "filePath": ".ua/tmp/entry_point_ctx.txt",
+      "summary": "Temporary context file identifying the project entry points for analysis.",
+      "tags": [
+        "documentation",
+        "context",
+        "temporary"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.ua/tmp/manifest_ctx.txt",
+      "type": "document",
+      "name": "manifest_ctx.txt",
+      "filePath": ".ua/tmp/manifest_ctx.txt",
+      "summary": "Temporary context file containing manifest data used to identify project dependencies and metadata.",
+      "tags": [
+        "documentation",
+        "context",
+        "temporary"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.ua/tmp/readme_ctx.txt",
+      "type": "document",
+      "name": "readme_ctx.txt",
+      "filePath": ".ua/tmp/readme_ctx.txt",
+      "summary": "Temporary context file extracting key information from the project README for semantic analysis.",
+      "tags": [
+        "documentation",
+        "context",
+        "temporary"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/tmp/ua-import-map-input.json",
+      "type": "config",
+      "name": "ua-import-map-input.json",
+      "filePath": ".ua/tmp/ua-import-map-input.json",
+      "summary": "Intermediate configuration file containing the raw import mapping data used to build the project knowledge graph.",
+      "tags": [
+        "configuration",
+        "import-map",
+        "temporary"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.ua/tmp/ua-scan-files.json",
+      "type": "config",
+      "name": "ua-scan-files.json",
+      "filePath": ".ua/tmp/ua-scan-files.json",
+      "summary": "Project inventory file containing a comprehensive list of all scanned files, their languages, and complexity metrics.",
+      "tags": [
+        "configuration",
+        "inventory",
+        "temporary"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:client/.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": "client/.env.example",
+      "summary": "Example environment configuration file providing a template for necessary environment variables, such as the API URL.",
+      "tags": [
+        "configuration",
+        "environment",
+        "template"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:client/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "client/README.md",
+      "summary": "Basic documentation for the client application, currently containing default Vite and React setup information.",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "setup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "client/index.html",
+      "summary": "Main HTML entry point for the React frontend application, serving as the root container for the UI.",
+      "tags": [
+        "entry-point",
+        "markup",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:client/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "client/package.json",
+      "summary": "Node.js package manifest for the client, defining project dependencies, scripts, and metadata for the React/Vite application.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "dependencies"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:server/.env",
+      "type": "config",
+      "name": ".env",
+      "filePath": "server/.env",
+      "summary": "Environment configuration file containing sensitive credentials and runtime settings for the backend server.",
+      "tags": [
+        "configuration",
+        "environment",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:server/.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": "server/.env.example",
+      "summary": "Template environment configuration file providing a guide for the required variables needed to run the backend.",
+      "tags": [
+        "configuration",
+        "documentation",
+        "template"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:server/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "server/package.json",
+      "summary": "Node.js project manifest for the server, defining dependencies, scripts, and project metadata.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "dependencies"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:client/src/index.css",
+      "type": "file",
+      "name": "index.css",
+      "filePath": "client/src/index.css",
+      "summary": "Global styles for the application.",
+      "tags": [
+        "styles",
+        "css"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:updateMaterial",
+      "type": "function",
+      "name": "updateMaterial",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "summary": "Function updateMaterial implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:deleteMaterial",
+      "type": "function",
+      "name": "deleteMaterial",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "summary": "Function deleteMaterial implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/features/materials/materialsAPI.js:getMaterialViewUrl",
+      "type": "function",
+      "name": "getMaterialViewUrl",
+      "filePath": "client/src/features/materials/materialsAPI.js",
+      "summary": "Function getMaterialViewUrl implemented in client/src/features/materials/materialsAPI.js.",
+      "tags": [
+        "function",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:client/src/shared/form/readFormValues.js:readFormValues",
+      "type": "function",
+      "name": "readFormValues",
+      "filePath": "client/src/shared/form/readFormValues.js",
+      "summary": "Utility function to extract and sanitize values from form elements.",
+      "tags": [
+        "utility",
+        "form-handling"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "function:client/src/App.jsx:App",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/materials/MaterialManager.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/student/StudentDashboard.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/ClassManagement.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/GradeModel.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/Login.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/SearchBar.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/StatsCard.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/UserModel.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/UserTable.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/App.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/ai/StudentAIChat.jsx",
+      "target": "function:client/src/features/ai/StudentAIChat.jsx:StudentAIChat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/ai/StudentAIChat.jsx",
+      "target": "file:client/src/features/ai/VideoPlayerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/ai/StudentAIChat.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/ai/VideoPlayerModal.jsx",
+      "target": "function:client/src/features/ai/VideoPlayerModal.jsx:VideoPlayerModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/ai/VideoPlayerModal.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NotesPage.jsx",
+      "target": "function:client/src/features/notes/NotesPage.jsx:NotesPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/NotesPage.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NotesPage.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/AchievementsPage.jsx",
+      "target": "function:client/src/features/student/AchievementsPage.jsx:AchievementsPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/DashboardPage.jsx",
+      "target": "function:client/src/features/student/DashboardPage.jsx:DashboardPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/LeaderboardPage.jsx",
+      "target": "function:client/src/features/student/LeaderboardPage.jsx:LeaderboardPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/LeaderboardPage.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/LearnPage.jsx",
+      "target": "function:client/src/features/student/LearnPage.jsx:LearnPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/ProfilePage.jsx",
+      "target": "function:client/src/features/student/ProfilePage.jsx:ProfilePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "function:client/src/features/student/StudentDashboard.jsx:StudentDashboard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/ai/StudentAIChat.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/materials/LessonAIView.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/notes/NoteViewPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/notes/NotesPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/AchievementsPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/DashboardPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/LeaderboardPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/LearnPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/ProfilePage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/QuizPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/StudentGrade.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentDashboard.jsx",
+      "target": "file:client/src/features/student/SubjectPage.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/StudentGrade.jsx",
+      "target": "function:client/src/features/student/StudentGrade.jsx:StudentGrade",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/ClassManagement.jsx",
+      "target": "function:client/src/features/users/ClassManagement.jsx:ClassManagement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/ClassManagement.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/ClassManagement.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/GradeModel.jsx",
+      "target": "function:client/src/features/users/GradeModel.jsx:GradeModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/GradeModel.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/Login.jsx",
+      "target": "function:client/src/features/users/Login.jsx:Login",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/Login.jsx",
+      "target": "file:client/src/features/users/userAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/Login.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/UserModel.jsx",
+      "target": "function:client/src/features/users/UserModel.jsx:UserModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/UserModel.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/users/UserTable.jsx",
+      "target": "function:client/src/features/users/UserTable.jsx:UserTable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/users/userAPI.js",
+      "target": "file:client/src/shared/api/apiClient.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/main.jsx",
+      "target": "file:client/src/App.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:stubModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:defaultStudent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:stubFetch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:okResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:headers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "function:server/features/chat/aiChat.test.js:postChat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiChat.test.js",
+      "target": "file:server/features/chat/aiRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/chat/aiController.js",
+      "target": "function:server/features/chat/aiController.js:fetchYouTubeVideos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiController.js",
+      "target": "function:server/features/chat/aiController.js:buildSearchFallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/aiController.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/chat/aiRoutes.js",
+      "target": "file:server/features/chat/aiController.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/chat/aiRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "function:server/features/quizzes/quizControllers.js:sendAiError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "function:server/features/quizzes/quizControllers.js:loadNoteSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "function:server/features/quizzes/quizControllers.js:loadLessonSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/features/materials/materialControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/features/notes/Note.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/features/quizzes/QuizAttempt.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/shared/ai.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizControllers.js",
+      "target": "file:server/shared/xp.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizRoutes.js",
+      "target": "file:server/features/quizzes/quizControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/classManagement.test.js",
+      "target": "function:server/features/users/classManagement.test.js:stubModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/classManagement.test.js",
+      "target": "function:server/features/users/classManagement.test.js:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/classManagement.test.js",
+      "target": "function:server/features/users/classManagement.test.js:createClass",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/classManagement.test.js",
+      "target": "file:server/features/users/userRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/loginAuth.test.js",
+      "target": "function:server/features/users/loginAuth.test.js:stubModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/loginAuth.test.js",
+      "target": "function:server/features/users/loginAuth.test.js:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/loginAuth.test.js",
+      "target": "function:server/features/users/loginAuth.test.js:login",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/loginAuth.test.js",
+      "target": "function:server/features/users/loginAuth.test.js:getMe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/loginAuth.test.js",
+      "target": "file:server/features/users/userRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userControllers.js",
+      "target": "file:server/features/users/Class.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userControllers.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userControllers.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userControllers.js",
+      "target": "file:server/shared/xp.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userModels.js",
+      "target": "file:server/shared/xp.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userRoutes.js",
+      "target": "file:server/features/users/userControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/userRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "function:server/features/users/xpLeaderboard.test.js:stubModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "function:server/features/users/xpLeaderboard.test.js:makeUsers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "function:server/features/users/xpLeaderboard.test.js:matchesFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "function:server/features/users/xpLeaderboard.test.js:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "function:server/features/users/xpLeaderboard.test.js:requestJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/users/xpLeaderboard.test.js",
+      "target": "file:server/features/users/userRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "function:server/features/videos/VideoInteractionControllers.js:lastReportedAtMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "function:server/features/videos/VideoInteractionControllers.js:storedWatchSeconds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "function:server/features/videos/VideoInteractionControllers.js:capReportedWatchSeconds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "function:server/features/videos/VideoInteractionControllers.js:awardWatchedXp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "file:server/features/videos/VideoInteraction.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionControllers.js",
+      "target": "file:server/shared/xp.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionRoutes.js",
+      "target": "file:server/features/videos/VideoInteractionControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/VideoInteractionRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:stubModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:headers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:requestJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:postJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "function:server/features/videos/videoInteractions.test.js:putJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/videos/videoInteractions.test.js",
+      "target": "file:server/features/videos/VideoInteractionRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/seed.js",
+      "target": "function:server/seed.js:seedAdmin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/seed.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "function:server/shared/authMiddleware.js:durationToMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "function:server/shared/authMiddleware.js:sameSitePolicy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "function:server/shared/authMiddleware.js:cookieOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "function:server/shared/authMiddleware.js:clearAuthCookie",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "function:server/shared/authMiddleware.js:readToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/authMiddleware.js",
+      "target": "file:server/features/users/userModels.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/server.js",
+      "target": "file:server/app.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/app.js",
+      "target": "file:server/features/chat/aiRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/app.js",
+      "target": "file:server/features/materials/materialRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/app.js",
+      "target": "file:server/features/notes/noteAiRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/app.js",
+      "target": "file:server/features/notes/noteRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/app.js",
+      "target": "file:server/features/quizzes/quizRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/app.js",
+      "target": "file:server/features/users/userRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/app.js",
+      "target": "file:server/features/videos/VideoInteractionRoutes.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialAiControllers.js",
+      "target": "file:server/features/chat/Chat.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialAiControllers.js",
+      "target": "file:server/features/materials/materialControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialAiControllers.js",
+      "target": "file:server/shared/ai.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialRoutes.js",
+      "target": "file:server/features/materials/materialAiControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialRoutes.js",
+      "target": "file:server/features/materials/materialControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialRoutes.js",
+      "target": "file:server/shared/uploadMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/noteAiControllers.js",
+      "target": "file:server/features/chat/Chat.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/noteAiControllers.js",
+      "target": "file:server/features/notes/Note.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/noteAiControllers.js",
+      "target": "file:server/shared/ai.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/noteAiRoutes.js",
+      "target": "file:server/features/notes/noteAiControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/noteAiRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/noteControllers.js",
+      "target": "file:server/features/notes/Note.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/noteControllers.js",
+      "target": "file:server/shared/pdf.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/noteRoutes.js",
+      "target": "file:server/features/notes/noteControllers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/noteRoutes.js",
+      "target": "file:server/shared/authMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/noteRoutes.js",
+      "target": "file:server/shared/uploadMiddleware.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/notes/notes.test.js",
+      "target": "file:server/app.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/lessonAi.test.js",
+      "target": "file:server/app.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/quizzes/quizzes.test.js",
+      "target": "file:server/app.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/shared/ai.js",
+      "target": "function:server/shared/ai.js:callGemini",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/ai.js",
+      "target": "function:server/shared/ai.js:generateSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/ai.js",
+      "target": "function:server/shared/ai.js:askQuestion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/ai.js",
+      "target": "function:server/shared/ai.js:generateFlashcards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/ai.js",
+      "target": "function:server/shared/ai.js:generateQuiz",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/materials/materialAiControllers.js",
+      "target": "function:server/features/materials/materialAiControllers.js:generateSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/materials/materialAiControllers.js",
+      "target": "function:server/features/materials/materialAiControllers.js:askQuestion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/materials/materialAiControllers.js",
+      "target": "function:server/features/materials/materialAiControllers.js:generateFlashcards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/notes/noteAiControllers.js",
+      "target": "function:server/features/notes/noteAiControllers.js:generateSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/notes/noteAiControllers.js",
+      "target": "function:server/features/notes/noteAiControllers.js:askQuestion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/notes/noteAiControllers.js",
+      "target": "function:server/features/notes/noteAiControllers.js:generateFlashcards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/notes/noteControllers.js",
+      "target": "function:server/features/notes/noteControllers.js:uploadNote",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/notes/noteControllers.js",
+      "target": "function:server/features/notes/noteControllers.js:getNotes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/chat/Chat.js",
+      "target": "class:server/features/chat/Chat.js:Chat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/notes/Note.js",
+      "target": "class:server/features/notes/Note.js:Note",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/materials/materialRoutes.js",
+      "target": "file:server/features/materials/materialAiControllers.js",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/features/notes/noteAiRoutes.js",
+      "target": "file:server/features/notes/noteAiControllers.js",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/features/notes/noteRoutes.js",
+      "target": "file:server/features/notes/noteControllers.js",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/features/notes/noteControllers.js",
+      "target": "file:server/features/notes/notes.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Direction corrected (was test \u00e2\u2020\u2019 production)"
+    },
+    {
+      "source": "file:server/features/materials/materialAiControllers.js",
+      "target": "file:server/features/materials/lessonAi.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Direction corrected (was test \u00e2\u2020\u2019 production)"
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIChat.jsx",
+      "target": "function:client/src/features/materials/LessonAIChat.jsx:LessonAIChat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIChat.jsx",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "function:client/src/features/materials/LessonAIView.jsx:LessonPdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "function:client/src/features/materials/LessonAIView.jsx:LessonAIView",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "file:client/src/features/materials/LessonAIChat.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "file:client/src/features/materials/MaterialViewerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "file:client/src/features/notes/Flashcards.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/LessonAIView.jsx",
+      "target": "file:client/src/features/notes/Quiz.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialViewerModal.jsx",
+      "target": "function:client/src/features/materials/MaterialViewerModal.jsx:MaterialViewerModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialViewerModal.jsx",
+      "target": "file:client/src/features/materials/PdfViewer.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialViewerModal.jsx",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/PdfViewer.jsx",
+      "target": "function:client/src/features/materials/PdfViewer.jsx:PdfViewer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/materialsAPI.js",
+      "target": "function:client/src/features/materials/materialsAPI.js:getMaterials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/materialsAPI.js",
+      "target": "function:client/src/features/materials/materialsAPI.js:uploadMaterial",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/materialsAPI.js",
+      "target": "function:client/src/features/materials/materialsAPI.js:reorderMaterials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/materialsAPI.js",
+      "target": "function:client/src/features/materials/materialsAPI.js:askMaterialQuestion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/materialsAPI.js",
+      "target": "file:client/src/shared/api/apiClient.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/Flashcards.jsx",
+      "target": "function:client/src/features/notes/Flashcards.jsx:Flashcards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/Flashcards.jsx",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/Flashcards.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteAIChat.jsx",
+      "target": "function:client/src/features/notes/NoteAIChat.jsx:NoteAIChat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/NoteAIChat.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "function:client/src/features/notes/NoteView.jsx:NoteSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "function:client/src/features/notes/NoteView.jsx:NoteView",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "file:client/src/features/notes/Flashcards.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "file:client/src/features/notes/NoteAIChat.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "file:client/src/features/notes/Quiz.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteView.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteViewPage.jsx",
+      "target": "function:client/src/features/notes/NoteViewPage.jsx:NoteViewPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/NoteViewPage.jsx",
+      "target": "file:client/src/features/notes/NoteView.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/NoteViewPage.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/Quiz.jsx",
+      "target": "function:client/src/features/notes/Quiz.jsx:Quiz",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/Quiz.jsx",
+      "target": "file:client/src/features/quizzes/quizzesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/notes/notesAPI.js",
+      "target": "function:client/src/features/notes/notesAPI.js:uploadNote",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/notesAPI.js",
+      "target": "function:client/src/features/notes/notesAPI.js:askQuestion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/notes/notesAPI.js",
+      "target": "file:client/src/shared/api/apiClient.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/quizzes/quizzesAPI.js",
+      "target": "file:client/src/shared/api/apiClient.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/QuizPage.jsx",
+      "target": "function:client/src/features/student/QuizPage.jsx:QuizPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/QuizPage.jsx",
+      "target": "file:client/src/features/notes/Quiz.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/QuizPage.jsx",
+      "target": "file:client/src/features/notes/notesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/QuizPage.jsx",
+      "target": "file:client/src/features/quizzes/quizzesAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialControllers.js",
+      "target": "file:server/features/materials/LessonMaterial.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialControllers.js",
+      "target": "file:server/shared/pdf.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialControllers.js",
+      "target": "file:server/shared/storage/index.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialControllers.js",
+      "target": "file:server/shared/storage/signUrl.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materials.test.js",
+      "target": "file:server/app.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materials.test.js",
+      "target": "file:server/shared/storage/signUrl.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/scripts/backfillMaterialText.js",
+      "target": "file:server/features/materials/LessonMaterial.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/scripts/backfillMaterialText.js",
+      "target": "file:server/shared/pdf.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/scripts/backfillMaterialText.js",
+      "target": "file:server/shared/storage/index.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/shared/storage/index.js",
+      "target": "file:server/shared/storage/localDriver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/shared/storage/index.js",
+      "target": "file:server/shared/storage/supabaseDriver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/shared/storage/localDriver.js",
+      "target": "file:server/shared/storage/signUrl.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/features/materials/materialControllers.js",
+      "target": "function:server/features/materials/materialControllers.js:createMaterial",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/materials/materialControllers.js",
+      "target": "function:server/features/materials/materialControllers.js:listMaterials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/materials/materialControllers.js",
+      "target": "function:server/features/materials/materialControllers.js:getMaterialViewUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/materials/materialControllers.js",
+      "target": "function:server/features/materials/materialControllers.js:serveMaterialFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/materials/materialControllers.js",
+      "target": "function:server/features/materials/materialControllers.js:reorderMaterials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/pdf.js",
+      "target": "function:server/shared/pdf.js:extractPdfText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/shared/storage/signUrl.js",
+      "target": "function:server/shared/storage/signUrl.js:verifySignature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/features/materials/materialControllers.js",
+      "target": "file:server/features/materials/materials.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Direction corrected (was test \u00e2\u2020\u2019 production)"
+    },
+    {
+      "source": "function:server/features/materials/materialControllers.js:createMaterial",
+      "target": "function:server/shared/pdf.js:extractPdfText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/features/materials/materialControllers.js:serveMaterialFile",
+      "target": "function:server/shared/storage/signUrl.js:verifySignature",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:client/src/features/materials/LessonSection.jsx",
+      "target": "function:client/src/features/materials/LessonSection.jsx:formatSize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/LessonSection.jsx",
+      "target": "function:client/src/features/materials/LessonSection.jsx:LessonSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialManager.jsx",
+      "target": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialManager.jsx",
+      "target": "file:client/src/features/materials/LessonSection.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialManager.jsx",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialManager.jsx",
+      "target": "file:client/src/features/materials/subjects.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/materials/MaterialManager.jsx",
+      "target": "file:client/src/shared/form/readFormValues.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:getMaterials",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:uploadMaterial",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:reorderMaterials",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:client/src/features/materials/UnitLessonPdfs.jsx",
+      "target": "function:client/src/features/materials/UnitLessonPdfs.jsx:formatSize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/UnitLessonPdfs.jsx",
+      "target": "function:client/src/features/materials/UnitLessonPdfs.jsx:UnitLessonPdfs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/subjects.js",
+      "target": "function:client/src/features/materials/subjects.js:librarySubjectFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/subjects.js",
+      "target": "function:client/src/features/materials/subjects.js:gradeKeyForPageSubject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/subjects.js",
+      "target": "function:client/src/features/materials/subjects.js:librarySubjectFor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:client/src/features/materials/subjects.js",
+      "target": "function:client/src/features/materials/subjects.js:gradeKeyForPageSubject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:client/src/features/materials/useLessonMaterials.js",
+      "target": "function:client/src/features/materials/useLessonMaterials.js:unitOf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/useLessonMaterials.js",
+      "target": "function:client/src/features/materials/useLessonMaterials.js:useLessonMaterials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/materials/useLessonMaterials.js",
+      "target": "file:client/src/features/materials/materialsAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:client/src/features/materials/useLessonMaterials.js:useLessonMaterials",
+      "target": "function:client/src/features/materials/materialsAPI.js:getMaterials",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:client/src/features/student/SubjectPage.jsx",
+      "target": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:client/src/features/student/SubjectPage.jsx",
+      "target": "file:client/src/features/materials/UnitLessonPdfs.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/SubjectPage.jsx",
+      "target": "file:client/src/features/materials/subjects.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:client/src/features/student/SubjectPage.jsx",
+      "target": "file:client/src/features/materials/useLessonMaterials.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "target": "function:client/src/features/materials/subjects.js:gradeKeyForPageSubject",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "target": "function:client/src/features/materials/subjects.js:librarySubjectFor",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "target": "function:client/src/features/materials/useLessonMaterials.js:useLessonMaterials",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/student/SubjectPage.jsx:SubjectPage",
+      "target": "function:client/src/features/materials/UnitLessonPdfs.jsx:UnitLessonPdfs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:client/package.json",
+      "target": "file:client/index.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:client/README.md",
+      "target": "file:client/index.html",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:client/.env.example",
+      "target": "file:client/index.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:server/.env",
+      "target": "file:server/server.js",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:server/package.json",
+      "target": "file:server/server.js",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:server/.env.example",
+      "target": "config:server/.env",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:client/src/main.jsx",
+      "target": "file:client/src/index.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:updateMaterial",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:deleteMaterial",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/features/materials/materialsAPI.js:getMaterialViewUrl",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:client/src/features/materials/MaterialManager.jsx:MaterialManager",
+      "target": "function:client/src/shared/form/readFormValues.js:readFormValues",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}
