@@ -200,8 +200,7 @@ exports.createQuizAttempt = async (req, res) => {
         );
 
         return res.status(500).json({
-            message: 'Unable to build that quiz',
-            error: error.message
+            message: 'Unable to build that quiz'
         });
     }
 };
@@ -346,8 +345,7 @@ exports.submitQuizAttempt = async (req, res) => {
         );
 
         return res.status(500).json({
-            message: 'Unable to submit that quiz',
-            error: error.message
+            message: 'Unable to submit that quiz'
         });
     }
 };
@@ -407,8 +405,7 @@ exports.listQuizAttempts = async (req, res) => {
         );
 
         return res.status(500).json({
-            message: 'Unable to load your quiz results',
-            error: error.message
+            message: 'Unable to load your quiz results'
         });
     }
 };

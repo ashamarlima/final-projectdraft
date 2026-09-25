@@ -7,7 +7,16 @@ const {
     allowRoles
 } = require('../../shared/authMiddleware');
 
+const {
+    aiLimiter
+} = require('../../shared/rateLimit');
+
 const router = express.Router();
+
+
+//Every route here is one paid Gemini call, so each is throttled per
+//student. The limiter sits behind protect() so it keys on the user rather
+//than on an address that a whole computer room may share.
 
 
 //summary of a note
@@ -15,6 +24,7 @@ router.post(
     '/summary',
     protect,
     allowRoles('student'),
+    aiLimiter,
     noteAiController.generateSummary
 );
 
@@ -24,6 +34,7 @@ router.post(
     '/ask',
     protect,
     allowRoles('student'),
+    aiLimiter,
     noteAiController.askQuestion
 );
 
@@ -33,6 +44,7 @@ router.post(
     '/flashcards',
     protect,
     allowRoles('student'),
+    aiLimiter,
     noteAiController.generateFlashcards
 );
 

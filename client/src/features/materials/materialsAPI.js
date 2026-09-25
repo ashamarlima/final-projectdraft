@@ -113,6 +113,17 @@ export const getMaterialDetail = async (id) => {
   return data.material;
 };
 
+//Read one lesson again for the AI assistant (admin only). Used when nothing
+//was read at upload time -- "no AI text" in the library -- so the lesson
+//does not have to be uploaded again to get its assistant back.
+export const rereadMaterialText = async (id) => {
+  const { data } = await apiClient.post(
+    `/materials/${id}/read`
+  );
+
+  return data.material;
+};
+
 //The lesson AI assistant. Every call is scoped on the server to a lesson
 //the student is allowed to see, and answers from that lesson's text, which
 //stays on the server.

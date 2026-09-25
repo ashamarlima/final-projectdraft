@@ -51,10 +51,6 @@ const quizXp = (correct) =>
     XP_PER_CORRECT_ANSWER;
 
 module.exports = {
-    XP_PER_LEVEL,
-    XP_PER_WATCHED_MINUTE,
-    XP_PER_CORRECT_ANSWER,
-    SUBJECTS,
     levelForXp,
     gradeXp,
     watchedXp,

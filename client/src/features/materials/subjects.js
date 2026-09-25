@@ -11,6 +11,13 @@ export const LESSON_SUBJECTS = [
   "Natural Sciences"
 ];
 
+//A unit and a lesson are each a whole number from 1 up to these values.
+//They have to match MAX_UNIT and MAX_LESSON in the server's materials
+//controller, which is where the rule is actually enforced; these drive the
+//form's min/max and the messages shown before a request is ever sent.
+export const MAX_UNIT = 99;
+export const MAX_LESSON = 99;
+
 //The student shell names its subjects differently: LearnPage and
 //SubjectPage use "Mathematics" and "Science" because that is what a
 //student reads on the page. The API name behind each page is looked up

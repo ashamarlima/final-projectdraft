@@ -1,7 +1,46 @@
 const express = require('express'); 
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const helmet = require('helmet');
+
 const app = express();
+
+//Standard security headers, applied before anything else so no response
+//escapes them.
+//
+//Two of helmet's defaults are relaxed here on purpose:
+//
+//  * crossOriginResourcePolicy -- the client is allowed to sit on another
+//    origin (see CLIENT_URL and COOKIE_SAME_SITE). The default would be
+//    'same-origin', which stops that browser reading any of our responses.
+//
+//  * framing -- a lesson PDF is shown by pointing an iframe at our own
+//    signed /file url. 'self' alone would block that whenever the client
+//    is on another origin, so the configured client origin is allowed
+//    alongside it. X-Frame-Options cannot name an origin (ALLOW-FROM is
+//    dead), so frameguard is switched off and the policy lives in CSP.
+app.use(
+    helmet({
+        contentSecurityPolicy: {
+            useDefaults: true,
+
+            directives: {
+                'frame-ancestors': [
+                    "'self'",
+
+                    process.env.CLIENT_URL ||
+                        'http://localhost:5173'
+                ]
+            }
+        },
+
+        crossOriginResourcePolicy: {
+            policy: 'cross-origin'
+        },
+
+        frameguard: false
+    })
+);
 const userRoutes = require('./features/users/userRoutes');
 const aiRoutes =
     require("./features/chat/aiRoutes");
@@ -10,6 +49,21 @@ const noteRoutes = require('./features/notes/noteRoutes');
 const noteAiRoutes = require('./features/notes/noteAiRoutes');
 const materialRoutes = require('./features/materials/materialRoutes');
 const quizRoutes = require('./features/quizzes/quizRoutes');
+
+//Behind a reverse proxy (nginx, a PaaS router) the client address arrives
+//in X-Forwarded-For. The login throttle counts per client address, so
+//without this every request would look like it came from the proxy and one
+//attacker could lock the whole school out of logging in. Set TRUST_PROXY
+//to the number of proxies in front of the app (a plain count, e.g. 1) or
+//to an Express preset such as 'loopback'.
+if (process.env.TRUST_PROXY) {
+    const value = process.env.TRUST_PROXY;
+
+    app.set(
+        'trust proxy',
+        /^\d+$/.test(value) ? Number(value) : value
+    );
+}
 
 app.use(cors({
     origin: process.env.CLIENT_URL || 'http://localhost:5173',
@@ -33,6 +87,15 @@ app.use('/api/v1/quizzes', quizRoutes);
 
 //central error handler: turns upload (multer) failures and any
 //unexpected error into JSON instead of Express's HTML page
+//
+//A response body says what failed, never how. The error's own message is
+//logged, and only an error that carries an explicit 4xx status (one we
+//threw for the caller) is repeated back. A 5xx stays generic, because a
+//Mongo or storage message can name collections, index names and paths.
+//The controllers below follow the same rule in their own catch blocks:
+//console.error the error, answer with a fixed message. The AI endpoints
+//are the deliberate exception -- an upstream provider message (a quota
+//error, say) is passed through, because the caller can act on it.
 app.use((err, req, res, next) => {
     if (res.headersSent) {
         return next(err);

@@ -75,7 +75,6 @@ const materialUpload = createUploader({
 });
 
 module.exports = {
-    createUploader,
     noteUpload,
     materialUpload
 };

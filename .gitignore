@@ -1,0 +1,5 @@
+# .ua/ is codebase-analysis tool output: a few hundred kilobytes of
+# intermediate graphs and scratch files, written under whatever directory
+# the tool happened to be run from. Nothing here is source, so it is
+# regenerated rather than committed.
+.ua/

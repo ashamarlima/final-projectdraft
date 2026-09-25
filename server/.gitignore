@@ -11,3 +11,8 @@ node_modules
 # driver's own source (index.js, localDriver.js, signUrl.js,
 # supabaseDriver.js) and must be committed.
 /storage/
+
+# Scratch scripts and their output from driving the live API by hand
+# (server/.e2e). The login files there hold real session tokens for the
+# admin and student accounts, so this directory must never be committed.
+.e2e/

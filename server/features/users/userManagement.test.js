@@ -80,9 +80,24 @@ const teacherUser = {
     xp: 0
 };
 
+const DELETABLE_ID =
+    'cccccccccccccccccccccccc';
+
+const deletableUser = {
+    _id: DELETABLE_ID,
+    name: 'A Departed Teacher',
+    email: 'departed@example.com',
+    phone: '2222222222',
+    status: 'active',
+    classroom: '9',
+    role: 'teacher',
+    xp: 0
+};
+
 const usersById = {
     [ADMIN_ID]: adminUser,
-    [TEACHER_ID]: teacherUser
+    [TEACHER_ID]: teacherUser,
+    [DELETABLE_ID]: deletableUser
 };
 
 const isObjectId = (value) =>
@@ -192,6 +207,24 @@ const fakeUsers = {
                     ...update
                 })
         };
+    },
+
+    //mirrors the real model, which throws on an id it cannot cast and
+    //returns the removed document (or null) otherwise
+    async findByIdAndDelete(id) {
+        if (!isObjectId(id)) {
+            throw castError();
+        }
+
+        const key = String(id);
+
+        const user = usersById[key] || null;
+
+        if (user) {
+            delete usersById[key];
+        }
+
+        return user;
     }
 };
 
@@ -249,6 +282,28 @@ async function getUsers(query = '') {
         {
             headers: {
                 Authorization: `Bearer ${adminToken()}`
+            }
+        }
+    );
+
+    const data = await response
+        .json()
+        .catch(() => null);
+
+    return {
+        status: response.status,
+        data
+    };
+}
+
+async function deleteUser(id, token = adminToken()) {
+    const response = await fetch(
+        `${baseUrl}/api/v1/users/${id}`,
+        {
+            method: 'DELETE',
+
+            headers: {
+                Authorization: `Bearer ${token}`
             }
         }
     );
@@ -506,5 +561,119 @@ test(
         //page 2 of 100 is a skip of 100, not 5000
         assert.equal(calls.skip, 100);
         assert.equal(data.currentPage, 2);
+    }
+);
+
+//------------------------------------------------------------
+//unexpected failures
+//------------------------------------------------------------
+
+test(
+    'an unexpected failure is reported without its internals',
+    async () => {
+        //The controller holds this same object, so making the model fail is
+        //how a dropped database connection is simulated here.
+        const original = fakeUsers.countDocuments;
+
+        fakeUsers.countDocuments = async () => {
+            throw new Error(
+                'MongoServerError: connection refused at 10.0.0.5:27017'
+            );
+        };
+
+        try {
+            const response = await fetch(
+                `${baseUrl}/api/v1/users/status`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${adminToken()}`
+                    }
+                }
+            );
+
+            assert.equal(response.status, 500);
+
+            const data = await response.json();
+
+            //A client is told what failed, never the internals behind it:
+            //the host and port belong in the log.
+            assert.equal(data.error, undefined);
+
+            assert.ok(
+                !JSON.stringify(data).includes('10.0.0.5'),
+                'the response body leaked the underlying error message'
+            );
+        } finally {
+            fakeUsers.countDocuments = original;
+        }
+    }
+);
+
+//delete -------------------------------------------------------
+
+test(
+    'delete is admin only',
+    async () => {
+        const result = await deleteUser(
+            DELETABLE_ID,
+            tokenFor(TEACHER_ID)
+        );
+
+        assert.equal(result.status, 403);
+
+        assert.match(
+            result.data.message,
+            /not allowed to perform this action/
+        );
+    }
+);
+
+test(
+    'delete reports a malformed id as a client error, not a failure of ours',
+    async () => {
+        const result = await deleteUser('abc');
+
+        assert.equal(result.status, 400);
+
+        assert.equal(
+            result.data.message,
+            'That user id is not valid'
+        );
+    }
+);
+
+test(
+    'delete answers 404 for an id that is not there',
+    async () => {
+        const result = await deleteUser(
+            'dddddddddddddddddddddddd'
+        );
+
+        assert.equal(result.status, 404);
+
+        assert.equal(
+            result.data.message,
+            'User not found'
+        );
+    }
+);
+
+//kept last, because it is the one test that removes a user
+
+test(
+    'delete removes the user, and the same request then reports it as gone',
+    async () => {
+        const first = await deleteUser(DELETABLE_ID);
+
+        assert.equal(first.status, 200);
+
+        assert.equal(
+            first.data.message,
+            'User deleted successfully'
+        );
+
+        const second = await deleteUser(DELETABLE_ID);
+
+        assert.equal(second.status, 404);
     }
 );

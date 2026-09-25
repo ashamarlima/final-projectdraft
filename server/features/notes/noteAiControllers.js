@@ -111,12 +111,30 @@ exports.askQuestion = async (req, res) => {
             });
         }
 
-        //context is optional: without a note the assistant falls
-        //back to general knowledge
+        //Context is optional: without a note the assistant falls back to
+        //general knowledge. An empty noteId is not "no note" though -- it
+        //is a caller that meant to send one and lost it -- so it is
+        //rejected instead of being answered from general knowledge, which
+        //would quietly ground nothing.
+        const rawNoteId = req.body.noteId;
+
+        const wantsNote =
+            rawNoteId !== undefined &&
+            rawNoteId !== null;
+
+        if (
+            wantsNote &&
+            String(rawNoteId).trim() === ''
+        ) {
+            return res.status(400).json({
+                message: 'That note id is not valid'
+            });
+        }
+
         let context = '';
         let noteId = null;
 
-        if (req.body.noteId) {
+        if (wantsNote) {
             const note = await loadNoteFromBody(
                 req,
                 res

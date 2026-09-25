@@ -6,11 +6,21 @@ const {
     allowRoles
 } = require('../../shared/authMiddleware');
 
+const {
+    loginLimiter
+} = require('../../shared/rateLimit');
+
 const router = express.Router();
 
 
-//public login route
-router.post('/login', userController.loginUser);
+//Public login route, throttled by client address: this is the one route an
+//attacker may hammer with a password list, and the bcrypt compare makes
+//each attempt expensive for us as well as for them.
+router.post(
+    '/login',
+    loginLimiter,
+    userController.loginUser
+);
 
 
 //Public on purpose: the login cookie is httpOnly, so only the server can

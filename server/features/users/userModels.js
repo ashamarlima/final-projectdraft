@@ -19,6 +19,16 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true,
         unique: true,
+
+        //An address is the same account however it was typed, so emails
+        //are stored lowercased. Mongoose runs this setter when a query
+        //filter is cast as well as when a document is written, so the
+        //login lookup matches 'Admin@Gmail.com' against 'admin@gmail.com'
+        //without every caller remembering to lowercase it first.
+        //
+        //Rows written before this was set still hold whatever case the
+        //admin typed; scripts/normalizeUserEmails.js lowercases those.
+        lowercase: true,
     },
     phone: {
         type: String,

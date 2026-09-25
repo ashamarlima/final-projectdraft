@@ -550,6 +550,155 @@ test('upload rejects a file that only claims to be an image', async () => {
     assert.equal(fakeNote.createCalls.length, 0);
 });
 
+test(
+    'ask rejects an empty noteId instead of answering without it',
+    async () => {
+        //a caller that meant to send a note and lost the id must not be
+        //quietly answered from general knowledge
+        const result = await request(
+            'POST',
+            '/api/v1/notes-ai/ask',
+            {
+                question: 'What is photosynthesis?',
+                noteId: ''
+            },
+            studentToken()
+        );
+
+        assert.equal(result.status, 400);
+
+        assert.equal(
+            result.data.message,
+            'That note id is not valid'
+        );
+
+        //and no model call was made at all
+        assert.equal(geminiRequests.length, 0);
+    }
+);
+
+//------------------------------------------------------------
+//an uploaded image is read by the vision model
+//------------------------------------------------------------
+
+//a real 2x2 PNG, so the image branch is exercised on actual bytes
+const PNG_BYTES = Buffer.from(
+    'iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFUlEQVR42mP8z8BQz0AEYBxVSF+FABJADveWkH6oAAAAAElFTkSuQmCC',
+    'base64'
+);
+
+const TRANSCRIBED_TEXT =
+    'Mitosis: prophase, metaphase, anaphase, telophase.';
+
+test('upload reads an image with the vision model', async () => {
+    geminiResponse = okText(
+        TRANSCRIBED_TEXT
+    );
+
+    const form = new FormData();
+
+    form.append(
+        'title',
+        'Handwritten biology notes'
+    );
+
+    form.append(
+        'file',
+        new Blob([PNG_BYTES], {
+            type: 'image/png'
+        }),
+        'page.png'
+    );
+
+    const result = await upload(form);
+
+    assert.equal(result.status, 201);
+
+    //the note holds the transcription, which is what the assistant then
+    //answers from
+    assert.equal(
+        result.data.note.preview,
+        TRANSCRIBED_TEXT
+    );
+
+    assert.equal(
+        fakeNote.createCalls[0].extractedText,
+        TRANSCRIBED_TEXT
+    );
+
+    assert.equal(
+        fakeNote.createCalls[0].title,
+        'Handwritten biology notes'
+    );
+
+    //the image travelled with the prompt, as a JPEG the model accepts
+    assert.equal(geminiRequests.length, 1);
+
+    const body = JSON.parse(
+        geminiRequests[0].options.body
+    );
+
+    const parts = body.contents[0].parts;
+
+    const imagePart = parts.find(
+        (part) => part.inlineData
+    );
+
+    assert.equal(
+        imagePart.inlineData.mimeType,
+        'image/jpeg'
+    );
+
+    assert.ok(imagePart.inlineData.data.length > 0);
+
+    //and the instruction to transcribe travelled as the text part
+    assert.ok(
+        parts.some((part) =>
+            String(part.text || '').includes(
+                'Transcribe this page'
+            )
+        )
+    );
+});
+
+test(
+    'a failed vision read is reported rather than stored as an empty note',
+    async () => {
+        //unlike a lesson material, a note is only its text: storing one
+        //with nothing in it would be useless, so this fails loudly
+        geminiResponse = {
+            ok: false,
+            status: 429,
+            jsonData: {
+                error: {
+                    message: 'quota exceeded'
+                }
+            }
+        };
+
+        const form = new FormData();
+
+        form.append(
+            'file',
+            new Blob([PNG_BYTES], {
+                type: 'image/png'
+            }),
+            'page.png'
+        );
+
+        const result = await upload(form);
+
+        assert.equal(result.status, 502);
+
+        assert.equal(
+            result.data.message,
+            'The AI assistant could not read that image'
+        );
+
+        assert.equal(fakeNote.createCalls.length, 0);
+    }
+);
+
 //------------------------------------------------------------
 //pdf parsing failures
 //------------------------------------------------------------

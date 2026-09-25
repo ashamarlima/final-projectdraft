@@ -121,9 +121,7 @@ exports.uploadNote = async (req, res) => {
             .json({
                 message: error.status
                     ? error.message
-                    : 'Unable to process that file',
-
-                error: error.message
+                    : 'Unable to process that file'
             });
     }
 };
@@ -158,8 +156,7 @@ exports.getNoteById = async (req, res) => {
         console.error('Get note error:', error);
 
         return res.status(500).json({
-            message: 'Unable to load that note',
-            error: error.message
+            message: 'Unable to load that note'
         });
     }
 };
@@ -179,8 +176,7 @@ exports.getNotes = async (req, res) => {
         console.error('Get notes error:', error);
 
         return res.status(500).json({
-            message: 'Unable to load notes',
-            error: error.message
+            message: 'Unable to load notes'
         });
     }
 };
@@ -213,8 +209,7 @@ exports.deleteNote = async (req, res) => {
         console.error('Delete note error:', error);
 
         return res.status(500).json({
-            message: 'Unable to delete that note',
-            error: error.message
+            message: 'Unable to delete that note'
         });
     }
 };

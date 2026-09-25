@@ -2,38 +2,46 @@ import {
     useCallback,
     useEffect,
     useMemo,
-    useRef,
     useState
 } from "react";
-import {
-    Check,
-    FileText,
-    Loader2,
-    Lock,
-    RefreshCw,
-    Upload,
-    X
-} from "lucide-react";
+import { FileText, Loader2, Lock } from "lucide-react";
+
 import LessonSection from "./LessonSection";
+import DeleteMaterialModal from "./components/DeleteMaterialModal";
+import EditMaterialModal from "./components/EditMaterialModal";
+import GradeCoverage from "./components/GradeCoverage";
+import LibraryFilters from "./components/LibraryFilters";
+import UploadForm from "./components/UploadForm";
+
 import {
     deleteMaterial,
     getMaterials,
     getMaterialViewUrl,
     reorderMaterials,
+    rereadMaterialText,
     updateMaterial,
     uploadMaterial
 } from "./materialsAPI";
-import { readFormValues } from "../../shared/form/readFormValues";
-import { LESSON_SUBJECTS } from "./subjects";
+
+import {
+    LESSON_SUBJECTS,
+    MAX_LESSON,
+    MAX_UNIT
+} from "./subjects";
 
 const FALLBACK_GRADES = ["9", "10", "11", "12"];
 
-const MAX_LESSON = 99;
-const MAX_UNIT = 99;
-
+//The lesson PDF library: one subject's PDFs, grouped by grade, unit and
+//lesson, with the admin actions on top.
+//
+//This component owns the data and every action. The pieces it renders --
+//the coverage strip, the upload form, the filters and the two dialogs --
+//are views over that state, which is why they take props rather than
+//fetching anything themselves.
+//
 //Uploading, reordering and deleting are admin-only on the server, so
-//canManage gates that UI rather than letting a teacher fill in a form
-//that would answer 403. It defaults to false: read-only is the safe side.
+//canManage gates that UI rather than letting a teacher fill in a form that
+//would answer 403. It defaults to false: read-only is the safe side.
 function MaterialManager({
     classrooms = [],
     canManage = false
@@ -60,34 +68,41 @@ function MaterialManager({
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    //grade, unit and lesson are all client-side filters over the
-    //subject's whole library, so the coverage strip below can count
-    //every grade at the same time
+    //grade, unit and lesson are all client-side filters over the subject's
+    //whole library, so the coverage strip below can count every grade at
+    //the same time
     const [gradeFilter, setGradeFilter] = useState("");
     const [unitFilter, setUnitFilter] = useState("");
-    const [lessonFilter, setLessonFilter] =
-        useState("");
+    const [lessonFilter, setLessonFilter] = useState("");
 
     const [uploading, setUploading] = useState(false);
 
-    //{ tone: "error" | "success", text } | null
+    //{ tone: "error" | "success", text } | null, for the upload form
     const [feedback, setFeedback] = useState(null);
+
+    //Errors from working on the library itself -- moving, reading or
+    //deleting a file -- are shown beside the list rather than in the upload
+    //form above, which is usually scrolled out of view by then. Kept in its
+    //own state so the two messages cannot overwrite each other.
+    const [libraryFeedback, setLibraryFeedback] =
+        useState(null);
 
     //the material being renamed, or null
     const [editing, setEditing] = useState(null);
 
     const [saving, setSaving] = useState(false);
 
+    //the material awaiting delete confirmation, or null
+    const [pendingDelete, setPendingDelete] = useState(null);
+
+    const [deleting, setDeleting] = useState(false);
+
     //the material currently being moved, so its buttons can be locked
     const [movingId, setMovingId] = useState(null);
 
-    const fileInputRef = useRef(null);
-
-    //Both forms are uncontrolled: their values are read when they are
-    //submitted, so typing does not re-render the PDF list beside them.
-    const uploadFormRef = useRef(null);
-    const editFormRef = useRef(null);
-    const titleInputRef = useRef(null);
+    //the material currently being read by the AI again, so its button can
+    //show that something is happening
+    const [readingId, setReadingId] = useState(null);
 
     const loadMaterials = useCallback(async () => {
         setLoading(true);
@@ -95,10 +110,10 @@ function MaterialManager({
 
         try {
             //The whole subject is loaded rather than one grade: the
-            //coverage strip counts the PDFs in every grade, which is
-            //what makes an upload that landed in the wrong grade
-            //visible from here instead of only from the student's
-            //side. Grade, unit and lesson are client-side filters.
+            //coverage strip counts the PDFs in every grade, which is what
+            //makes an upload that landed in the wrong grade visible from
+            //here instead of only from the student's side. Grade, unit and
+            //lesson are client-side filters.
             setMaterials(
                 await getMaterials({ subject })
             );
@@ -113,8 +128,8 @@ function MaterialManager({
     }, [subject]);
 
     useEffect(() => {
-        //defer so the effect body performs no synchronous
-        //state updates (loadMaterials calls setLoading)
+        //defer so the effect body performs no synchronous state updates
+        //(loadMaterials calls setLoading)
         const timeoutId = setTimeout(() => {
             loadMaterials();
         }, 0);
@@ -122,28 +137,22 @@ function MaterialManager({
         return () => clearTimeout(timeoutId);
     }, [loadMaterials]);
 
-    //How many PDFs this subject holds in each grade. A grade sitting
-    //at 0 is the usual reason a student's subject page looks empty, so
-    //the coverage strip reports it rather than leaving it to be
-    //discovered from the student's side.
+    //How many PDFs this subject holds in each grade.
     const gradeCounts = useMemo(() => {
         const counts = new Map();
 
         for (const material of materials) {
             const key = String(material.grade);
 
-            counts.set(
-                key,
-                (counts.get(key) || 0) + 1
-            );
+            counts.set(key, (counts.get(key) || 0) + 1);
         }
 
         return counts;
     }, [materials]);
 
-    //A unit or lesson number only means something inside its grade, so
-    //the dropdowns are scoped to the selected grade (or to the whole
-    //subject while no grade is selected).
+    //A unit or lesson number only means something inside its grade, so the
+    //dropdowns are scoped to the selected grade (or to the whole subject
+    //while no grade is selected).
     const gradeScopedMaterials = useMemo(
         () =>
             gradeFilter
@@ -198,9 +207,9 @@ function MaterialManager({
             groups.get(key).push(material);
         }
 
-        //grades are strings, so compare them as numbers to get 9 before
-        //10; a lesson number only means something inside its unit, so
-        //unit comes first
+        //grades are strings, so compare them as numbers to get 9 before 10;
+        //a lesson number only means something inside its unit, so unit
+        //comes first
         return [...groups.entries()]
             .map(([key, items]) => ({
                 key,
@@ -251,14 +260,33 @@ function MaterialManager({
         0
     );
 
-    const handleUpload = async (event) => {
-        event.preventDefault();
+    //A unit or lesson number belongs to a grade, so narrowing the grade
+    //drops the two filters under it.
+    const handleGradeFilter = (value) => {
+        setGradeFilter(value);
+        setUnitFilter("");
+        setLessonFilter("");
+    };
 
+    const handleUnitFilter = (value) => {
+        setUnitFilter(value);
+
+        //a lesson number only exists inside a unit, so it is dropped with
+        //the unit
+        setLessonFilter("");
+    };
+
+    //Store one upload. The form reads its own fields and hands them over as
+    //strings; returns true only when the file was stored, which is the
+    //form's signal that it may clear itself.
+    const handleUpload = async ({
+        file,
+        title,
+        grade,
+        unit: unitField,
+        lesson: lessonField
+    }) => {
         setFeedback(null);
-
-        const file =
-            fileInputRef.current?.files?.[0] ||
-            null;
 
         if (!file) {
             setFeedback({
@@ -266,15 +294,8 @@ function MaterialManager({
                 text: "Choose a PDF or image file to upload"
             });
 
-            return;
+            return false;
         }
-
-        const {
-            title,
-            grade,
-            unit: unitField,
-            lesson: lessonField
-        } = readFormValues(uploadFormRef.current);
 
         const unit = Number(unitField);
         const lesson = Number(lessonField);
@@ -290,7 +311,7 @@ function MaterialManager({
                 text: `Unit must be a whole number between 1 and ${MAX_UNIT}`
             });
 
-            return;
+            return false;
         }
 
         if (
@@ -304,13 +325,13 @@ function MaterialManager({
                 text: `Lesson must be a whole number between 1 and ${MAX_LESSON}`
             });
 
-            return;
+            return false;
         }
 
         setUploading(true);
 
         try {
-            await uploadMaterial({
+            const material = await uploadMaterial({
                 file,
                 subject,
                 grade,
@@ -319,22 +340,26 @@ function MaterialManager({
                 title
             });
 
-            //clear the title and the chosen file, but keep the grade and
-            //lesson, so a run of uploads into one lesson is not reset
-            if (titleInputRef.current) {
-                titleInputRef.current.value = "";
-            }
-
-            if (fileInputRef.current) {
-                fileInputRef.current.value = "";
-            }
-
+            //hasText is false when the AI found nothing to read: either a
+            //scanned PDF with no text layer, or a photo the vision model
+            //could not make out. The upload still worked, but saying so now
+            //is far more use than letting the admin discover the missing
+            //assistant on the student's side.
             setFeedback({
-                tone: "success",
-                text: "Uploaded successfully"
+                tone:
+                    material?.hasText === false
+                        ? "error"
+                        : "success",
+
+                text:
+                    material?.hasText === false
+                        ? "Uploaded, but the AI could not read any text in it, so the assistant, flashcards and quiz are off for this lesson. Upload a clearer copy if you need them."
+                        : "Uploaded successfully"
             });
 
             await loadMaterials();
+
+            return true;
         } catch (err) {
             setFeedback({
                 tone: "error",
@@ -343,6 +368,8 @@ function MaterialManager({
                     err.message ||
                     "Unable to upload that file"
             });
+
+            return false;
         } finally {
             setUploading(false);
         }
@@ -366,45 +393,38 @@ function MaterialManager({
         } catch (err) {
             previewWindow?.close();
 
-            alert(
-                err.message || "Unable to open that PDF"
-            );
+            setLibraryFeedback({
+                tone: "error",
+
+                text:
+                    err.message ||
+                    "Unable to open that PDF"
+            });
         }
     };
 
-    //the modal prefills itself from `editing`, so only the material is
+    //the dialog prefills itself from `editing`, so only the material is
     //kept here
     const openEditor = (material) => {
         setEditing(material);
     };
 
-    const handleSave = async (event) => {
-        event.preventDefault();
-
+    //Rename or move one PDF. Returns the reason it was refused, or "" when
+    //it worked, so the dialog can show the message in place.
+    const handleSave = async (values) => {
         if (!editing) {
-            return;
+            return "";
         }
 
-        const {
-            title,
-            grade,
-            unit: unitField,
-            lesson: lessonField
-        } = readFormValues(editFormRef.current);
-
-        const unit = Number(unitField);
-        const lesson = Number(lessonField);
+        const unit = Number(values.unit);
+        const lesson = Number(values.lesson);
 
         if (
             !Number.isInteger(unit) ||
             unit < 1 ||
             unit > MAX_UNIT
         ) {
-            alert(
-                `Unit must be a whole number between 1 and ${MAX_UNIT}`
-            );
-
-            return;
+            return `Unit must be a whole number between 1 and ${MAX_UNIT}`;
         }
 
         if (
@@ -412,19 +432,15 @@ function MaterialManager({
             lesson < 1 ||
             lesson > MAX_LESSON
         ) {
-            alert(
-                `Lesson must be a whole number between 1 and ${MAX_LESSON}`
-            );
-
-            return;
+            return `Lesson must be a whole number between 1 and ${MAX_LESSON}`;
         }
 
         setSaving(true);
 
         try {
             await updateMaterial(editing._id, {
-                title,
-                grade,
+                title: values.title,
+                grade: values.grade,
                 unit,
                 lesson
             });
@@ -432,19 +448,20 @@ function MaterialManager({
             setEditing(null);
 
             await loadMaterials();
+
+            return "";
         } catch (err) {
-            alert(
-                err.message ||
-                    "Unable to update that PDF"
+            return (
+                err.message || "Unable to update that PDF"
             );
         } finally {
             setSaving(false);
         }
     };
 
-    //Move a PDF one place earlier or later within its own lesson. The
-    //whole lesson is sent back, so the stored order stays a clean
-    //sequence instead of drifting into duplicate positions.
+    //Move a PDF one place earlier or later within its own lesson. The whole
+    //lesson is sent back, so the stored order stays a clean sequence
+    //instead of drifting into duplicate positions.
     const handleMove = async (
         lessonItems,
         index,
@@ -473,45 +490,101 @@ function MaterialManager({
                 grade: lessonItems[0].grade,
                 unit: lessonItems[0].unit,
                 lesson: lessonItems[0].lesson,
-                order: reordered.map(
-                    (item) => item._id
-                )
+                order: reordered.map((item) => item._id)
             });
 
             await loadMaterials();
         } catch (err) {
-            alert(
-                err.message ||
+            setLibraryFeedback({
+                tone: "error",
+
+                text:
+                    err.message ||
                     "Unable to reorder that PDF"
-            );
+            });
         } finally {
             setMovingId(null);
         }
     };
 
-    const handleDelete = async (material) => {
-        const confirmed = window.confirm(
-            `Delete "${material.title}"? The stored file is removed too.`
-        );
+    //Ask the AI to read the lesson again, for a file nothing could be read
+    //from at upload time ("no AI text" in the list). The stored page is read
+    //again, so a clearer copy is not needed.
+    const handleReread = async (material) => {
+        setReadingId(material._id);
+        setLibraryFeedback(null);
 
-        if (!confirmed) {
+        try {
+            const updated = await rereadMaterialText(
+                material._id
+            );
+
+            setLibraryFeedback({
+                tone:
+                    updated?.hasText === false
+                        ? "error"
+                        : "success",
+
+                text:
+                    updated?.hasText === false
+                        ? "The AI still found no text in this file, so the assistant, flashcards and quiz stay off for this lesson."
+                        : "The AI read this lesson, so the assistant, flashcards and quiz now work for it."
+            });
+
+            await loadMaterials();
+        } catch (err) {
+            setLibraryFeedback({
+                tone: "error",
+
+                text:
+                    err.message ||
+                    "Unable to read that lesson again"
+            });
+        } finally {
+            setReadingId(null);
+        }
+    };
+
+    //Deleting removes the stored file as well as the record, so it is the
+    //one action here that cannot be undone. The dialog below asks first;
+    //this only opens it.
+    const handleDelete = (material) => {
+        setLibraryFeedback(null);
+        setPendingDelete(material);
+    };
+
+    const confirmDelete = async () => {
+        if (!pendingDelete) {
             return;
         }
+
+        const material = pendingDelete;
+
+        setDeleting(true);
 
         try {
             await deleteMaterial(material._id);
 
+            setPendingDelete(null);
+
             await loadMaterials();
         } catch (err) {
-            alert(
-                err.message ||
+            setPendingDelete(null);
+
+            setLibraryFeedback({
+                tone: "error",
+
+                text:
+                    err.message ||
                     "Unable to delete that PDF"
-            );
+            });
+        } finally {
+            setDeleting(false);
         }
     };
 
-    //switching library drops the unit and lesson filters, because a
-    //number that exists in one subject usually does not exist in the next
+    //switching library drops the filters, because a number that exists in
+    //one subject usually does not exist in the next
     const handleSubjectChange = (nextSubject) => {
         setSubject(nextSubject);
         setUnitFilter("");
@@ -525,303 +598,53 @@ function MaterialManager({
             {/* Subject picker: chooses which library the page works in */}
             <div className="bg-gray-900 border border-gray-800 rounded-lg p-2 flex flex-wrap gap-2">
 
-                {LESSON_SUBJECTS.map(
-                    (subjectOption) => {
-                        const isActive =
-                            subjectOption === subject;
+                {LESSON_SUBJECTS.map((subjectOption) => {
+                    const isActive =
+                        subjectOption === subject;
 
-                        return (
-                            <button
-                                key={subjectOption}
-                                type="button"
-                                onClick={() =>
-                                    handleSubjectChange(
-                                        subjectOption
-                                    )
-                                }
-                                aria-pressed={isActive}
-                                className={`flex-1 min-w-40 px-4 py-3 rounded-lg text-sm font-semibold transition-colors cursor-pointer ${
-                                    isActive
-                                        ? "bg-green-500 text-gray-950"
-                                        : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                                }`}
-                            >
-                                {subjectOption}
-                            </button>
-                        );
-                    }
-                )}
-
-            </div>
-
-
-            {/* Coverage by grade. A student only ever sees their own
-                grade, so a grade sitting at 0 PDFs is why a student's
-                subject page looks empty; this makes that visible from
-                the admin side. Clicking a grade filters the library
-                below to it. */}
-            <div className="bg-gray-900 border border-gray-800 rounded-lg p-5">
-
-                <div className="flex flex-wrap items-start justify-between gap-3">
-
-                    <div>
-
-                        <h2 className="text-lg font-bold text-white">
-                            {subject} coverage by grade
-                        </h2>
-
-                        <p className="text-sm text-gray-400 mt-1">
-                            A student only sees the grade they
-                            are enrolled in, so a grade holding
-                            no PDFs shows them nothing.
-                        </p>
-
-                    </div>
-
-
-                    {gradeFilter && (
+                    return (
                         <button
+                            key={subjectOption}
                             type="button"
-                            onClick={() => {
-                                setGradeFilter("");
-                                setUnitFilter("");
-                                setLessonFilter("");
-                            }}
-                            className="px-4 py-2 bg-gray-800 border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-700 text-sm cursor-pointer transition-colors"
+                            onClick={() =>
+                                handleSubjectChange(
+                                    subjectOption
+                                )
+                            }
+                            aria-pressed={isActive}
+                            className={`flex-1 min-w-40 px-4 py-3 rounded-lg text-sm font-semibold transition-colors cursor-pointer ${
+                                isActive
+                                    ? "bg-green-500 text-gray-950"
+                                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                            }`}
                         >
-                            Show all grades
+                            {subjectOption}
                         </button>
-                    )}
-
-                </div>
-
-
-                <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
-
-                    {grades.map((grade) => {
-                        const count =
-                            gradeCounts.get(
-                                String(grade)
-                            ) || 0;
-
-                        const isActive =
-                            gradeFilter ===
-                            String(grade);
-
-                        const isEmpty = count === 0;
-
-                        return (
-                            <button
-                                key={grade}
-                                type="button"
-                                aria-pressed={isActive}
-                                onClick={() => {
-                                    setGradeFilter(
-                                        isActive
-                                            ? ""
-                                            : String(grade)
-                                    );
-
-                                    setUnitFilter("");
-                                    setLessonFilter("");
-                                }}
-                                className={`text-left px-4 py-3 rounded-lg border transition-colors cursor-pointer ${
-                                    isActive
-                                        ? "bg-green-500 border-green-500 text-gray-950"
-                                        : isEmpty
-                                            ? "bg-gray-800/40 border-amber-500/40 text-amber-300 hover:bg-gray-800"
-                                            : "bg-gray-800 border-gray-700 text-gray-200 hover:bg-gray-700"
-                                }`}
-                            >
-
-                                <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">
-                                    Grade {grade}
-                                </span>
-
-                                <span className="block text-2xl font-bold mt-1">
-                                    {count}
-                                </span>
-
-                                <span className="block text-xs opacity-70">
-                                    {count === 1
-                                        ? "PDF"
-                                        : "PDFs"}
-                                </span>
-
-                            </button>
-                        );
-                    })}
-
-                </div>
+                    );
+                })}
 
             </div>
+
+
+            {/* Coverage by grade */}
+            <GradeCoverage
+                subject={subject}
+                grades={grades}
+                gradeCounts={gradeCounts}
+                gradeFilter={gradeFilter}
+                onGradeChange={handleGradeFilter}
+            />
 
 
             {/* Upload */}
             {canManage && (
-            <div className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
-
-                <div className="p-6 border-b border-gray-800 flex items-center gap-3">
-
-                    <div className="p-2 bg-green-500 rounded-lg">
-                        <Upload
-                            size={20}
-                            className="text-gray-950"
-                        />
-                    </div>
-
-                    <div>
-
-                        <h2 className="text-xl font-bold text-white">
-                            Upload a {subject} lesson PDF
-                        </h2>
-
-                        <p className="text-sm text-gray-400">
-                            {subject} · PDF or image, up to 25MB
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <form
-                    ref={uploadFormRef}
+                <UploadForm
+                    subject={subject}
+                    grades={grades}
+                    uploading={uploading}
+                    feedback={feedback}
                     onSubmit={handleUpload}
-                    className="p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 text-left"
-                >
-
-                    <div>
-                        <label className="block text-gray-300 font-medium mb-2">
-                            Title
-                        </label>
-
-                        <input
-                            ref={titleInputRef}
-                            name="title"
-                            type="text"
-                            defaultValue=""
-                            placeholder="Defaults to the file name"
-                            className="w-full px-4 py-2.5 bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
-                        />
-                    </div>
-
-
-                    <div>
-                        <label className="block text-gray-300 font-medium mb-2">
-                            Grade *
-                        </label>
-
-                        <select
-                            name="grade"
-                            defaultValue="9"
-                            className="w-full px-4 py-2.5 bg-gray-800 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-green-500 outline-none cursor-pointer"
-                        >
-                            {grades.map((grade) => (
-                                <option
-                                    key={grade}
-                                    value={grade}
-                                >
-                                    Grade {grade}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-
-
-                    <div>
-                        <label className="block text-gray-300 font-medium mb-2">
-                            Unit *
-                        </label>
-
-                        <input
-                            name="unit"
-                            type="number"
-                            min="1"
-                            max={MAX_UNIT}
-                            defaultValue="1"
-                            className="w-full px-4 py-2.5 bg-gray-800 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
-                        />
-                    </div>
-
-
-                    <div>
-                        <label className="block text-gray-300 font-medium mb-2">
-                            Lesson *
-                        </label>
-
-                        <input
-                            name="lesson"
-                            type="number"
-                            min="1"
-                            max={MAX_LESSON}
-                            defaultValue="1"
-                            className="w-full px-4 py-2.5 bg-gray-800 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
-                        />
-                    </div>
-
-
-                    <div>
-                        <label className="block text-gray-300 font-medium mb-2">
-                            PDF or image file *
-                        </label>
-
-                        {/* An image is turned into a PDF by the server,
-                            so the picker offers both. image/* covers the
-                            formats a phone or a scanner produces; the
-                            extensions are there for the ones a system may
-                            not have a registered type for (HEIC). */}
-                        <input
-                            ref={fileInputRef}
-                            type="file"
-                            accept="application/pdf,.pdf,image/*,.png,.jpg,.jpeg,.webp,.avif,.heic,.heif,.gif,.tif,.tiff,.bmp"
-                            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 text-gray-300 rounded-lg file:mr-3 file:px-3 file:py-1 file:rounded-lg file:border-0 file:bg-green-500 file:text-gray-950 file:text-sm file:font-medium cursor-pointer"
-                        />
-                    </div>
-
-
-                    <div className="md:col-span-2 xl:col-span-5 flex flex-wrap items-center gap-4">
-
-                        <button
-                            type="submit"
-                            disabled={uploading}
-                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-green-500 hover:bg-green-400 disabled:opacity-50 disabled:cursor-not-allowed text-gray-950 font-semibold rounded-lg transition-colors cursor-pointer"
-                        >
-                            {uploading ? (
-                                <>
-                                    <Loader2
-                                        size={18}
-                                        className="animate-spin"
-                                    />
-                                    Uploading...
-                                </>
-                            ) : (
-                                <>
-                                    <Upload size={18} />
-                                    Upload file
-                                </>
-                            )}
-                        </button>
-
-
-                        {feedback && (
-                            <p
-                                className={`text-sm ${
-                                    feedback.tone ===
-                                    "success"
-                                        ? "text-green-400"
-                                        : "text-red-400"
-                                }`}
-                            >
-                                {feedback.text}
-                            </p>
-                        )}
-
-                    </div>
-
-                </form>
-
-            </div>
+                />
             )}
 
 
@@ -843,8 +666,8 @@ function MaterialManager({
                         </h2>
 
                         <p className="text-sm text-gray-400 mt-1">
-                            Open or preview any PDF below. A photo you
-                        upload is stored as a PDF.
+                            Open or preview any PDF below. A
+                            photo you upload is stored as a PDF.
                             Uploading, reordering and deleting
                             are limited to admins.
                         </p>
@@ -880,102 +703,35 @@ function MaterialManager({
                     </div>
 
 
-                    <div className="flex flex-wrap items-center gap-3">
-
-                        <select
-                            value={gradeFilter}
-                            onChange={(event) => {
-                                setGradeFilter(
-                                    event.target.value
-                                );
-
-                                //units and lessons belong to a grade, so
-                                //both filters are dropped with it
-                                setUnitFilter("");
-                                setLessonFilter("");
-                            }}
-                            className="px-3 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-green-500 outline-none cursor-pointer"
-                        >
-                            <option value="">
-                                All grades
-                            </option>
-
-                            {grades.map((grade) => (
-                                <option
-                                    key={grade}
-                                    value={grade}
-                                >
-                                    Grade {grade}
-                                </option>
-                            ))}
-                        </select>
-
-
-                        <select
-                            value={unitFilter}
-                            onChange={(event) => {
-                                setUnitFilter(
-                                    event.target.value
-                                );
-
-                                //a lesson number only exists inside a
-                                //unit, so it is dropped with the unit
-                                setLessonFilter("");
-                            }}
-                            className="px-3 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-green-500 outline-none cursor-pointer"
-                        >
-                            <option value="">
-                                All units
-                            </option>
-
-                            {unitOptions.map((unit) => (
-                                <option
-                                    key={unit}
-                                    value={String(unit)}
-                                >
-                                    Unit {unit}
-                                </option>
-                            ))}
-                        </select>
-
-
-                        <select
-                            value={lessonFilter}
-                            onChange={(event) =>
-                                setLessonFilter(
-                                    event.target.value
-                                )
-                            }
-                            className="px-3 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-green-500 outline-none cursor-pointer"
-                        >
-                            <option value="">
-                                All lessons
-                            </option>
-
-                            {lessonOptions.map((lesson) => (
-                                <option
-                                    key={lesson}
-                                    value={String(lesson)}
-                                >
-                                    Lesson {lesson}
-                                </option>
-                            ))}
-                        </select>
-
-
-                        <button
-                            type="button"
-                            onClick={loadMaterials}
-                            disabled={loading}
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-700 disabled:opacity-50 cursor-pointer transition-colors"
-                        >
-                            <RefreshCw size={15} />
-                            Refresh
-                        </button>
-
-                    </div>
+                    <LibraryFilters
+                        grades={grades}
+                        gradeFilter={gradeFilter}
+                        unitFilter={unitFilter}
+                        lessonFilter={lessonFilter}
+                        unitOptions={unitOptions}
+                        lessonOptions={lessonOptions}
+                        loading={loading}
+                        onGradeChange={handleGradeFilter}
+                        onUnitChange={handleUnitFilter}
+                        onLessonChange={setLessonFilter}
+                        onRefresh={loadMaterials}
+                    />
 
                 </div>
+
+
+                {libraryFeedback && (
+                    <div
+                        role="status"
+                        className={`px-6 py-3 text-sm border-b border-gray-800 ${
+                            libraryFeedback.tone === "success"
+                                ? "text-green-400"
+                                : "text-red-400"
+                        }`}
+                    >
+                        {libraryFeedback.text}
+                    </div>
+                )}
 
 
                 {loading ? (
@@ -1026,10 +782,12 @@ function MaterialManager({
                                 materials={section.items}
                                 canManage={canManage}
                                 busy={movingId !== null}
+                                readingId={readingId}
                                 onMove={handleMove}
                                 onPreview={handlePreview}
                                 onEdit={openEditor}
                                 onDelete={handleDelete}
+                                onReread={handleReread}
                             />
                         ))}
 
@@ -1039,165 +797,28 @@ function MaterialManager({
             </div>
 
 
-            {/* Edit modal, keyed by material so the prefilled form is rebuilt per PDF */}
+            {/* Delete confirmation */}
+            {canManage && pendingDelete && (
+                <DeleteMaterialModal
+                    material={pendingDelete}
+                    deleting={deleting}
+                    onConfirm={confirmDelete}
+                    onCancel={() => setPendingDelete(null)}
+                />
+            )}
+
+
+            {/* Edit dialog, keyed by material so the prefilled form is
+                rebuilt per PDF */}
             {canManage && editing && (
-                <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50">
-
-                    <div
-                        key={editing._id}
-                        className="bg-gray-900 rounded-lg shadow-2xl max-w-lg w-full border border-gray-800"
-                    >
-
-                        <div className="flex justify-between items-center p-6 border-b border-gray-800">
-
-                            <h2 className="text-xl font-bold text-white">
-                                Edit PDF
-                            </h2>
-
-                            <button
-                                type="button"
-                                onClick={() =>
-                                    setEditing(null)
-                                }
-                                className="text-gray-400 hover:text-white hover:bg-gray-800 p-1 rounded-full transition-colors cursor-pointer"
-                            >
-                                <X size={22} />
-                            </button>
-
-                        </div>
-
-
-                        <form
-                            ref={editFormRef}
-                            onSubmit={handleSave}
-                            className="p-6 space-y-5 text-left"
-                        >
-
-                            <div>
-                                <label className="block text-gray-300 font-medium mb-2">
-                                    Title
-                                </label>
-
-                                <input
-                                    name="title"
-                                    type="text"
-                                    defaultValue={editing.title}
-                                    className="w-full px-4 py-2.5 bg-gray-800 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
-                                />
-                            </div>
-
-
-                            <div className="grid grid-cols-3 gap-5">
-
-                                <div>
-                                    <label className="block text-gray-300 font-medium mb-2">
-                                        Grade
-                                    </label>
-
-                                    <select
-                                        name="grade"
-                                        defaultValue={
-                                            editing.grade
-                                        }
-                                        className="w-full px-4 py-2.5 bg-gray-800 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-green-500 outline-none cursor-pointer"
-                                    >
-                                        {grades.map(
-                                            (grade) => (
-                                                <option
-                                                    key={
-                                                        grade
-                                                    }
-                                                    value={
-                                                        grade
-                                                    }
-                                                >
-                                                    Grade{" "}
-                                                    {
-                                                        grade
-                                                    }
-                                                </option>
-                                            )
-                                        )}
-                                    </select>
-                                </div>
-
-
-                                <div>
-                                    <label className="block text-gray-300 font-medium mb-2">
-                                        Unit
-                                    </label>
-
-                                    <input
-                                        name="unit"
-                                        type="number"
-                                        min="1"
-                                        max={MAX_UNIT}
-                                        defaultValue={
-                                            editing.unit ?? 1
-                                        }
-                                        className="w-full px-4 py-2.5 bg-gray-800 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
-                                    />
-                                </div>
-
-
-                                <div>
-                                    <label className="block text-gray-300 font-medium mb-2">
-                                        Lesson
-                                    </label>
-
-                                    <input
-                                        name="lesson"
-                                        type="number"
-                                        min="1"
-                                        max={MAX_LESSON}
-                                        defaultValue={
-                                            editing.lesson
-                                        }
-                                        className="w-full px-4 py-2.5 bg-gray-800 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
-                                    />
-                                </div>
-
-                            </div>
-
-
-                            <div className="flex gap-3 pt-2">
-
-                                <button
-                                    type="button"
-                                    onClick={() =>
-                                        setEditing(null)
-                                    }
-                                    className="flex-1 px-4 py-2.5 bg-gray-800 border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-700 font-medium cursor-pointer transition-colors"
-                                >
-                                    Cancel
-                                </button>
-
-                                <button
-                                    type="submit"
-                                    disabled={saving}
-                                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-green-500 hover:bg-green-400 disabled:opacity-50 text-gray-950 font-semibold rounded-lg cursor-pointer transition-colors"
-                                >
-                                    {saving ? (
-                                        <Loader2
-                                            size={18}
-                                            className="animate-spin"
-                                        />
-                                    ) : (
-                                        <Check size={18} />
-                                    )}
-
-                                    {saving
-                                        ? "Saving..."
-                                        : "Save changes"}
-                                </button>
-
-                            </div>
-
-                        </form>
-
-                    </div>
-
-                </div>
+                <EditMaterialModal
+                    key={editing._id}
+                    material={editing}
+                    grades={grades}
+                    saving={saving}
+                    onSubmit={handleSave}
+                    onClose={() => setEditing(null)}
+                />
             )}
 
         </div>

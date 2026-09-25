@@ -1,27 +1,34 @@
 #!/usr/bin/env node
 
-//Read the AI text out of lesson PDFs that were uploaded before the lesson
-//assistant existed.
+//Read the AI text out of lesson files that were uploaded without it.
 //
-//Uploading a PDF now extracts its text once and stores it on the material,
+//Uploading a file now reads its text once and stores it on the material,
 //which is what lets the assistant answer questions and build flashcards and
 //quizzes for that lesson. Anything uploaded earlier has no text, so this
-//script reads those PDFs back out of storage and fills it in.
+//script reads those files back out of storage and fills it in.
+//
+//There are two kinds of row, and they are read differently:
+//
+//  * a PDF is parsed for its text layer.
+//
+//  * a photo was read by the vision model at upload time, and a textless
+//    row of that kind means the read failed -- the provider answers a burst
+//    of traffic with a 503, and a burst outlasts an upload. The original
+//    image is not kept, but the page is in storage as a PDF and the model
+//    reads PDFs, so it is read from there. This is the same thing the
+//    admin's "read with AI" action does for a single lesson.
 //
 //It is safe to run more than once: it only looks at rows whose text was
 //never read (textExtractedAt is still null), and it stamps that field for
-//every row it processes, so a PDF that genuinely holds no text is not
-//re-read on the next run.
-//
-//Rows uploaded as photos are the one exception. Their text came from the
-//vision model rather than from parsing, and the original image is not
-//kept, so those are reported and left alone instead of being stamped.
+//every row it processes, so a file that genuinely holds no text is not
+//re-read on the next run. A row that could not be read is left unstamped on
+//purpose, so a later run picks it up.
 //
 //Usage:
 //   node scripts/backfillMaterialText.js
 //
 //Uses the same server/.env as the app, because the bytes are fetched back
-//through the configured storage driver.
+//through the configured storage driver and read with the same AI helpers.
 
 const dotenv = require('dotenv');
 
@@ -31,9 +38,14 @@ const mongoose = require('mongoose');
 
 const LessonMaterial = require('../features/materials/LessonMaterial');
 
-const { getStorageDriver } = require('../shared/storage');
+const {
+    getStorageDriver,
+    readObjectBuffer
+} = require('../shared/storage');
 
 const { extractPdfText } = require('../shared/pdf');
+
+const ai = require('../shared/ai');
 
 //the same ceiling the upload path applies, for the same reason
 const MAX_LESSON_TEXT = 200000;
@@ -55,22 +67,6 @@ function databaseUrl() {
     return url.replace('<DB_PASSWORD>', password);
 }
 
-//collect one stored object into a single buffer
-async function readStoredObject(key) {
-    const { stream } =
-        await getStorageDriver().createReadStream({
-            key
-        });
-
-    const chunks = [];
-
-    for await (const chunk of stream) {
-        chunks.push(chunk);
-    }
-
-    return Buffer.concat(chunks);
-}
-
 async function backfill() {
     await mongoose.connect(databaseUrl());
 
@@ -90,9 +86,13 @@ async function backfill() {
         `Found ${materials.length} lesson(s) without extracted text.`
     );
 
+    //One driver for the whole run. readObjectBuffer builds its own when it
+    //is not given one, and this loop would otherwise rebuild it per row.
+    const driver = getStorageDriver();
+
     let filled = 0;
     let empty = 0;
-    let skipped = 0;
+    let stamped = 0;
     let failed = 0;
 
     for (const material of materials) {
@@ -101,37 +101,46 @@ async function backfill() {
             `unit-${material.unit} lesson-${material.lesson} ` +
             `"${material.title}"`;
 
-        //An image-origin lesson was read by the vision model, and the
-        //original photo is not kept, so this script cannot read it: the
-        //stored PDF has no text layer to parse. A textless row of that
-        //kind means the vision read failed at upload time, and re-uploading
-        //the page is the only way to fill it in. Stamping it here would
-        //claim it had been processed as a PDF.
-        if (
-            material.sourceKind === 'image' &&
-            !String(material.extractedText || '').trim()
-        ) {
-            skipped++;
+        //A row that already carries text only needs its stamp: the model
+        //must not be asked to read a page that was read once already, and
+        //overwriting the stored text would be a step backwards.
+        if (String(material.extractedText || '').trim()) {
+            material.textExtractedAt = new Date();
+
+            await material.save();
+
+            stamped++;
 
             console.log(
-                `  skipped  ${label} (photo: re-upload to read it)`
+                `  stamped  ${label} (already has text)`
             );
 
             continue;
         }
 
+        //how this file was read the first time decides how it is read
+        //now: a photo has no text layer to parse
+        const fromPhoto = material.sourceKind === 'image';
+
         try {
-            const buffer = await readStoredObject(
-                material.storageKey
+            const buffer = await readObjectBuffer(
+                material.storageKey,
+                driver
             );
 
             const text = (
-                await extractPdfText(buffer)
+                fromPhoto
+                    ? await ai.transcribeDocument({
+                        data: buffer.toString('base64'),
+                        mimeType: 'application/pdf'
+                    })
+                    : await extractPdfText(buffer)
             ).slice(0, MAX_LESSON_TEXT);
 
             material.extractedText = text;
 
-            //stamped even when the PDF had no text, so the next run skips it
+            //stamped even when the file had no text, so the next run skips
+            //it: an image-only PDF is not going to gain a text layer
             material.textExtractedAt = new Date();
 
             await material.save();
@@ -140,7 +149,8 @@ async function backfill() {
                 filled++;
 
                 console.log(
-                    `  filled   ${label} (${text.length} chars)`
+                    `  filled   ${label} (${text.length} chars` +
+                        `${fromPhoto ? ', read from the stored page' : ''})`
                 );
             } else {
                 empty++;
@@ -161,7 +171,7 @@ async function backfill() {
 
     console.log(
         `Done. ${filled} filled, ${empty} without readable text, ` +
-            `${skipped} photos skipped, ${failed} failed.`
+            `${stamped} already had text, ${failed} failed.`
     );
 
     await mongoose.disconnect();

@@ -3,6 +3,7 @@ import {
     ChevronUp,
     FileText,
     Pencil,
+    RefreshCw,
     Trash2
 } from "lucide-react";
 
@@ -30,10 +31,12 @@ function LessonSection({
     materials,
     canManage,
     busy,
+    readingId,
     onMove,
     onPreview,
     onEdit,
-    onDelete
+    onDelete,
+    onReread
 }) {
     const move = (index, direction) => {
         const target = index + direction;
@@ -204,7 +207,7 @@ function LessonSection({
                                         it is used. */}
                                     {material.hasText === false && (
                                         <span
-                                            title="No readable text, so the AI assistant, flashcards and quiz are unavailable for this PDF. Re-uploading a clearer photo may fix it."
+                                            title="No readable text, so the AI assistant, flashcards and quiz are unavailable for this PDF. Use Read with AI to try the stored page again."
                                             className="ml-2 align-middle text-[10px] font-semibold text-amber-400"
                                         >
                                             no AI text
@@ -241,6 +244,41 @@ function LessonSection({
                                             Preview
                                         </button>
 
+
+                                        {/* A page the AI walked away from at
+                                            upload time can be read again
+                                            from storage, so the lesson does
+                                            not have to be uploaded afresh. */}
+                                        {canManage &&
+                                            material.hasText === false && (
+                                                <button
+                                                    type="button"
+                                                    disabled={
+                                                        readingId ===
+                                                        material._id
+                                                    }
+                                                    onClick={() =>
+                                                        onReread(
+                                                            material
+                                                        )
+                                                    }
+                                                    className="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-amber-500 text-gray-900 rounded-lg hover:bg-amber-400 font-semibold cursor-pointer transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                                                >
+                                                    <RefreshCw
+                                                        size={14}
+                                                        className={
+                                                            readingId ===
+                                                            material._id
+                                                                ? "animate-spin"
+                                                                : ""
+                                                        }
+                                                    />
+                                                    {readingId ===
+                                                    material._id
+                                                        ? "Reading…"
+                                                        : "Read with AI"}
+                                                </button>
+                                            )}
 
                                         {canManage && (
                                             <>

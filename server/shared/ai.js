@@ -24,6 +24,39 @@ const EMPTY_REPLY_MESSAGE =
 //how long one request may take before it is abandoned
 const REQUEST_TIMEOUT_MS = 20000;
 
+//Gemini regularly answers a burst of traffic with "currently experiencing
+//high demand" (a 503), which is worth trying again. Measurements against
+//the live API show such a burst lasting well over half a minute, which no
+//sane in-request budget can sit out, so the wait between attempts doubles
+//(a short blip is ridden out here) and a longer outage is left to the
+//re-read path instead -- see rereadMaterialText in the materials
+//controller, which reads a lesson again from the stored PDF.
+const MAX_ATTEMPTS = 4;
+const RETRY_BASE_DELAY_MS = 400;
+const RETRY_MAX_DELAY_MS = 4000;
+
+//how long to wait before attempt `attempt` again: 400ms, 800ms, 1.6s, ...
+//up to the cap, with a little jitter so simultaneous requests do not
+//retry in lockstep
+function retryDelay(attempt) {
+    const backoff = Math.min(
+        RETRY_BASE_DELAY_MS * 2 ** (attempt - 1),
+        RETRY_MAX_DELAY_MS
+    );
+
+    return Math.round(backoff * (0.75 + Math.random() * 0.5));
+}
+
+//429 is "too many requests" and 5xx is the provider having a bad time.
+//Anything else (a bad request, an invalid key, a safety block) will fail
+//the same way every time, so it is not retried.
+const isTransientStatus = (status) =>
+    status === 429 ||
+    (status >= 500 && status <= 504);
+
+const wait = (ms) =>
+    new Promise((resolve) => setTimeout(resolve, ms));
+
 //Reading a page of handwriting takes the model far longer than answering
 //a short question does, so the vision call gets its own budget.
 const VISION_TIMEOUT_MS = 45000;
@@ -74,87 +107,120 @@ async function callGemini({
     const model =
         process.env.GEMINI_MODEL || DEFAULT_MODEL;
 
-    const response = await fetch(
-        GEMINI_URL(model),
-        {
-            method: 'POST',
+    //built once, because a retry sends exactly the same request again
+    const request = {
+        method: 'POST',
 
-            headers: {
-                'Content-Type': 'application/json',
-                'x-goog-api-key': getApiKey()
+        headers: {
+            'Content-Type': 'application/json',
+            'x-goog-api-key': getApiKey()
+        },
+
+        body: JSON.stringify({
+            systemInstruction: {
+                parts: [
+                    {
+                        text: systemInstruction
+                    }
+                ]
             },
 
-            body: JSON.stringify({
-                systemInstruction: {
+            contents: [
+                {
+                    role: 'user',
                     parts: [
+                        //the image travels with the question, so the
+                        //model can read it
+                        ...(image
+                            ? [
+                                {
+                                    inlineData: {
+                                        mimeType:
+                                            image.mimeType,
+                                        data: image.data
+                                    }
+                                }
+                            ]
+                            : []),
+
                         {
-                            text: systemInstruction
+                            text: prompt
                         }
                     ]
-                },
-
-                contents: [
-                    {
-                        role: 'user',
-                        parts: [
-                            //the image travels with the question, so the
-                            //model can read it
-                            ...(image
-                                ? [
-                                    {
-                                        inlineData: {
-                                            mimeType:
-                                                image.mimeType,
-                                            data: image.data
-                                        }
-                                    }
-                                ]
-                                : []),
-
-                            {
-                                text: prompt
-                            }
-                        ]
-                    }
-                ],
-
-                generationConfig: {
-                    temperature,
-                    maxOutputTokens,
-
-                    //ask Gemini for pure JSON on the structured calls
-                    ...(json
-                        ? {
-                            responseMimeType:
-                                'application/json'
-                        }
-                        : {})
                 }
-            }),
+            ],
 
+            generationConfig: {
+                temperature,
+                maxOutputTokens,
+
+                //ask Gemini for pure JSON on the structured calls
+                ...(json
+                    ? {
+                        responseMimeType:
+                            'application/json'
+                    }
+                    : {})
+            }
+        })
+    };
+
+    let response;
+    let data;
+
+    for (
+        let attempt = 1;
+        attempt <= MAX_ATTEMPTS;
+        attempt++
+    ) {
+        response = await fetch(GEMINI_URL(model), {
+            ...request,
             signal: AbortSignal.timeout(timeoutMs)
-        }
-    );
+        });
 
-    const data = await response.json();
+        //a body that is not JSON (an error page, say) is not fatal here:
+        //the status below is what decides
+        data = await response
+            .json()
+            .catch(() => null);
+
+        if (response.ok) {
+            break;
+        }
+
+        const canRetry =
+            isTransientStatus(response.status) &&
+            attempt < MAX_ATTEMPTS;
+
+        if (!canRetry) {
+            //The provider's own status is kept on the error as
+            //`upstreamStatus` so a caller that wants to can pass it
+            //through (the student chat does, so a quota error stays a
+            //429). `status` is left free for "our fault" errors, which
+            //is what the other AI endpoints report as a 502.
+            throw Object.assign(
+                new Error(
+                    data?.error?.message ||
+                        `Gemini request failed with status ${response.status}`
+                ),
+                { upstreamStatus: response.status }
+            );
+        }
+
+        console.warn(
+            `Gemini answered ${response.status}; retrying (attempt ${attempt} of ${MAX_ATTEMPTS})`
+        );
+
+        await wait(retryDelay(attempt));
+    }
 
     if (!response.ok) {
-        //The provider's own status is kept on the error as
-        //`upstreamStatus` so a caller that wants to can pass it through
-        //(the student chat does, so a quota error stays a 429). `status`
-        //is left free for "our fault" errors, which is what the other
-        //AI endpoints report as a 502.
-        throw Object.assign(
-            new Error(
-                data.error?.message ||
-                    `Gemini request failed with status ${response.status}`
-            ),
-            { upstreamStatus: response.status }
-        );
+        //unreachable: the loop either breaks on success or throws
+        throw new Error('Gemini request failed');
     }
 
     const text = (
-        data.candidates?.[0]?.content?.parts || []
+        data?.candidates?.[0]?.content?.parts || []
     )
         .map((part) => part.text || '')
         .join('')
@@ -270,21 +336,21 @@ async function generateFlashcards(text) {
     return cards;
 }
 
-//Read an image: transcribe the words in it and describe anything that is
-//not text, so a lesson or a note that arrived as a photo still has
-//something for the assistant to answer from.
-async function transcribeImage({ data, mimeType }) {
+//Read an uploaded page with the model: transcribe the words in it and
+//describe anything that is not text, so a lesson or a note that arrived as
+//a photo still has something for the assistant to answer from.
+//
+//The same helper serves an image and a document, because Gemini takes both
+//the same way -- inline data with a mime type -- and only the wording of
+//the instruction differs.
+async function transcribe(
+    { data, mimeType },
+    { source, instruction, prompt, failureMessage }
+) {
     try {
         return await callGemini({
-            systemInstruction:
-                'You transcribe study material from images for students. ' +
-                'Reproduce every readable word exactly as it appears, keeping the reading order. ' +
-                'Describe any diagram, graph, table or figure in words, and label each description clearly. ' +
-                'Add nothing else: no advice, no summary of your own, no commentary.',
-
-            prompt:
-                'Transcribe this page. Reply with the text and the descriptions only.',
-
+            systemInstruction: instruction,
+            prompt,
             image: { data, mimeType },
 
             //Transcription is a reading task, so there is no room for
@@ -299,7 +365,7 @@ async function transcribeImage({ data, mimeType }) {
 
     } catch (error) {
         console.error(
-            'Image transcription failed:',
+            `${source} transcription failed:`,
             error
         );
 
@@ -309,14 +375,55 @@ async function transcribeImage({ data, mimeType }) {
         //key keeps its 500, because that is our misconfiguration, while
         //anything else is the provider being unavailable -- the 502 the
         //other AI endpoints report.
-        const failure = new Error(
-            'The AI assistant could not read that image'
-        );
+        const failure = new Error(failureMessage);
 
         failure.status = error.status || 502;
 
         throw failure;
     }
+}
+
+const IMAGE_INSTRUCTION =
+    'You transcribe study material from images for students. ' +
+    'Reproduce every readable word exactly as it appears, keeping the reading order. ' +
+    'Describe any diagram, graph, table or figure in words, and label each description clearly. ' +
+    'Add nothing else: no advice, no summary of your own, no commentary.';
+
+//a lesson or a note that arrived as a photo
+async function transcribeImage(image) {
+    return transcribe(image, {
+        source: 'Image',
+
+        instruction: IMAGE_INSTRUCTION,
+
+        prompt:
+            'Transcribe this page. Reply with the text and the descriptions only.',
+
+        failureMessage:
+            'The AI assistant could not read that image'
+    });
+}
+
+//Read a stored document: how a lesson whose text was never read is picked
+//up again, because the original photo is not kept and a PDF wrapped around
+//one holds no text layer to parse. Gemini accepts a PDF directly, so the
+//bytes from storage can be sent as they are.
+async function transcribeDocument(document) {
+    return transcribe(document, {
+        source: 'Document',
+
+        instruction:
+            'You transcribe study material from documents for students. ' +
+            'Reproduce every readable word exactly as it appears, keeping the reading order. ' +
+            'Describe any diagram, graph, table or figure in words, and label each description clearly. ' +
+            'Add nothing else: no advice, no summary of your own, no commentary.',
+
+        prompt:
+            'Transcribe this document. Reply with the text and the descriptions only.',
+
+        failureMessage:
+            'The AI assistant could not read that document'
+    });
 }
 
 //quiz -> [{ question, options: [4], correctAnswer }]
@@ -372,6 +479,7 @@ module.exports = {
     EMPTY_REPLY_MESSAGE,
     callGemini,
     transcribeImage,
+    transcribeDocument,
     generateSummary,
     askQuestion,
     generateFlashcards,

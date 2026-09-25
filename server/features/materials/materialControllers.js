@@ -2,7 +2,10 @@ const crypto = require('node:crypto');
 
 const LessonMaterial = require('./LessonMaterial');
 
-const { getStorageDriver } = require('../../shared/storage');
+const {
+    getStorageDriver,
+    readObjectBuffer
+} = require('../../shared/storage');
 
 const { verifySignature } = require('../../shared/storage/signUrl');
 
@@ -26,6 +29,12 @@ const MAX_UNIT = 99;
 //much smaller slice than this (see shared/ai.js); this ceiling is only
 //about what is stored.
 const MAX_LESSON_TEXT = 200000;
+
+//How large a stored PDF may be for the model to read it inline (the
+//re-read path). Base64 adds a third on the way out, and an inline request
+//has a hard ceiling, so a page-sized file passes easily and an outsized one
+//is refused with a message instead of failing upstream.
+const MAX_AI_DOCUMENT_BYTES = 12 * 1024 * 1024;
 
 //where a PDF lands when no unit is named. Uploads made before units
 //existed (and their stored rows) belong here.
@@ -350,7 +359,69 @@ async function nextPositionFor({
         : 0;
 }
 
-//upload a PDF for a lesson
+//How many times a create will look for a free position before giving up. A
+//clash means another upload took the slot in the moment between reading
+//the last position and writing the new row, which is rare, so a handful of
+//attempts is far more than enough.
+const MAX_POSITION_ATTEMPTS = 5;
+
+//MongoDB's duplicate-key error. The position index is the only unique one
+//on this collection that an insert can trip, so an insert that hits it is a
+//racing upload rather than a bad payload.
+function isDuplicateKeyError(error) {
+    return error?.code === 11000;
+}
+
+//Create a material at the end of its lesson.
+//
+//The position is read and then written, so two uploads arriving together
+//can compute the same one. The unique index on the group turns that into a
+//duplicate-key error instead of a silent clash, and the position is
+//recomputed and tried again. Anything else -- a validation failure, a
+//dropped connection -- is not a race and is thrown straight out.
+async function createAtNextPosition(payload) {
+    const group = {
+        subject: payload.subject,
+        grade: payload.grade,
+        unit: payload.unit,
+        lesson: payload.lesson
+    };
+
+    let lastRaceError;
+
+    for (
+        let attempt = 1;
+        attempt <= MAX_POSITION_ATTEMPTS;
+        attempt++
+    ) {
+        try {
+            return await LessonMaterial.create({
+                ...payload,
+
+                position: await nextPositionFor(group)
+            });
+
+        } catch (error) {
+            if (!isDuplicateKeyError(error)) {
+                throw error;
+            }
+
+            lastRaceError = error;
+
+            console.warn(
+                'Another upload reached that lesson first; ' +
+                    `trying again (attempt ${attempt} of ${MAX_POSITION_ATTEMPTS})`
+            );
+        }
+    }
+
+    //every attempt lost the race: report the last one rather than inventing
+    //a message, so the log shows what MongoDB actually said
+    throw lastRaceError;
+}
+
+//upload a file for a lesson: a PDF as it arrived, or an image that is
+//turned into one first (see prepareUpload)
 exports.createMaterial = async (req, res) => {
     try {
         if (!req.file) {
@@ -409,7 +480,9 @@ exports.createMaterial = async (req, res) => {
         //Only stamped once the read actually finished. An image-only PDF
         //finishes with no text and is stamped (there is nothing to retry),
         //while a thrown error leaves it null so the backfill script can try
-        //again later.
+        //again later. A photo is the exception: the original is not kept,
+        //so a failed vision read can only be fixed by re-uploading, which
+        //the backfill script reports rather than silently stamping over.
         let textExtractedAt = null;
 
         try {
@@ -425,23 +498,18 @@ exports.createMaterial = async (req, res) => {
             );
         }
 
-        const position = await nextPositionFor({
-            subject,
-            grade,
-            unit,
-            lesson
-        });
-
         let material;
 
         try {
-            material = await LessonMaterial.create({
+            //the placement is read-then-written, so this retries against
+            //the unique index rather than trusting that it won (see
+            //createAtNextPosition)
+            material = await createAtNextPosition({
                 subject,
                 grade,
                 unit,
                 lesson,
                 title,
-                position,
 
                 storageKey: key,
                 storageProvider: driver.provider,
@@ -488,9 +556,7 @@ exports.createMaterial = async (req, res) => {
             .json({
                 message: error.status
                     ? error.message
-                    : 'Unable to store that PDF',
-
-                error: error.message
+                    : 'Unable to store that PDF'
             });
     }
 };
@@ -556,8 +622,7 @@ exports.listMaterials = async (req, res) => {
         console.error('List materials error:', error);
 
         return res.status(500).json({
-            message: 'Unable to load materials',
-            error: error.message
+            message: 'Unable to load materials'
         });
     }
 };
@@ -580,6 +645,106 @@ async function findAccessibleMaterial(req) {
         req.params.id
     );
 }
+
+//Read a lesson again for the AI assistant (admin only).
+//
+//A photo is read by the vision model at upload time, and that call can
+//fail: the provider answers a burst of traffic with a 503, and a burst
+//lasts longer than an upload can sit there. The photo itself is not kept,
+//so without this the lesson would be stuck with no assistant until someone
+//re-uploaded the page.
+//
+//It does not need the photo. The page was stored as a PDF, and Gemini reads
+//a PDF directly, so the bytes are fetched back out of storage and sent as
+//they are. That also means a lesson whose text was never read for any other
+//reason can be picked up here, which is the same path the backfill script
+//uses in bulk.
+exports.rereadMaterialText = async (req, res) => {
+    try {
+        const material = await LessonMaterial.findById(
+            req.params.id
+        );
+
+        if (!material) {
+            return res.status(404).json({
+                message: 'Material not found'
+            });
+        }
+
+        const buffer = await readObjectBuffer(
+            material.storageKey,
+            getStorageDriver()
+        );
+
+        //Base64 inflates the payload by a third on top of the file, and
+        //the model takes the document inline, so a file far beyond the
+        //usual page cannot be read this way. Saying so beats passing a
+        //provider failure on to the admin.
+        if (buffer.length > MAX_AI_DOCUMENT_BYTES) {
+            return res.status(400).json({
+                message:
+                    'That PDF is too large for the AI assistant to read'
+            });
+        }
+
+        let text;
+
+        try {
+            text = await ai.transcribeDocument({
+                data: buffer.toString('base64'),
+                mimeType: 'application/pdf'
+            });
+
+        } catch (error) {
+            console.error(
+                'Re-read lesson error:',
+                error
+            );
+
+            //a missing API key is our misconfiguration (500); anything
+            //else is the provider being unavailable, which the other AI
+            //endpoints report as a 502
+            return res
+                .status(error.status || 502)
+                .json({
+                    message:
+                        error.status === 500
+                            ? 'Unable to read that lesson'
+                            : 'The AI assistant is currently unavailable',
+
+                    error: error.message
+                });
+        }
+
+        material.extractedText = text.slice(
+            0,
+            MAX_LESSON_TEXT
+        );
+
+        //stamped now that a read has finished, so the backfill script
+        //leaves the row alone
+        material.textExtractedAt = new Date();
+
+        await material.save();
+
+        return res.status(200).json({
+            message: 'The AI assistant can read this lesson now',
+            material: toMaterialSummary(material)
+        });
+    } catch (error) {
+        if (error.name === 'CastError') {
+            return res.status(400).json({
+                message: 'That material id is not valid'
+            });
+        }
+
+        console.error('Re-read material error:', error);
+
+        return res.status(500).json({
+            message: 'Unable to read that lesson'
+        });
+    }
+};
 
 //the metadata for one lesson, so a lesson page reached by a deep link (or
 //a refresh) does not have to download the whole subject's library
@@ -607,8 +772,7 @@ exports.getMaterialById = async (req, res) => {
         console.error('Get material error:', error);
 
         return res.status(500).json({
-            message: 'Unable to load that material',
-            error: error.message
+            message: 'Unable to load that material'
         });
     }
 };
@@ -651,8 +815,7 @@ exports.getMaterialViewUrl = async (req, res) => {
         console.error('Material view url error:', error);
 
         return res.status(500).json({
-            message: 'Unable to open that PDF',
-            error: error.message
+            message: 'Unable to open that PDF'
         });
     }
 };
@@ -728,8 +891,7 @@ exports.updateMaterial = async (req, res) => {
         console.error('Update material error:', error);
 
         return res.status(500).json({
-            message: 'Unable to update that material',
-            error: error.message
+            message: 'Unable to update that material'
         });
     }
 };
@@ -767,8 +929,7 @@ exports.deleteMaterial = async (req, res) => {
         console.error('Delete material error:', error);
 
         return res.status(500).json({
-            message: 'Unable to delete that material',
-            error: error.message
+            message: 'Unable to delete that material'
         });
     }
 };
@@ -864,9 +1025,7 @@ exports.serveMaterialFile = async (req, res) => {
             .json({
                 message: error.status
                     ? error.message
-                    : 'Unable to read that file',
-
-                error: error.message
+                    : 'Unable to read that file'
             });
     }
 };
@@ -930,14 +1089,35 @@ exports.reorderMaterials = async (req, res) => {
             });
         }
 
-        requested.forEach((id, index) => {
-            byId.get(id).position = index;
-        });
+        //Two phases, because the unique index on the lesson makes the
+        //direct write fail: the new positions would collide with the
+        //documents still holding them, and swapping two files is exactly
+        //that. Every file in the lesson is moved above the group's current
+        //range first, which no held value can clash with, and the real
+        //positions are written once that is done.
+        const offset =
+            Math.max(
+                ...materials.map((material) =>
+                    Number(material.position) || 0
+                )
+            ) + 1;
 
         await Promise.all(
-            materials.map((material) =>
-                material.save()
-            )
+            materials.map((material, index) => {
+                material.position = offset + index;
+
+                return material.save();
+            })
+        );
+
+        await Promise.all(
+            requested.map((id, index) => {
+                const material = byId.get(id);
+
+                material.position = index;
+
+                return material.save();
+            })
         );
 
         return res.status(200).json({
@@ -951,8 +1131,7 @@ exports.reorderMaterials = async (req, res) => {
         console.error('Reorder materials error:', error);
 
         return res.status(500).json({
-            message: 'Unable to reorder those PDFs',
-            error: error.message
+            message: 'Unable to reorder those PDFs'
         });
     }
 };

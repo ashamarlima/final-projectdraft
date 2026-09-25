@@ -135,6 +135,9 @@ const storageCalls = {
 //set to make the bucket fail, to prove uploads roll back
 let putFailure = null;
 
+//what a read hands back
+let readBytes = Buffer.from('%PDF-1.4 streamed');
+
 function fakeDriver() {
     return {
         provider: 'supabase',
@@ -169,19 +172,23 @@ function fakeDriver() {
         async createReadStream(args) {
             storageCalls.read.push(args);
 
-            const buffer = Buffer.from(
-                '%PDF-1.4 streamed'
-            );
-
+            //a test can swap this for an oversized object, to prove the
+            //re-read refuses one the model could not take
             return {
-                stream: Readable.from(buffer),
-                sizeBytes: buffer.length
+                stream: Readable.from(readBytes),
+                sizeBytes: readBytes.length
             };
         }
     };
 }
 
+//The real module is spread in so its own helpers (readObjectBuffer, used
+//by the re-read endpoint) are exercised for real -- the driver they are
+//handed is the fake above.
+const realStorage = require('../../shared/storage');
+
 stubModule('shared/storage/index.js', {
+    ...realStorage,
     getStorageDriver: fakeDriver
 });
 
@@ -275,8 +282,17 @@ const fakeMaterials = {
     async create(payload) {
         this.createCalls.push(payload);
 
-        if (this.createFailure) {
-            throw this.createFailure;
+        //One failure, or a queue of them. A queue is what lets a test
+        //simulate the first attempt losing the position race and the next
+        //one winning it.
+        const failure = Array.isArray(
+            this.createFailure
+        )
+            ? this.createFailure.shift()
+            : this.createFailure;
+
+        if (failure) {
+            throw failure;
         }
 
         const document = {
@@ -339,6 +355,18 @@ const fakeMaterials = {
     },
 
     findById(id) {
+        //Mongoose rejects an id that cannot be an ObjectId with a
+        //CastError, which is what the controllers turn into a 400. Without
+        //this the 400 path could only be assumed, never exercised.
+        if (!/^[0-9a-f]{24}$/i.test(String(id))) {
+            return Promise.reject(
+                Object.assign(
+                    new Error('Cast to ObjectId failed'),
+                    { name: 'CastError' }
+                )
+            );
+        }
+
         return Promise.resolve(
             this.decorate(
                 this.documents.find(
@@ -383,8 +411,10 @@ stubModule(
 const realAi = require('../../shared/ai');
 
 const transcribeCalls = [];
+const documentCalls = [];
 
 let transcribeFailure = null;
+let documentFailure = null;
 
 const TRANSCRIBED_TEXT =
     'Photosynthesis converts light into chemical energy.';
@@ -397,6 +427,17 @@ stubModule('shared/ai.js', {
 
         if (transcribeFailure) {
             throw transcribeFailure;
+        }
+
+        return TRANSCRIBED_TEXT;
+    },
+
+    //reading a stored lesson again for the AI assistant
+    async transcribeDocument(document) {
+        documentCalls.push(document);
+
+        if (documentFailure) {
+            throw documentFailure;
         }
 
         return TRANSCRIBED_TEXT;
@@ -442,6 +483,14 @@ beforeEach(() => {
     storageCalls.read = [];
 
     putFailure = null;
+
+    readBytes = Buffer.from('%PDF-1.4 streamed');
+
+    transcribeCalls.length = 0;
+    documentCalls.length = 0;
+
+    transcribeFailure = null;
+    documentFailure = null;
 });
 
 //------------------------------------------------------------
@@ -1168,6 +1217,22 @@ test('a failed metadata write removes the uploaded object', async () => {
 
     assert.equal(result.status, 500);
 
+    //The store's own message stays in the log: a client is told what
+    //failed, never the internals behind it. Nothing in the body may carry
+    //the detail, whether under an `error` field or inside a message.
+    assert.equal(result.data.error, undefined);
+
+    assert.ok(
+        !JSON.stringify(result.data).includes(
+            'database is down'
+        ),
+        'the response body leaked the underlying error message'
+    );
+
+    //a failure that is not the position index is not a race, so it is
+    //reported instead of being retried
+    assert.equal(fakeMaterials.createCalls.length, 1);
+
     //no orphaned object is left in the bucket
     assert.equal(storageCalls.remove.length, 1);
 
@@ -1175,6 +1240,35 @@ test('a failed metadata write removes the uploaded object', async () => {
         storageCalls.remove[0].key,
         storageCalls.put[0].key
     );
+});
+
+test('a position taken by a racing upload is retried', async () => {
+    //another upload took the slot in the moment between reading the last
+    //position and writing this row, which is what the unique index
+    //reports as a duplicate key
+    fakeMaterials.createFailure = [
+        Object.assign(
+            new Error('E11000 duplicate key error'),
+            { code: 11000 }
+        )
+    ];
+
+    const result = await upload(
+        pdfForm({
+            subject: 'English',
+            grade: '9',
+            lesson: 1
+        })
+    );
+
+    assert.equal(result.status, 201);
+
+    //the slot was asked for again rather than the upload failing
+    assert.equal(fakeMaterials.createCalls.length, 2);
+
+    //and the file belonging to the retry is kept, not cleaned up as though
+    //the upload had failed
+    assert.equal(storageCalls.remove.length, 0);
 });
 
 //------------------------------------------------------------
@@ -2291,4 +2385,194 @@ test('update keeps the unit when the request does not name one', async () => {
 
     assert.equal(stored.unit, 3);
     assert.equal(stored.title, 'Renamed only');
+});
+
+//------------------------------------------------------------
+//reading a lesson again for the AI assistant
+//------------------------------------------------------------
+//
+//A photo is read by the vision model at upload time, and that read can
+//fail: the provider answers a burst of traffic with a 503, and a burst
+//outlasts an upload. The photo is not kept, so these prove the lesson can
+//be read again from the stored PDF instead of being stuck without an
+//assistant until someone re-uploads the page.
+
+//a lesson nothing could be read from at upload time
+function seedUnreadPhoto(overrides = {}) {
+    return seedMaterial({
+        title: 'Photographed worksheet',
+        sourceKind: 'image',
+        originalName: 'worksheet.pdf',
+        extractedText: '',
+        textExtractedAt: null,
+        ...overrides
+    });
+}
+
+test('an admin can read an unread lesson again from the stored page', async () => {
+    const material = seedUnreadPhoto();
+
+    const result = await requestJson(
+        'POST',
+        `${MATERIALS}/${material._id}/read`,
+        undefined,
+        adminToken()
+    );
+
+    assert.equal(result.status, 200);
+
+    //the assistant is switched back on for it
+    assert.equal(result.data.material.hasText, true);
+
+    //Read from storage -- not from a re-upload -- and handed to the model
+    //as the PDF it is stored as, whole.
+    assert.equal(storageCalls.read.length, 1);
+    assert.equal(
+        storageCalls.read[0].key,
+        material.storageKey
+    );
+
+    assert.equal(documentCalls.length, 1);
+    assert.equal(
+        documentCalls[0].mimeType,
+        'application/pdf'
+    );
+
+    assert.equal(
+        documentCalls[0].data,
+        readBytes.toString('base64')
+    );
+
+    const stored = fakeMaterials.documents.find(
+        (document) =>
+            String(document._id) ===
+            String(material._id)
+    );
+
+    assert.equal(
+        stored.extractedText,
+        TRANSCRIBED_TEXT
+    );
+
+    //stamped, so the backfill script does not read it a third time
+    assert.ok(stored.textExtractedAt instanceof Date);
+});
+
+test('reading a lesson again is admin-only', async () => {
+    const material = seedUnreadPhoto();
+
+    const asStudent = await requestJson(
+        'POST',
+        `${MATERIALS}/${material._id}/read`,
+        undefined,
+        studentToken()
+    );
+
+    assert.equal(asStudent.status, 403);
+
+    //the read never happened
+    assert.equal(documentCalls.length, 0);
+    assert.equal(storageCalls.read.length, 0);
+});
+
+test('a lesson that is not there cannot be read again', async () => {
+    const missing = await requestJson(
+        'POST',
+        `${MATERIALS}/${objectId(7)}/read`,
+        undefined,
+        adminToken()
+    );
+
+    assert.equal(missing.status, 404);
+
+    assert.equal(documentCalls.length, 0);
+});
+
+test('a malformed lesson id is a 400, not a 500', async () => {
+    const result = await requestJson(
+        'POST',
+        `${MATERIALS}/not-an-id/read`,
+        undefined,
+        adminToken()
+    );
+
+    assert.equal(result.status, 400);
+});
+
+test('a stored page the model cannot read leaves the row alone', async () => {
+    const material = seedUnreadPhoto();
+
+    documentFailure = Object.assign(
+        new Error('high demand'),
+        { status: 502 }
+    );
+
+    const result = await requestJson(
+        'POST',
+        `${MATERIALS}/${material._id}/read`,
+        undefined,
+        adminToken()
+    );
+
+    assert.equal(result.status, 502);
+
+    const stored = fakeMaterials.documents.find(
+        (document) =>
+            String(document._id) ===
+            String(material._id)
+    );
+
+    //Left unstamped on purpose: this lesson is still waiting for a read,
+    //so the next attempt (or the backfill) can pick it up. Stamping it
+    //here would declare it done and lose the lesson's assistant for good.
+    assert.equal(stored.textExtractedAt, null);
+    assert.equal(stored.extractedText, '');
+});
+
+test('a file too large for the model is refused before it is sent', async () => {
+    const material = seedUnreadPhoto();
+
+    //just over the ceiling
+    readBytes = Buffer.alloc(
+        12 * 1024 * 1024 + 1,
+        'x'
+    );
+
+    const result = await requestJson(
+        'POST',
+        `${MATERIALS}/${material._id}/read`,
+        undefined,
+        adminToken()
+    );
+
+    assert.equal(result.status, 400);
+
+    //the bytes were never handed to the provider
+    assert.equal(documentCalls.length, 0);
+});
+
+test('a plain PDF is read again the same way', async () => {
+    const material = seedMaterial({
+        extractedText: '',
+        textExtractedAt: null
+    });
+
+    const result = await requestJson(
+        'POST',
+        `${MATERIALS}/${material._id}/read`,
+        undefined,
+        adminToken()
+    );
+
+    assert.equal(result.status, 200);
+    assert.equal(result.data.material.hasText, true);
+
+    //the stored PDF is what the model was given, and the extracted text
+    //never reaches the browser -- only whether there is any
+    assert.equal(
+        result.data.material.extractedText,
+        undefined
+    );
+
+    assert.equal(documentCalls.length, 1);
 });

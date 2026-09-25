@@ -228,6 +228,5 @@ function create() {
 }
 
 module.exports = {
-    create,
-    DEFAULT_BUCKET
+    create
 };

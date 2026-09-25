@@ -132,4 +132,4 @@ function create() {
     };
 }
 
-module.exports = { create, rootDirectory };
+module.exports = { create };

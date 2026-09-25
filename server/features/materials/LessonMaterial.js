@@ -156,6 +156,34 @@ lessonMaterialSchema.index({
     createdAt: 1
 });
 
+//A position is what orders the PDFs inside one lesson, so two files must
+//never claim the same one. This is what makes the assignment in the
+//controller safe against two uploads arriving together: the one that
+//computed a position someone else already took is refused here and retried
+//with a fresh one, instead of the two silently sharing a slot.
+//
+//It is a second index rather than a change to the one above, because
+//uniqueness would have to include createdAt, and that would not constrain
+//position at all.
+//
+//On a database that already holds a duplicate (only reachable through that
+//same race) this index cannot build and Mongoose logs it; nothing else
+//breaks, and scripts/dedupeMaterialPositions.js clears the duplicate so the
+//next start can build it.
+lessonMaterialSchema.index(
+    {
+        subject: 1,
+        grade: 1,
+        unit: 1,
+        lesson: 1,
+        position: 1
+    },
+    {
+        unique: true,
+        name: 'lesson_position_unique'
+    }
+);
+
 //signed local urls are resolved back to a material by key
 lessonMaterialSchema.index({ storageKey: 1 });
 

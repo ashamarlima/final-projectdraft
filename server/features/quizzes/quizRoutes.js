@@ -7,15 +7,24 @@ const {
     allowRoles
 } = require('../../shared/authMiddleware');
 
+const {
+    aiLimiter
+} = require('../../shared/rateLimit');
+
 const router = express.Router();
 
 
 //Quizzes belong to one student: generating, answering and reviewing are
 //all scoped to the requester inside the controller.
+//
+//Generating one is a paid Gemini call, so it is throttled per student.
+//Answering and reviewing are not: they only read and grade what was
+//already generated.
 router.post(
     '/',
     protect,
     allowRoles('student'),
+    aiLimiter,
     quizController.createQuizAttempt
 );
 

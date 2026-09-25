@@ -10,6 +10,10 @@ const {
 } = require('../../shared/authMiddleware');
 
 const {
+    aiLimiter
+} = require('../../shared/rateLimit');
+
+const {
     materialUpload
 } = require('../../shared/uploadMiddleware');
 
@@ -47,6 +51,18 @@ router.post(
 );
 
 
+//Read one lesson again for the AI assistant (admin only). Used when the
+//vision read at upload time could not finish -- the page is re-read from
+//the stored PDF, so a lesson never has to be re-uploaded to get its
+//assistant back.
+router.post(
+    '/:id/read',
+    protect,
+    allowRoles('admin'),
+    materialController.rereadMaterialText
+);
+
+
 //a short-lived url the browser can open directly
 router.get(
     '/:id/view',
@@ -60,10 +76,15 @@ router.get(
 //text of the lesson never leaves the server, these endpoints only return
 //what the model wrote from it. The lesson is grade-scoped inside the
 //controller, so a student can only study their own grade's lessons.
+//
+//Each of the three is one paid Gemini call, so each is throttled per
+//student (the limiter sits behind protect() to key on the user rather
+//than on a shared address).
 router.post(
     '/:id/summary',
     protect,
     allowRoles('student'),
+    aiLimiter,
     materialAiController.generateSummary
 );
 
@@ -72,6 +93,7 @@ router.post(
     '/:id/ask',
     protect,
     allowRoles('student'),
+    aiLimiter,
     materialAiController.askQuestion
 );
 
@@ -80,6 +102,7 @@ router.post(
     '/:id/flashcards',
     protect,
     allowRoles('student'),
+    aiLimiter,
     materialAiController.generateFlashcards
 );
 
@@ -93,8 +116,10 @@ router.get(
 );
 
 
-//the order of the PDFs inside one lesson. Must stay above the '/:id'
-//routes, or 'reorder' would be read as an id.
+//The order of the PDFs inside one lesson. It has to stay above the
+//'PUT /:id' route below, or 'reorder' would be read as an id. (The GET
+//routes above it are unaffected: Express matches on method as well as
+//path, so a GET /:id never claims a PUT /reorder.)
 router.put(
     '/reorder',
     protect,

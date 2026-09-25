@@ -10,7 +10,8 @@
 //the same as an empty one.
 export function readFormValues(form) {
   if (!form) {
-    return {};
+    console.error("No form element provided");
+    return { console: "No form element provided" };
   }
 
   return Object.fromEntries(

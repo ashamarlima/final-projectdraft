@@ -19,5 +19,21 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
+
+    //Vitest reads this from the same config, so a test renders a component
+    //through the same React and JSX transform the app is built with.
+    test: {
+      //components are rendered into a DOM, not a bare node process
+      environment: 'jsdom',
+
+      //the matchers from @testing-library/jest-dom are added here
+      setupFiles: './src/test/setup.js',
+
+      include: ['src/**/*.test.{js,jsx}'],
+
+      //Anything a test replaced with vi.spyOn/vi.fn is put back
+      //afterwards, so one test cannot change how the next one behaves.
+      restoreMocks: true,
+    },
   }
 })

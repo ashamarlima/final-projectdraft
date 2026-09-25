@@ -31,7 +31,7 @@ exports.getStatus = async (req, res) => {
             message: "Server is working!"
         });
     } catch (error) {
-        return res.status(500).json({ message: "Error", error: error.message });
+        return res.status(500).json({ message: "Error" });
     }
 };
 
@@ -116,8 +116,7 @@ exports.searchUsers = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({
-            message: "Error",
-            error: error.message
+            message: "Error"
         });
     }
 };
@@ -159,8 +158,7 @@ exports.getAllUsers = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({
-            message: "Error",
-            error: error.message
+            message: "Error"
         });
     }
 };
@@ -209,7 +207,7 @@ exports.createClass = async (req, res) => {
             message: "Class created successfully"
         });
     } catch (error) {
-        return res.status(500).json({ message: "Error creating class", error: error.message });
+        return res.status(500).json({ message: "Error creating class" });
     }
 };
 
@@ -222,7 +220,7 @@ exports.getAllClasses = async (req, res) => {
 
         return res.status(200).json({ success: true, data: classes });
     } catch (error) {
-        return res.status(500).json({ message: 'Error', error: error.message });
+        return res.status(500).json({ message: 'Error' });
     }
 };
 
@@ -238,8 +236,7 @@ exports.getAllTeachers = async (req, res) => {
         return res.status(200).json({ teachers });
     } catch (error) {
         return res.status(500).json({
-            message: "Error",
-            error: error.message
+            message: "Error"
         });
     }
 };
@@ -326,8 +323,7 @@ exports.getLeaderboard = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({
-            message: "Error",
-            error: error.message
+            message: "Error"
         });
     }
 };
@@ -347,7 +343,7 @@ exports.deleteClass = async (req, res) => {
         });
     } catch (error) {
         console.error("Error in deleteClass:", error);
-        return res.status(500).json({ message: "Error deleting class", error: error.message });
+        return res.status(500).json({ message: "Error deleting class" });
     }
 };
 
@@ -365,7 +361,7 @@ exports.getUserById = async (req, res) => {
         return res.status(200).json({ user });
 
     } catch (error) {
-        return res.status(500).json({ message: "Error", error: error.message });
+        return res.status(500).json({ message: "Error" });
     }
 };
 //create user
@@ -454,8 +450,7 @@ exports.createUser = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({
-            message: "Internal server error",
-            error: error.message
+            message: "Internal server error"
         });
     }
 };
@@ -603,8 +598,7 @@ exports.updateUser = async (req, res) => {
         }
 
         return res.status(500).json({
-            message: "Internal server error",
-            error: error.message
+            message: "Internal server error"
         });
     }
 };
@@ -612,13 +606,24 @@ exports.updateUser = async (req, res) => {
 exports.deleteUser = async (req, res) => {
     try {
         const user = await User.findByIdAndDelete(req.params.id);
+
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
+
         return res.status(200).json({ message: "User deleted successfully" });
     }
     catch (error) {
-        return res.status(500).json({ message: "Internal server error", error: error.message });
+        //a malformed id is a client error, anything else is not. Same
+        //split as updateUser above, so DELETE /users/abc answers 400
+        //rather than reporting a database failure.
+        if (error.name === 'CastError') {
+            return res.status(400).json({
+                message: "That user id is not valid"
+            });
+        }
+
+        return res.status(500).json({ message: "Internal server error" });
     }
 };
 //get filter options
@@ -635,8 +640,7 @@ exports.getFilterOptions = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({
-            message: "Error",
-            error: error.message
+            message: "Error"
         });
     }
 };
@@ -720,8 +724,7 @@ exports.loginUser = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({
-            message: "Internal server error",
-            error: error.message
+            message: "Internal server error"
         });
     }
 };
@@ -741,8 +744,7 @@ exports.logoutUser = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({
-            message: "Internal server error",
-            error: error.message
+            message: "Internal server error"
         });
     }
 };
@@ -757,8 +759,7 @@ exports.getCurrentUser = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({
-            message: "Internal server error",
-            error: error.message
+            message: "Internal server error"
         });
     }
 };
@@ -847,8 +848,7 @@ exports.updateGrades = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({
-            message: "Internal server error",
-            error: error.message
+            message: "Internal server error"
         });
     }
 };

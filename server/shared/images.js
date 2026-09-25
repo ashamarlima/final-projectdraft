@@ -16,8 +16,13 @@
 //     is narrower than sharp's, and an inline request has to stay small.
 //
 //sharp does the decoding: it covers everything a browser can produce
-//(PNG, JPEG, WEBP, HEIC, AVIF, GIF, TIFF, BMP), while pdf-lib can only
-//embed PNG and JPEG bytes.
+//(PNG, JPEG, WEBP, AVIF, GIF, TIFF, BMP), while pdf-lib can only embed PNG
+//and JPEG bytes.
+//
+//HEIC is the exception, and it is worth knowing why: sharp's packaged
+//libvips leaves out the HEVC decoder for licensing reasons, so an iPhone
+//photo saved in "High Efficiency" mode cannot be read here and is refused
+//with a message that says what to do instead (see imageReadError).
 
 const sharp = require('sharp');
 const { PDFDocument } = require('pdf-lib');
@@ -150,19 +155,42 @@ function detectRasterImage(buffer) {
     return null;
 }
 
+//what the uploader is told when the bytes are not an image at all
+const NOT_AN_IMAGE_MESSAGE =
+    'That image could not be read. It may be corrupt, or renamed from another format.';
+
 //Turn a sharp failure into a clear message carrying a 400, so the
 //uploader is told the image is the problem rather than seeing a 500.
 //Mirrors pdfReadError in shared/pdf.js.
 function imageReadError(error) {
     const reason = String(error?.message || '');
 
-    //what sharp says when the bytes are not an image it can decode (the
-    //magic bytes can look right while the rest of the file is broken)
-    if (/unsupported image format|corrupt header/i.test(reason)) {
+    //HEIC is the one format the converters cannot manage here. sharp's
+    //packaged libvips decodes AVIF but not HEVC (it is patent encumbered
+    //and left out of the prebuilt binaries), which is the codec an iPhone
+    //uses when it is set to "High Efficiency". Saying so -- and saying
+    //what to do about it -- beats passing libheif's code number on to a
+    //teacher.
+    if (/unsupported codec|unsupported compression/i.test(reason)) {
         return Object.assign(
             new Error(
-                'That image could not be read. It may be corrupt, or renamed from another format.'
+                'That HEIC photo cannot be read here. Export or save it as a JPEG (on an iPhone: camera settings, "Most Compatible") and upload that instead.'
             ),
+            { status: 400 }
+        );
+    }
+
+    //Called with no error at all when the caller already knows these
+    //bytes are not an image (detectRasterImage found nothing). sharp says
+    //much the same thing with "unsupported image format" when they merely
+    //look like one: the magic bytes can be right while the rest of the
+    //file is broken.
+    if (
+        !error ||
+        /unsupported image format|corrupt header/i.test(reason)
+    ) {
+        return Object.assign(
+            new Error(NOT_AN_IMAGE_MESSAGE),
             { status: 400 }
         );
     }
